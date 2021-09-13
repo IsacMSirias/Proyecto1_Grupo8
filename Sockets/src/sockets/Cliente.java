@@ -12,10 +12,30 @@ import java.io.*;
  */
 public class Cliente {
     /**
-     * Attributes of client 
+     * Attributes of client
      */
-    Socket client;
+    Socket socket;
     int port = 9000;
-    String ip = "192.168.0.16";
+    String ipAddress = "192.168.0.16";
+    BufferedReader input;
+    DataOutputStream output;
     
+    public void start(String ipAddress, int port) throws IOException {
+        socket = new Socket(ipAddress, port);
+        this.input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        String message = input.readLine();
+        System.out.println(message);
+        this.output = new DataOutputStream(socket.getOutputStream());
+        output.writeUTF("Conectado!");
+        output.close();
+    }
+
+    public static void main(String[] args) {
+        Cliente cliente = new Cliente();
+        try {
+            cliente.start("192.168.0.16", 9000);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
