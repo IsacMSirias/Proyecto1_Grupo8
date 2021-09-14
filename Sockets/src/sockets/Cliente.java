@@ -18,22 +18,23 @@ public class Cliente {
     int port = 9000;
     String ipAddress = "192.168.0.16";
     BufferedReader input;
-    DataOutputStream output;
+    PrintWriter output;
     
     public void start(String ipAddress, int port) throws IOException {
         socket = new Socket(ipAddress, port);
         this.input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        String message = input.readLine();
-        System.out.println(message);
-        this.output = new DataOutputStream(socket.getOutputStream());
-        output.writeUTF("Conectado!");
-        output.close();
+        this.output = new PrintWriter(socket.getOutputStream(), true);
+        output.println("Conectado!");
+        while (this.port == 9000) {
+            String message = input.readLine();
+            System.out.println(message);
+        }
     }
 
     public static void main(String[] args) {
         Cliente cliente = new Cliente();
         try {
-            cliente.start("192.168.0.16", 9000);
+            cliente.start("localhost", 9000);
         } catch (IOException e) {
             e.printStackTrace();
         }

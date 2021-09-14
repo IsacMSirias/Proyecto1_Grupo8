@@ -12,31 +12,27 @@ public class Servidor {
     ServerSocket server;
     Socket socket;
     int port = 9000;
-    DataOutputStream output; 
+    PrintWriter output; 
     BufferedReader input;
     boolean conectando = true;
     
     public void run(){
-        while(conectando == true){
-            try{
-                server = new ServerSocket(port);
-                socket = new Socket();
+        try{
+            server = new ServerSocket(port);
+            socket = new Socket();
+            while(conectando == true){
                 socket = server.accept();
                 this.input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                this.output = new PrintWriter(socket.getOutputStream(), true);
                 String message = input.readLine();
                 System.out.println(message);
-                this.output = new DataOutputStream(socket.getOutputStream());
-                if(message == "Conectado!"){
+                if(message == "Conectado!"){ // esta condición no se cumple (averiguar por qué)
                     this.conectando = false;
                 }
-            }catch(Exception e){};
-        }
-        try {
-            output.writeUTF("Partida iniciada");
-            output.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+                output.println("Partida iniciada");
+                output.close();
+            }
+        }catch(Exception e){};
     }
 
     public static void main(String[] args) {
