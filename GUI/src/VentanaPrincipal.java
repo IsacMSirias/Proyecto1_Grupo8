@@ -67,7 +67,7 @@ public class VentanaPrincipal implements ActionListener {
 
         if (e.getSource() == BotonJugar) {
             ventanap.dispose();
-            VentanaJuego ventanaj = new VentanaJuego();
+            new VentanaJuego().start();
 
         }
         if (e.getSource() == BotonAbout){

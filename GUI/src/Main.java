@@ -8,6 +8,8 @@ public class Main {
 
       VentanaPrincipal Menu = new VentanaPrincipal();
 
+      VentanaPrincipal Menu2 = new VentanaPrincipal();
+
 
 
 
