@@ -1,7 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferInt;
 import java.io.IOException;
+import Graphics.Pantalla;
 
 
 
@@ -15,10 +18,21 @@ public class VentanaJuego  extends JFrame implements Runnable{
     private static int aps = 0;
     private static int fps = 0;
 
+    private static int x = 0;
+    private static int y = 0;
+    private static Pantalla pantalla;
+
+    private static BufferedImage imagen =
+            new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
+
+    private static int [] pixeles = ((DataBufferInt) imagen.getRaster().getDataBuffer()).getData();
+
 
     ImageIcon imageIcon = new ImageIcon("Sprites/IconMath.png");
 
     VentanaJuego(){
+
+        pantalla = new Pantalla(WIDTH, HEIGHT);
 
         setIconImage(imageIcon.getImage());
         setSize(500, 600);
@@ -52,11 +66,22 @@ public class VentanaJuego  extends JFrame implements Runnable{
             canvas.createBufferStrategy(3);
             return;
         }
-        g = bs.getDrawGraphics();
+
+        pantalla.clean();
+        pantalla.mostrar(x , y);
+
+        for (int i = 0; i < pixeles.length; i++){
+            pixeles[i] = pantalla.pixeles[i];
+        }
+
+        Graphics graphics = bs.getDrawGraphics();
+
+
 
         //----------------
-        g.setColor(Color.white);
-        g.fillRect(0,0,500,600);
+
+        graphics.drawImage(imagen,0,0, getWidth(), getHeight(), null);
+
 
         //----------------
         g.dispose();
