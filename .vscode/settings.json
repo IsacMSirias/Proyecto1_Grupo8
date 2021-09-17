@@ -1,6 +1,8 @@
 {
     "java.project.sourcePaths": [
         "Sockets/src",
-        "Sockets/Socket/src"
+        "Sockets/Socket/src",
+        "src\\DoubleLinked",
+        "src\\BoardGeneration"
     ]
 }
