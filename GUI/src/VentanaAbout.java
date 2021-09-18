@@ -5,9 +5,7 @@ public class VentanaAbout {
 
     JFrame ventanaAb = new JFrame();
 
-
     VentanaAbout() {
-
         ventanaAb.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventanaAb.setSize(500, 600);
         ventanaAb.setLayout(null);
