@@ -23,8 +23,8 @@ public class DoublyLinkedList {
      * Add a character BNode containing the character c to the end of the linked list. This routine does not require a search.
      * @param c a single character
      */
-    public void addFieldAtEnd(String str){
-        DoubleNode n = new DoubleNode(tail, str, null);
+    public void addFieldAtEnd(String str, String opt, int num1, int num2, int mvt){
+        DoubleNode n = new DoubleNode(tail, str, opt, num1, num1, mvt, null);
         if(isEmpty()){
             head = tail = n;
         }else{
@@ -37,8 +37,8 @@ public class DoublyLinkedList {
      * Add a character BNode containing the character c to the front of the linked list. No search is required.
      * @param c a single character
      */
-    public void addFieldAtFront(String str){
-        DoubleNode n = new DoubleNode(null, str, head);
+    public void addFieldAtFront(String str, String opt, int num1, int num2, int mvt){
+        DoubleNode n = new DoubleNode(null, str, opt, num1, num1, mvt, head);
         if(isEmpty()){
             head = tail = n;
         }else{
@@ -111,10 +111,4 @@ public class DoublyLinkedList {
             cn = cn.getNext();  
         }  
     }  
-
-    /**
-     * Test driver for DoublyLinkedList
-     */
-    public static void main(String a[]) {
-    }
 }

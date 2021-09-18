@@ -3,6 +3,7 @@
         "Sockets/src",
         "Sockets/Socket/src",
         "src\\DoubleLinked",
-        "src\\BoardGeneration"
+        "src\\BoardGeneration",
+        "src"
     ]
 }
