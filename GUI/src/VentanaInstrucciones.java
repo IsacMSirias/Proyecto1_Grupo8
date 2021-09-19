@@ -1,11 +1,8 @@
 import javax.swing.*;
-import java.awt.*;
 
 public class VentanaInstrucciones {
 
     JFrame ventanaIns = new JFrame();
-
-
 
     VentanaInstrucciones() {
 
