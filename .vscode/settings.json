@@ -4,6 +4,7 @@
         "Sockets/Socket/src",
         "src\\DoubleLinked",
         "src\\BoardGeneration",
-        "src"
+        "src",
+        "GUI"
     ]
 }
