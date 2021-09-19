@@ -5,6 +5,7 @@ public class ListGeneration {
     public int casillas_reto = 0;
     public int casillas_trampa = 0;
     public int casillas_tunel = 0;
+    //eso tilin
 
     public DoublyLinkedList random() {
         Random random = new Random();
