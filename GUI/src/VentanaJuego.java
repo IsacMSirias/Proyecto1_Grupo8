@@ -1,152 +1,148 @@
+import javax.management.RuntimeMBeanException;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferInt;
-import java.io.IOException;
-import Graphics.Pantalla;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
+public class VentanaJuego implements ActionListener {
 
-public class VentanaJuego  extends JFrame implements Runnable{
 
-    private final Canvas canvas;
-    private Thread thread;
-    private boolean running = false;
-    private BufferStrategy bs;
-    private Graphics g;
-    private static int aps = 0;
-    private static int fps = 0;
+    public static int varNumDado1 = 0;
+    public static int varPocision1 = 0;
+    public static String varCasilla1 = "";
 
-    private static int x = 0;
-    private static int y = 0;
-    private static Pantalla pantalla;
+    public static int varNumDado2 = 0;
+    public static int varPocision2 = 0;
+    public static String varCasilla2 = "";
 
-    private static BufferedImage imagen =
-            new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
+    JFrame ventanaj = new JFrame();
 
-    private static int [] pixeles = ((DataBufferInt) imagen.getRaster().getDataBuffer()).getData();
+    JLabel Titulo = new JLabel();
 
+    JLabel Espacio = new JLabel();
+
+    JLabel Jugador1 = new JLabel();
+    JLabel Jugador2 = new JLabel();
+
+    JLabel Posicion1 = new JLabel();
+    JLabel Posicion2 = new JLabel();
+
+    JLabel CasillaTipo1 = new JLabel();
+    JLabel CasillaTipo2 = new JLabel();
+
+    JButton BotonMenu = new JButton("MENU");
+    JButton BLanzarDado = new JButton("Lanzar");
 
     ImageIcon imageIcon = new ImageIcon("Sprites/IconMath.png");
+    JLabel Tablero = new JLabel(new ImageIcon("Sprites/Tablero.png"));
+    JLabel Dado = new JLabel(new ImageIcon("Sprites/Dado.png"));
 
-    VentanaJuego(){
+    public VentanaJuego() {
 
-        pantalla = new Pantalla(WIDTH, HEIGHT);
+        ventanaj.setIconImage(imageIcon.getImage());
 
-        setIconImage(imageIcon.getImage());
-        setSize(500, 600);
-        setResizable(false);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
-        setFocusable(true);
-        setLocationRelativeTo(null);
+        ventanaj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ventanaj.setTitle("S O C K E T   M A T H");
+        ventanaj.setResizable(false);
 
-        canvas = new Canvas();
-        canvas.setPreferredSize(new Dimension(500,600));
-        canvas.setMaximumSize(new Dimension(500,600));
-        canvas.setMinimumSize(new Dimension(500,600));
-        canvas.setFocusable(true);
+        Titulo.setText("SOCKET MATH");
+        Titulo.setBounds(600/2 - 250/2, 0, 250, 100);
+        Titulo.setFont(new Font("cooper black", 0, 30));
 
-        add(canvas);
+        Espacio.setText(":");
+        Espacio.setBounds(300, 499, 50,30);
+        Espacio.setFont(new Font("cooper black", 0, 20));
+
+        Jugador1.setText("Jugador 1:");
+        Jugador1.setBounds(200-50, 400, 200, 20);
+        Jugador1.setFont(new Font("cooper black", 0, 15));
+
+        Jugador2.setText("Jugador 2:");
+        Jugador2.setBounds(300+50, 400, 200, 20);
+        Jugador2.setFont(new Font("cooper black", 0, 15));
+
+        Posicion1.setText("Pocisión:");
+        Posicion1.setBounds(200-50, 425, 200, 20);
+        Posicion1.setFont(new Font("cooper black", 0, 15));
+
+        Posicion2.setText("Pocisión:");
+        Posicion2.setBounds(300+50, 425, 200, 20);
+        Posicion2.setFont(new Font("cooper black", 0, 15));
+
+        CasillaTipo1.setText("Casilla");
+        CasillaTipo1.setBounds(200-50, 450, 200, 15);
+        CasillaTipo1.setFont(new Font("cooper black", 0, 15));
+
+        CasillaTipo2.setText("Casilla");
+        CasillaTipo2.setBounds(300+50, 450, 200, 15);
+        CasillaTipo2.setFont(new Font("cooper black", 0, 15));
+
+        Tablero.setBounds(137, 75,300, 299);
+
+        Dado.setBounds(250, 498, 50,50);
+
+
+        BotonMenu.setFocusable(false);
+        BotonMenu.addActionListener(this);
+        BotonMenu.setBounds(250, 600, 75, 40);
+
+        BLanzarDado.setFocusable(false);
+        BLanzarDado.addActionListener(this);
+        BLanzarDado.setBounds(150, 500, 75, 40);
+
+
+        ventanaj.setSize(600, 700);
+        ventanaj.setLayout(null);
+        ventanaj.setVisible(true);
+        ventanaj.add(BotonMenu);
+        ventanaj.add(BLanzarDado);
+        ventanaj.add(Titulo);
+        ventanaj.add(Espacio);
+        ventanaj.add(Tablero);
+        ventanaj.add(Jugador1);
+        ventanaj.add(Jugador2);
+        ventanaj.add(Posicion1);
+        ventanaj.add(Posicion2);
+        ventanaj.add(CasillaTipo1);
+        ventanaj.add(CasillaTipo2);
+        ventanaj.add(Dado);
+
+        ventanaj.setLocationRelativeTo(null);
+
     }
-
-    private void ActualizarPantalla(){
-        aps ++;
-    }
-
-    private void draw(){
-
-        fps ++;
-
-        bs = canvas.getBufferStrategy();
-
-        if (bs == null){
-
-            canvas.createBufferStrategy(3);
-            return;
-        }
-
-        pantalla.clean();
-        pantalla.mostrar(x , y);
-
-        for (int i = 0; i < pixeles.length; i++){
-            pixeles[i] = pantalla.pixeles[i];
-        }
-
-        Graphics graphics = bs.getDrawGraphics();
-
-
-
-        //----------------
-
-        graphics.drawImage(imagen,0,0, getWidth(), getHeight(), null);
-
-
-        //----------------
-        g.dispose();
-        bs.show();
-
-
-    }
-
-
 
     @Override
-    public void run() {
+    public void actionPerformed(ActionEvent e) {
 
-        final int NPS = 1000000000;
-        final byte APSObj = 60;
-        final double NSAct = NPS/APSObj;
-
-        long refAct = System.nanoTime();
-        long contador = System.nanoTime();
-
-
-        double Time;
-        double delta = 0;
-
-
-
-        while(running) {
-            final long inicio = System.nanoTime();
-            Time = inicio - refAct;
-            refAct = inicio;
-            delta += Time / NSAct;
-
-            while (delta <= 1) {
-                ActualizarPantalla();
-                delta--;
-            }
-            draw();
-
-            if (System.nanoTime() - contador > NPS){
-                aps = 0;
-                fps = 0;
-
-                contador = System.nanoTime();
-
-            }
-
-
+        if (e.getSource() == BotonMenu) {
+            ventanaj.dispose();
+            VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
         }
-    }
 
-
-    void start(){
-
-        thread = new Thread(this);
-        thread.start();
-        running = true;
-    }
-
-    private void  stop () {
-        running = false;
-        try {
-            thread.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        int NumRandom = (int) (Math.random() * 3 + 1);
+        if(e.getSource() == BLanzarDado & NumRandom == 1){
+            varNumDado1 = 1;
+            Espacio.setText(": 1");
+            System.out.println(NumRandom);
         }
+        varNumDado1 = 0;
+
+        if(e.getSource() == BLanzarDado & NumRandom == 2){
+            varNumDado1 = 2;
+            Espacio.setText(": 2");
+            System.out.println(NumRandom);
+        }
+        varNumDado1 = 0;
+
+        if(e.getSource() == BLanzarDado & NumRandom == 3){
+            varNumDado1 = 3;
+            Espacio.setText(": 3");
+            System.out.println(NumRandom);
+        }
+        varNumDado1 = 0;
+
+
     }
 
 }

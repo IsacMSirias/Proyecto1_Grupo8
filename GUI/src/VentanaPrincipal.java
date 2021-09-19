@@ -5,12 +5,18 @@ import java.awt.event.ActionListener;
 
 public class VentanaPrincipal implements ActionListener {
 
+
+
     JFrame ventanap = new JFrame();
 
     JLabel NombreJugador = new JLabel();
     JLabel Titulo = new JLabel();
 
     JTextField Usertxtbox = new JTextField();
+
+    public static String Nombre = "";
+
+
 
     JButton BotonJugar = new JButton("J U G A R");
     JButton BotonAbout = new JButton("Creditos");
@@ -36,6 +42,7 @@ public class VentanaPrincipal implements ActionListener {
 
         Usertxtbox.setBounds(290, 112, 150, 25);
         Usertxtbox.setFont(new Font("cooper black", 0, 15));
+        Nombre = Usertxtbox.getText();
 
         BotonJugar.setFocusable(false);
         BotonJugar.addActionListener(this);
@@ -67,7 +74,7 @@ public class VentanaPrincipal implements ActionListener {
 
         if (e.getSource() == BotonJugar) {
             ventanap.dispose();
-            new VentanaJuego().start();
+            VentanaJuego ventanaJuego = new VentanaJuego();
 
         }
         if (e.getSource() == BotonAbout){
