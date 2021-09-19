@@ -35,9 +35,9 @@ public class VentanaJuego implements ActionListener {
     JButton BotonMenu = new JButton("MENU");
     JButton BLanzarDado = new JButton("Lanzar");
 
-    ImageIcon imageIcon = new ImageIcon("GUI/Sprites/IconMath.png");
-    JLabel Tablero = new JLabel(new ImageIcon("GUI/Sprites/Tablero.png"));
-    JLabel Dado = new JLabel(new ImageIcon("GUI/Sprites/Dado.png"));
+    ImageIcon imageIcon = new ImageIcon("/Sprites/IconMath.png");
+    JLabel Tablero = new JLabel(new ImageIcon("/Sprites/Tablero.png"));
+    JLabel Dado = new JLabel(new ImageIcon("/Sprites/Dado.png"));
 
     public VentanaJuego() {
 
