@@ -1,3 +1,5 @@
+package DoubleLinked;
+
 public class DoubleNode {
 
     private DoubleNode prev;

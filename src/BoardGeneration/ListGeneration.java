@@ -1,4 +1,8 @@
+package BoardGeneration;
+
 import java.util.Random;
+
+import DoubleLinked.DoublyLinkedList;
 
 public class ListGeneration {
     public DoublyLinkedList board = new DoublyLinkedList();

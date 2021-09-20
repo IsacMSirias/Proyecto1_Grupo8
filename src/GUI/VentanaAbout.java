@@ -12,6 +12,5 @@ public class VentanaAbout {
         ventanaAb.setLayout(null);
         ventanaAb.setVisible(true);
         ventanaAb.setLocationRelativeTo(null);
-
     }
 }

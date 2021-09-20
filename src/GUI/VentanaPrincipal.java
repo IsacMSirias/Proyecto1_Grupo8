@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 public class VentanaPrincipal implements ActionListener {
 
-
+//ekisde
 
     JFrame ventanap = new JFrame();
 
@@ -22,8 +22,10 @@ public class VentanaPrincipal implements ActionListener {
     JButton BotonJugar = new JButton("J U G A R");
     JButton BotonAbout = new JButton("Creditos");
     JButton BotonInstrucciones = new JButton("Instrucciones");
+    JButton BotonUnirse  = new JButton("Unirse a partida");
+    JButton BotonCrear = new JButton("Crear partida");
 
-    ImageIcon imageIcon = new ImageIcon("Sprites/IconMath.png");
+    ImageIcon imageIcon = new ImageIcon("src/Sprites/IconMath.png");
 
     public VentanaPrincipal() {
 
@@ -49,6 +51,15 @@ public class VentanaPrincipal implements ActionListener {
         BotonJugar.addActionListener(this);
         BotonJugar.setBounds(140, 300, 200, 40);
 
+        BotonUnirse.setFocusable(false);
+        BotonUnirse.addActionListener(this);
+        BotonUnirse.setBounds(85, 250, 150, 40);
+
+        BotonCrear.setFocusable(false);
+        BotonCrear.addActionListener(this);
+        BotonCrear.setBounds(245, 250, 150, 40);
+
+
         BotonAbout.setFocusable(false);
         BotonAbout.addActionListener(this);
         BotonAbout.setBounds(85, 450, 150, 40);
@@ -63,6 +74,8 @@ public class VentanaPrincipal implements ActionListener {
         ventanap.add(BotonJugar);
         ventanap.add(BotonAbout);
         ventanap.add(BotonInstrucciones);
+        ventanap.add(BotonCrear);
+        ventanap.add(BotonUnirse);
         ventanap.add(NombreJugador);
         ventanap.add(Titulo);
         ventanap.add(Usertxtbox);
