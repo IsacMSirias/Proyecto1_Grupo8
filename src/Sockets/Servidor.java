@@ -5,26 +5,25 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import BoardGeneration.ListGeneration;
 
-public class Servidor {
+public class Servidor implements Runnable {
+    
+    Thread thread;
+    ServerSocket servidor = null;
+    Socket socket = null;
+    DataInputStream input;
+    DataOutputStream output;
+    //PORT de nuestro servidor
+    int PORT = 5000;
 
-    public static void main(String[] args) {
-
-        ServerSocket servidor = null;
-        Socket socket = null;
-        DataInputStream input;
-        DataOutputStream output;
-
-        //PORT de nuestro servidor
-        int PORT = 5000;
-
+    public void run() {
+        //Creamos el socket del servidor
         try {
-            //Creamos el socket del servidor
-            servidor = new ServerSocket(PORT);
+            this.servidor = new ServerSocket(PORT);
             System.out.println("Servidor iniciado");
-
+            ListGeneration list = new ListGeneration();
+            list.random();
             //Siempre estara escuchando peticiones
             while (true) {
 
@@ -49,13 +48,9 @@ public class Servidor {
                 socket.close();
                 keyboard.close();
                 System.out.println("Cliente desconectado");
-
             }
-
-        } catch (IOException ex) {
-            Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
     }
-
 }

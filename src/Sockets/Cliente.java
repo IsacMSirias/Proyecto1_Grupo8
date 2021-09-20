@@ -7,17 +7,16 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Cliente {
+public class Cliente implements Runnable {
 
-    public static void main(String[] args) {
+    //Host del servidor
+    String HOST = "Localhost";
+    //PORT del servidor
+    int PORT = 5000;
+    DataInputStream input;
+    DataOutputStream output;
 
-        //Host del servidor
-        String HOST = "Localhost";
-        //PORT del servidor
-        int PORT = 5000;
-        DataInputStream input;
-        DataOutputStream output;
-
+    public void run() {
         try {
             //Creo el socket para conectarme con el cliente
             Socket socket = new Socket(HOST, PORT);
@@ -41,7 +40,5 @@ public class Cliente {
         } catch (IOException ex) {
             Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
-
 }

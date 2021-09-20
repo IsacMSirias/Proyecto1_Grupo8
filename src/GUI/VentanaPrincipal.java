@@ -1,5 +1,9 @@
 package GUI;
 import javax.swing.*;
+
+import Sockets.Cliente;
+import Sockets.Servidor;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -91,15 +95,22 @@ public class VentanaPrincipal implements ActionListener {
             VentanaJuego ventanaJuego = new VentanaJuego();
 
         }
-        if (e.getSource() == BotonAbout){
+        if (e.getSource() == BotonAbout) {
             ventanap.dispose();
             VentanaAbout ventanaAb = new VentanaAbout();
         }
-        if (e.getSource() == BotonInstrucciones){
+        if (e.getSource() == BotonInstrucciones) {
             ventanap.dispose();
             VentanaInstrucciones ventanaInstrucciones = new VentanaInstrucciones();
         }
-
+        if (e.getSource() == BotonCrear) {
+            Servidor servidor = new Servidor();
+            new Thread(servidor).start();
+        }
+        if (e.getSource() == BotonUnirse) {
+            Cliente cliente = new Cliente();
+            new Thread(cliente).start();
+        }
     }
 }
 
