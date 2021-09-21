@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 public class VentanaJuego implements ActionListener {
 
-
+    String Nombrejugador1 = VentanaPrincipal.Nombre;
     public static int varNumDado1 = 0;
     public static int varPocision1 = 0;
     public static String varCasilla1 = "";
@@ -55,7 +55,7 @@ public class VentanaJuego implements ActionListener {
         Espacio.setBounds(300, 499, 50,30);
         Espacio.setFont(new Font("cooper black", 0, 20));
 
-        Jugador1.setText("Jugador 1:");
+        Jugador1.setText("Jugador 1: "+Nombrejugador1);
         Jugador1.setBounds(200-50, 400, 200, 20);
         Jugador1.setFont(new Font("cooper black", 0, 15));
 
