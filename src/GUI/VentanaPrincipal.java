@@ -20,6 +20,8 @@ public class VentanaPrincipal implements ActionListener {
     JTextField Usertxtbox = new JTextField();
 
     public static String Nombre = "";
+    public static String Nombre2 = "";
+    public static String conexion = "";
 
 
 
@@ -91,11 +93,8 @@ public class VentanaPrincipal implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == BotonJugar) {
-            Nombre = Usertxtbox.getText();
             ventanap.dispose();
             VentanaJuego ventanaJuego = new VentanaJuego();
-            
-
         }
         if (e.getSource() == BotonAbout) {
             ventanap.dispose();
@@ -106,10 +105,14 @@ public class VentanaPrincipal implements ActionListener {
             VentanaInstrucciones ventanaInstrucciones = new VentanaInstrucciones();
         }
         if (e.getSource() == BotonCrear) {
+            conexion = "servidor";
+            Nombre = Usertxtbox.getText();
             Servidor servidor = new Servidor();
             new Thread(servidor).start();
         }
         if (e.getSource() == BotonUnirse) {
+            conexion = "cliente";
+            Nombre2 = Usertxtbox.getText();
             Cliente cliente = new Cliente();
             new Thread(cliente).start();
         }

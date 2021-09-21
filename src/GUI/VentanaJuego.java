@@ -1,6 +1,9 @@
 package GUI;
 import javax.management.RuntimeMBeanException;
 import javax.swing.*;
+
+import Sockets.Cliente;
+import Sockets.Servidor;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,7 +11,8 @@ import java.awt.event.ActionListener;
 
 public class VentanaJuego implements ActionListener {
 
-    String Nombrejugador1 = VentanaPrincipal.Nombre;
+    String Nombrejugador1;
+    String Nombrejugador2;
     public static int varNumDado1 = 0;
     public static int varPocision1 = 0;
     public static String varCasilla1 = "";
@@ -40,6 +44,12 @@ public class VentanaJuego implements ActionListener {
     JLabel Dado = new JLabel(new ImageIcon("src/Sprites/Dado.png"));
 
     public VentanaJuego() {
+        if (VentanaPrincipal.conexion == "servidor") {
+            Nombrejugador1 = Servidor.Nombrejugador1;
+            Nombrejugador2 = Servidor.Nombrejugador2;
+        } else if (VentanaPrincipal.conexion == "cliente")
+            Nombrejugador1 = Cliente.Nombrejugador1;
+            Nombrejugador2 = Cliente.Nombrejugador2;
 
         ventanaj.setIconImage(imageIcon.getImage());
 
@@ -59,7 +69,7 @@ public class VentanaJuego implements ActionListener {
         Jugador1.setBounds(200-50, 400, 200, 20);
         Jugador1.setFont(new Font("cooper black", 0, 15));
 
-        Jugador2.setText("Jugador 2:");
+        Jugador2.setText("Jugador 2:"+Nombrejugador2);
         Jugador2.setBounds(300+50, 400, 200, 20);
         Jugador2.setFont(new Font("cooper black", 0, 15));
 

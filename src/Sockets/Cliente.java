@@ -7,6 +7,8 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import GUI.VentanaPrincipal;
+
 public class Cliente implements Runnable {
 
     //Host del servidor
@@ -15,6 +17,8 @@ public class Cliente implements Runnable {
     int PORT = 5000;
     DataInputStream input;
     DataOutputStream output;
+    public static String Nombrejugador1 = VentanaPrincipal.Nombre;
+    public static String Nombrejugador2;
 
     public void run() {
         try {
@@ -25,17 +29,14 @@ public class Cliente implements Runnable {
             output = new DataOutputStream(socket.getOutputStream());
 
             //Envio un mensaje al servidor
-            Scanner keyboard = new Scanner(System.in);
-            String MensajeParaServidor = keyboard.nextLine();
-            output.writeUTF(MensajeParaServidor);
+            output.writeUTF(Nombrejugador1);
 
             //Recibo el mensaje del servidor
-            String mensaje = input.readUTF();
+            String Nombrejugador2 = input.readUTF();
 
-            System.out.println(mensaje);
+            System.out.println(Nombrejugador2);
 
             socket.close();
-            keyboard.close();
 
         } catch (IOException ex) {
             Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);

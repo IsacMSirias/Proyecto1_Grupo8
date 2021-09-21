@@ -6,6 +6,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 import BoardGeneration.ListGeneration;
+import GUI.VentanaPrincipal;
 
 public class Servidor implements Runnable {
     
@@ -16,6 +17,8 @@ public class Servidor implements Runnable {
     DataOutputStream output;
     //PORT de nuestro servidor
     int PORT = 5000;
+    public static String Nombrejugador1;
+    public static String Nombrejugador2 = VentanaPrincipal.Nombre2;
 
     public void run() {
         //Creamos el socket del servidor
@@ -26,27 +29,22 @@ public class Servidor implements Runnable {
             list.random();
             //Siempre estara escuchando peticiones
             while (true) {
-
                 //Espero a que un cliente se conecte
                 socket = servidor.accept();
-
                 System.out.println("Cliente conectado");
                 input = new DataInputStream(socket.getInputStream());
                 output = new DataOutputStream(socket.getOutputStream());
 
                 //Leo el mensaje que me envia
-                String mensaje = input.readUTF();
+                String Nombrejugador1 = input.readUTF();
 
-                System.out.println(mensaje);
+                System.out.println(Nombrejugador1);
 
                 //Le envio un mensaje
-                Scanner keyboard = new Scanner(System.in);
-                String MensajeParaCliente = keyboard.nextLine();
-                output.writeUTF(MensajeParaCliente);
+                output.writeUTF(Nombrejugador2);
 
                 //Cierro el socket
                 socket.close();
-                keyboard.close();
                 System.out.println("Cliente desconectado");
             }
         } catch (IOException e) {
