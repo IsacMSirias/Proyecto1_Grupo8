@@ -49,7 +49,7 @@ public class VentanaPrincipal implements ActionListener {
 
         Usertxtbox.setBounds(290, 112, 150, 25);
         Usertxtbox.setFont(new Font("cooper black", 0, 15));
-        Nombre = Usertxtbox.getText();
+        
 
         BotonJugar.setFocusable(false);
         BotonJugar.addActionListener(this);
@@ -91,8 +91,10 @@ public class VentanaPrincipal implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == BotonJugar) {
+            Nombre = Usertxtbox.getText();
             ventanap.dispose();
             VentanaJuego ventanaJuego = new VentanaJuego();
+            
 
         }
         if (e.getSource() == BotonAbout) {
