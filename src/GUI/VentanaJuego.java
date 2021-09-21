@@ -47,10 +47,10 @@ public class VentanaJuego implements ActionListener {
         if (VentanaPrincipal.conexion == "servidor") {
             Nombrejugador1 = Servidor.Nombrejugador1;
             Nombrejugador2 = Servidor.Nombrejugador2;
-        } else if (VentanaPrincipal.conexion == "cliente")
+        } else if (VentanaPrincipal.conexion == "cliente") {
             Nombrejugador1 = Cliente.Nombrejugador1;
             Nombrejugador2 = Cliente.Nombrejugador2;
-
+        }
         ventanaj.setIconImage(imageIcon.getImage());
 
         ventanaj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

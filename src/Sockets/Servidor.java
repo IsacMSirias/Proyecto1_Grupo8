@@ -17,8 +17,8 @@ public class Servidor implements Runnable {
     DataOutputStream output;
     //PORT de nuestro servidor
     int PORT = 5000;
-    public static String Nombrejugador1;
-    public static String Nombrejugador2 = VentanaPrincipal.Nombre2;
+    public static String Nombrejugador1 = VentanaPrincipal.Nombre;
+    public static String Nombrejugador2;
 
     public void run() {
         //Creamos el socket del servidor
@@ -36,13 +36,13 @@ public class Servidor implements Runnable {
                 output = new DataOutputStream(socket.getOutputStream());
 
                 //Leo el mensaje que me envia
-                String Nombrejugador1 = input.readUTF();
+                Nombrejugador2 = input.readUTF();
 
-                System.out.println(Nombrejugador1);
+                System.out.println(Nombrejugador2);
 
                 //Le envio un mensaje
-                output.writeUTF(Nombrejugador2);
-
+                output.writeUTF(Nombrejugador1);
+                
                 //Cierro el socket
                 socket.close();
                 System.out.println("Cliente desconectado");

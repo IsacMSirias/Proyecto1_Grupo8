@@ -17,8 +17,8 @@ public class Cliente implements Runnable {
     int PORT = 5000;
     DataInputStream input;
     DataOutputStream output;
-    public static String Nombrejugador1 = VentanaPrincipal.Nombre;
-    public static String Nombrejugador2;
+    public static String Nombrejugador1;
+    public static String Nombrejugador2 = VentanaPrincipal.Nombre2;
 
     public void run() {
         try {
@@ -29,12 +29,12 @@ public class Cliente implements Runnable {
             output = new DataOutputStream(socket.getOutputStream());
 
             //Envio un mensaje al servidor
-            output.writeUTF(Nombrejugador1);
+            output.writeUTF(Nombrejugador2);
 
             //Recibo el mensaje del servidor
-            String Nombrejugador2 = input.readUTF();
+            Nombrejugador1 = input.readUTF();
 
-            System.out.println(Nombrejugador2);
+            System.out.println(Nombrejugador1);
 
             socket.close();
 
