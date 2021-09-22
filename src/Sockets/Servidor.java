@@ -34,6 +34,7 @@ public class Servidor implements Runnable {
                 System.out.println("Cliente conectado");
                 input = new DataInputStream(socket.getInputStream());
                 output = new DataOutputStream(socket.getOutputStream());
+                
 
                 //Leo el mensaje que me envia
                 Nombrejugador2 = input.readUTF();
