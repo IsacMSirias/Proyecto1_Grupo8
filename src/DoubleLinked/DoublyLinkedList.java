@@ -1,22 +1,22 @@
 package DoubleLinked;
 
 public class DoublyLinkedList {
-    public static String Casilla1;
-    public static String Casilla2;
-    public static String Casilla3;
-    public static String Casilla4;
-    public static String Casilla5;
-    public static String Casilla6;
-    public static String Casilla7;
-    public static String Casilla8;
-    public static String Casilla9;
-    public static String Casilla10;
-    public static String Casilla11;
-    public static String Casilla12;
-    public static String Casilla13;
-    public static String Casilla14;
-    public static String Casilla15;
-    public static String Casilla16;
+    public String Casilla1;
+    public String Casilla2;
+    public String Casilla3;
+    public String Casilla4;
+    public String Casilla5;
+    public String Casilla6;
+    public String Casilla7;
+    public String Casilla8;
+    public String Casilla9;
+    public String Casilla10;
+    public String Casilla11;
+    public String Casilla12;
+    public String Casilla13;
+    public String Casilla14;
+    public String Casilla15;
+    public String Casilla16;
 
     private DoubleNode head;
     private DoubleNode tail;

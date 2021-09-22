@@ -51,7 +51,7 @@ public class DoubleNode {
     /**
      * @param num is assigned to this BNode
      */
-    public static int getA(){
+    public int getA(){
         return a;
     }
 

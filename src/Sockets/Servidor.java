@@ -38,47 +38,52 @@ public class Servidor implements Runnable {
 
             //genero la lista para el tablero
             ListGeneration list = new ListGeneration();
-            list.random();
+            DoublyLinkedList board = list.random();
             //Siempre estara escuchando peticiones
             while (true) {
                 //Espero a que un cliente se conecte
                 socket = servidor.accept();
                 System.out.println("Cliente conectado");
                 //Genero los canales de  entrada y salida 
-                inputobject = new ObjectInputStream(socket.getInputStream());
-                outputobject = new ObjectOutputStream(socket.getOutputStream());
                 inputdata = new DataInputStream(socket.getInputStream());
                 outputdata = new DataOutputStream(socket.getOutputStream()); 
                 
                 //Leo el mensaje que me envia
                 Nombrejugador2 = inputdata.readUTF();
                 System.out.println(Nombrejugador2);
-
+                
                 //Le envio un mensaje
                 outputdata.writeUTF(Nombrejugador1);
-  
+                
+                
+                inputobject = new ObjectInputStream(socket.getInputStream());
+                outputobject = new ObjectOutputStream(socket.getOutputStream()); // cuidao tilin no ti acerques
+                
+                System.out.println(board.Casilla1);
+                
                 //Seteo las casillas
                 Paquetes DatosCasillas = new Paquetes();
-                DatosCasillas.setCasilla1(DoublyLinkedList.Casilla1);
-                DatosCasillas.setCasilla2(DoublyLinkedList.Casilla2);
-                DatosCasillas.setCasilla3(DoublyLinkedList.Casilla3);
-                DatosCasillas.setCasilla4(DoublyLinkedList.Casilla4);
-                DatosCasillas.setCasilla5(DoublyLinkedList.Casilla5);
-                DatosCasillas.setCasilla6(DoublyLinkedList.Casilla6);
-                DatosCasillas.setCasilla7(DoublyLinkedList.Casilla7);
-                DatosCasillas.setCasilla8(DoublyLinkedList.Casilla8);
-                DatosCasillas.setCasilla9(DoublyLinkedList.Casilla9);
-                DatosCasillas.setCasilla10(DoublyLinkedList.Casilla10);
-                DatosCasillas.setCasilla11(DoublyLinkedList.Casilla11);
-                DatosCasillas.setCasilla12(DoublyLinkedList.Casilla12);
-                DatosCasillas.setCasilla13(DoublyLinkedList.Casilla13);
-                DatosCasillas.setCasilla14(DoublyLinkedList.Casilla14);
-                DatosCasillas.setCasilla15(DoublyLinkedList.Casilla15);
-                DatosCasillas.setCasilla16(DoublyLinkedList.Casilla16);
+                DatosCasillas.setCasilla1(board.Casilla1);
+                DatosCasillas.setCasilla2(board.Casilla2);
+                DatosCasillas.setCasilla3(board.Casilla3);
+                DatosCasillas.setCasilla4(board.Casilla4);
+                DatosCasillas.setCasilla5(board.Casilla5);
+                DatosCasillas.setCasilla6(board.Casilla6);
+                DatosCasillas.setCasilla7(board.Casilla7);
+                DatosCasillas.setCasilla8(board.Casilla8);
+                DatosCasillas.setCasilla9(board.Casilla9);
+                DatosCasillas.setCasilla10(board.Casilla10);
+                DatosCasillas.setCasilla11(board.Casilla11);
+                DatosCasillas.setCasilla12(board.Casilla12);
+                DatosCasillas.setCasilla13(board.Casilla13);
+                DatosCasillas.setCasilla14(board.Casilla14);
+                DatosCasillas.setCasilla15(board.Casilla15);
+                DatosCasillas.setCasilla16(board.Casilla16);
 
                 //envio los datos de las casillas a modo de lista(objeto) "DatosCasillas"
                 outputobject.writeObject(DatosCasillas);
                 
+
                 //Cierro el socket
                 socket.close();
                 System.out.println("Cliente desconectado");
@@ -91,23 +96,7 @@ public class Servidor implements Runnable {
 
 class Paquetes implements Serializable {
     private String casilla1, casilla2, casilla3, casilla4, casilla5, casilla6, casilla7, casilla8, casilla9, 
-    casilla10, casilla11, casilla12, casilla13, casilla14, Casilla15, casilla16, nombrejugador1, nombrejugador2;
-
-    public String getNombrejugador1() {
-        return nombrejugador1;
-    }
-
-    public void setNombrejugador1(String nombrejugador1) {
-        this.nombrejugador1 = nombrejugador1;
-    }
-
-    public String getNombrejugador2() {
-        return nombrejugador2;
-    }
-
-    public void setNombrejugador2(String nombrejugador2) {
-        this.nombrejugador2 = nombrejugador2;
-    }
+    casilla10, casilla11, casilla12, casilla13, casilla14, Casilla15, casilla16;
 
     public String getCasilla1() {
         return casilla1;

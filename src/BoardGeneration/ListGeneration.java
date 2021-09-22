@@ -63,8 +63,4 @@ public class ListGeneration {
         board.display();
         return board;
     }
-
-    public static void main(String[] args) {
-        
-    }
 }
