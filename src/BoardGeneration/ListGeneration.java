@@ -65,7 +65,6 @@ public class ListGeneration {
     }
 
     public static void main(String[] args) {
-        ListGeneration list = new ListGeneration();
-        list.random();
+        
     }
 }

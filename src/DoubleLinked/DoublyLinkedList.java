@@ -1,6 +1,22 @@
 package DoubleLinked;
 
 public class DoublyLinkedList {
+    public static String Casilla1;
+    public static String Casilla2;
+    public static String Casilla3;
+    public static String Casilla4;
+    public static String Casilla5;
+    public static String Casilla6;
+    public static String Casilla7;
+    public static String Casilla8;
+    public static String Casilla9;
+    public static String Casilla10;
+    public static String Casilla11;
+    public static String Casilla12;
+    public static String Casilla13;
+    public static String Casilla14;
+    public static String Casilla15;
+    public static String Casilla16;
 
     private DoubleNode head;
     private DoubleNode tail;
@@ -11,6 +27,7 @@ public class DoublyLinkedList {
     public DoublyLinkedList() {
         head = null;
         tail = null;
+        
     }
 
     /**
@@ -111,98 +128,82 @@ public class DoublyLinkedList {
             int i = 0;
             //Prints each node by incrementing the pointer.  
             if (i == 0){
-                String casilla1 = cn.getField();
-                System.out.println(casilla1);
+                Casilla1 = cn.getField();
                 cn = cn.getNext();
                 i++;
             }
-            if (i == 1){
-                String casilla2 = cn.getField();
-                System.out.println(casilla2);
+            else if (i == 1){
+                Casilla2 = cn.getField();
                 cn = cn.getNext();
                 i++;
             }
-            if (i == 2){
-                String casilla3 = cn.getField();
-                System.out.println(casilla3);
+            else if (i == 2){
+                Casilla3 = cn.getField();
                 cn = cn.getNext();
                 i++;
             }
-            if (i == 3){
-                String casilla4 = cn.getField();
-                System.out.println(casilla4);
+            else if (i == 3){
+                Casilla4 = cn.getField();
                 cn = cn.getNext();
                 i++;
             }
-            if (i == 4){
-                String casilla5 = cn.getField();
-                System.out.println(casilla5);
+            else if (i == 4){
+                Casilla5 = cn.getField();
                 cn = cn.getNext();
                 i++;
             }
-            if (i == 5){
-                String casilla6 = cn.getField();
-                System.out.println(casilla6);
+            else if (i == 5){
+                Casilla6 = cn.getField();
                 cn = cn.getNext();
                 i++;
             }
-            if (i == 6){
-                String casilla7 = cn.getField();
-                System.out.println(casilla7);
+            else if (i == 6){
+                Casilla7 = cn.getField();
                 cn = cn.getNext();
                 i++;
             }
-            if (i == 7){
-                String casilla8 = cn.getField();
-                System.out.println(casilla8);
+            else if (i == 7){
+                Casilla8 = cn.getField();
                 cn = cn.getNext();
                 i++;
             }
-            if (i == 8){
-                String casilla9 = cn.getField();
-                System.out.println(casilla9);
+            else if (i == 8){
+                Casilla9 = cn.getField();
                 cn = cn.getNext();
                 i++;
             }
-            if (i == 9){
-                String casilla10 = cn.getField();
-                System.out.println(casilla10);
+            else if (i == 9){
+                Casilla10 = cn.getField();
                 cn = cn.getNext();
                 i++;
             }
-            if (i == 10){
-                String casilla11 = cn.getField();
-                System.out.println(casilla11);
+            else if (i == 10){
+                Casilla11 = cn.getField();
                 cn = cn.getNext();
                 i++;
             }
-            if (i == 11){
-                String casilla12 = cn.getField();
-                System.out.println(casilla12);
+            else if (i == 11){
+                Casilla12 = cn.getField();
                 cn = cn.getNext();
                 i++;
             }
-            if (i == 12){
-                String casilla13 = cn.getField();
-                System.out.println(casilla13);
+            else if (i == 12){
+                Casilla13 = cn.getField();
                 cn = cn.getNext();
                 i++;
             }
-            if (i == 13){
-                String casilla14 = cn.getField();
-                System.out.println(casilla14);
+            else if (i == 13){
+                Casilla14 = cn.getField();
                 cn = cn.getNext();
                 i++;
             }
-            if (i == 14){
-                String casilla15 = cn.getField();
-                System.out.println(casilla15);
+            else if (i == 14){
+                Casilla15 = cn.getField();
                 cn = cn.getNext();
                 i++;
             }
-            if (i == 15){
-                String casilla16 = cn.getField();
-                System.out.println(casilla16);
+            else if (i == 15){
+                Casilla16 = cn.getField();
                 cn = cn.getNext();
                 i++;
             }
