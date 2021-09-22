@@ -98,7 +98,7 @@ public class DoublyLinkedList {
         }
         return count;
     }
-
+    
     public void display() {  
         //Node current will point to head  
         DoubleNode cn = head;  
@@ -108,9 +108,104 @@ public class DoublyLinkedList {
         }  
         System.out.println("Nodes of doubly linked list: ");  
         while(cn != null) {  
+            int i = 0;
             //Prints each node by incrementing the pointer.  
-            System.out.print(cn.getField() + " ");  
-            cn = cn.getNext();  
+            if (i == 0){
+                String casilla1 = cn.getField();
+                System.out.println(casilla1);
+                cn = cn.getNext();
+                i++;
+            }
+            if (i == 1){
+                String casilla2 = cn.getField();
+                System.out.println(casilla2);
+                cn = cn.getNext();
+                i++;
+            }
+            if (i == 2){
+                String casilla3 = cn.getField();
+                System.out.println(casilla3);
+                cn = cn.getNext();
+                i++;
+            }
+            if (i == 3){
+                String casilla4 = cn.getField();
+                System.out.println(casilla4);
+                cn = cn.getNext();
+                i++;
+            }
+            if (i == 4){
+                String casilla5 = cn.getField();
+                System.out.println(casilla5);
+                cn = cn.getNext();
+                i++;
+            }
+            if (i == 5){
+                String casilla6 = cn.getField();
+                System.out.println(casilla6);
+                cn = cn.getNext();
+                i++;
+            }
+            if (i == 6){
+                String casilla7 = cn.getField();
+                System.out.println(casilla7);
+                cn = cn.getNext();
+                i++;
+            }
+            if (i == 7){
+                String casilla8 = cn.getField();
+                System.out.println(casilla8);
+                cn = cn.getNext();
+                i++;
+            }
+            if (i == 8){
+                String casilla9 = cn.getField();
+                System.out.println(casilla9);
+                cn = cn.getNext();
+                i++;
+            }
+            if (i == 9){
+                String casilla10 = cn.getField();
+                System.out.println(casilla10);
+                cn = cn.getNext();
+                i++;
+            }
+            if (i == 10){
+                String casilla11 = cn.getField();
+                System.out.println(casilla11);
+                cn = cn.getNext();
+                i++;
+            }
+            if (i == 11){
+                String casilla12 = cn.getField();
+                System.out.println(casilla12);
+                cn = cn.getNext();
+                i++;
+            }
+            if (i == 12){
+                String casilla13 = cn.getField();
+                System.out.println(casilla13);
+                cn = cn.getNext();
+                i++;
+            }
+            if (i == 13){
+                String casilla14 = cn.getField();
+                System.out.println(casilla14);
+                cn = cn.getNext();
+                i++;
+            }
+            if (i == 14){
+                String casilla15 = cn.getField();
+                System.out.println(casilla15);
+                cn = cn.getNext();
+                i++;
+            }
+            if (i == 15){
+                String casilla16 = cn.getField();
+                System.out.println(casilla16);
+                cn = cn.getNext();
+                i++;
+            }
         }  
     }  
 }
