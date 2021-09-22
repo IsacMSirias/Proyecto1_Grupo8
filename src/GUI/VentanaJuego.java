@@ -13,11 +13,12 @@ public class VentanaJuego implements ActionListener {
 
     String Nombrejugador1;
     String Nombrejugador2;
-    public static int varNumDado1 = 0;
+
+    public static int varNumDado = 0;
+
     public static int varPocision1 = 0;
     public static String varCasilla1 = "";
 
-    public static int varNumDado2 = 0;
     public static int varPocision2 = 0;
     public static String varCasilla2 = "";
 
@@ -132,26 +133,44 @@ public class VentanaJuego implements ActionListener {
         }
 
         int NumRandom = (int) (Math.random() * 3 + 1);
-        if(e.getSource() == BLanzarDado & NumRandom == 1){
-            varNumDado1 = 1;
+        if(e.getSource() == BLanzarDado & NumRandom == 1 & varNumDado <= 16){
+            varNumDado = 1;
+            varPocision1 += 1;
+            Posicion1.setText("Posicion: " + varPocision1);
             Espacio.setText(": 1");
             System.out.println(NumRandom);
         }
-        varNumDado1 = 0;
 
-        if(e.getSource() == BLanzarDado & NumRandom == 2){
-            varNumDado1 = 2;
+        else if(e.getSource() == BLanzarDado & NumRandom == 2 & varNumDado <= 16){
+            varNumDado = 2;
+            varPocision1 += 2;
+            Posicion1.setText("Posicion: " + varPocision1);
             Espacio.setText(": 2");
             System.out.println(NumRandom);
         }
-        varNumDado1 = 0;
-
-        if(e.getSource() == BLanzarDado & NumRandom == 3){
-            varNumDado1 = 3;
+       
+     
+        else if(e.getSource() == BLanzarDado & NumRandom == 3 & varNumDado <= 16){
+            varNumDado = 3;
+            varPocision1 += 3;
+        
             Espacio.setText(": 3");
+            Posicion1.setText("Posicion: " + varPocision1);
+        
             System.out.println(NumRandom);
         }
-        varNumDado1 = 0;
+
+        if (varPocision1 >= 16 || varPocision2 >= 16){
+
+
+            ventanaj.dispose();
+
+        }
+        
+        varNumDado = 0;
+
+    
+       
 
 
     }
