@@ -11,7 +11,11 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.List;
 import java.util.Scanner;
+
+import org.json.simple.JSONArray;
+
 import BoardGeneration.ListGeneration;
+import DoubleLinked.DoubleNode;
 import DoubleLinked.DoublyLinkedList;
 import GUI.VentanaPrincipal;
 
@@ -22,13 +26,14 @@ public class Servidor implements Runnable {
     Socket socket = null;
     ObjectInputStream inputobject;
     ObjectOutputStream outputobject;
-    DataOutputStream outputdata;
-    DataInputStream inputdata;
+    //DataOutputStream outputdata;
+    //DataInputStream inputdata;
     
     //PORT de nuestro servidor
     int PORT = 5000;
     public static String Nombrejugador1 = VentanaPrincipal.Nombre;
     public static String Nombrejugador2;
+
 
     public void run() {
         //Creamos el socket del servidor
@@ -44,185 +49,199 @@ public class Servidor implements Runnable {
                 //Espero a que un cliente se conecte
                 socket = servidor.accept();
                 System.out.println("Cliente conectado");
-                //Genero los canales de  entrada y salida 
-                inputdata = new DataInputStream(socket.getInputStream());
-                outputdata = new DataOutputStream(socket.getOutputStream()); 
-                
-                //Leo el mensaje que me envia
-                Nombrejugador2 = inputdata.readUTF();
-                System.out.println(Nombrejugador2);
-                
-                //Le envio un mensaje
-                outputdata.writeUTF(Nombrejugador1);
-                
-                
-                inputobject = new ObjectInputStream(socket.getInputStream());
-                outputobject = new ObjectOutputStream(socket.getOutputStream()); // cuidao tilin no ti acerques
-                
-                System.out.println(board.Casilla1);
-                
+                    
                 //Seteo las casillas
                 Paquetes DatosCasillas = new Paquetes();
-                DatosCasillas.setCasilla1(board.Casilla1);
-                DatosCasillas.setCasilla2(board.Casilla2);
-                DatosCasillas.setCasilla3(board.Casilla3);
-                DatosCasillas.setCasilla4(board.Casilla4);
-                DatosCasillas.setCasilla5(board.Casilla5);
-                DatosCasillas.setCasilla6(board.Casilla6);
-                DatosCasillas.setCasilla7(board.Casilla7);
-                DatosCasillas.setCasilla8(board.Casilla8);
-                DatosCasillas.setCasilla9(board.Casilla9);
-                DatosCasillas.setCasilla10(board.Casilla10);
-                DatosCasillas.setCasilla11(board.Casilla11);
-                DatosCasillas.setCasilla12(board.Casilla12);
-                DatosCasillas.setCasilla13(board.Casilla13);
-                DatosCasillas.setCasilla14(board.Casilla14);
-                DatosCasillas.setCasilla15(board.Casilla15);
-                DatosCasillas.setCasilla16(board.Casilla16);
-
+                DatosCasillas.setCasilla1(DoublyLinkedList.Casilla1);
+                DatosCasillas.setCasilla2(DoublyLinkedList.Casilla2);
+                DatosCasillas.setCasilla3(DoublyLinkedList.Casilla3);
+                DatosCasillas.setCasilla4(DoublyLinkedList.Casilla4);
+                DatosCasillas.setCasilla5(DoublyLinkedList.Casilla5);
+                DatosCasillas.setCasilla6(DoublyLinkedList.Casilla6);
+                DatosCasillas.setCasilla7(DoublyLinkedList.Casilla7);
+                DatosCasillas.setCasilla8(DoublyLinkedList.Casilla8);
+                DatosCasillas.setCasilla9(DoublyLinkedList.Casilla9);
+                DatosCasillas.setCasilla10(DoublyLinkedList.Casilla10);
+                DatosCasillas.setCasilla11(DoublyLinkedList.Casilla11);
+                DatosCasillas.setCasilla12(DoublyLinkedList.Casilla12);
+                DatosCasillas.setCasilla13(DoublyLinkedList.Casilla13);
+                DatosCasillas.setCasilla14(DoublyLinkedList.Casilla14);
+                DatosCasillas.setCasilla15(DoublyLinkedList.Casilla15);
+                DatosCasillas.setCasilla16(DoublyLinkedList.Casilla16);
+                DatosCasillas.setNombrejugador1(Nombrejugador1);
+                
+                
+                
+                System.out.println(DatosCasillas.getCasilla1()); 
+                
+                outputobject = new ObjectOutputStream(socket.getOutputStream()); // Eso tilín acércate
+                
                 //envio los datos de las casillas a modo de lista(objeto) "DatosCasillas"
                 outputobject.writeObject(DatosCasillas);
                 
-
                 //Cierro el socket
+                inputobject = new ObjectInputStream(socket.getInputStream());
+                Paquetes PaqueteRecibidodelcliente = new Paquetes();
+
+                PaqueteRecibidodelcliente = (Paquetes) inputobject.readObject();
+                Nombrejugador2 = PaqueteRecibidodelcliente.getNombrejugador2();
                 socket.close();
                 System.out.println("Cliente desconectado");
             }
-        } catch (IOException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
 }
 
 class Paquetes implements Serializable {
-    private String casilla1, casilla2, casilla3, casilla4, casilla5, casilla6, casilla7, casilla8, casilla9, 
+    private DoubleNode casilla1, casilla2, casilla3, casilla4, casilla5, casilla6, casilla7, casilla8, casilla9, 
     casilla10, casilla11, casilla12, casilla13, casilla14, Casilla15, casilla16;
+    private String nombrejugador1, nombrejugador2;
 
-    public String getCasilla1() {
+    public DoubleNode getCasilla1() {
         return casilla1;
     }
 
-    public void setCasilla1(String casilla1) {
+    public void setCasilla1(DoubleNode casilla1) {
         this.casilla1 = casilla1;
     }
 
-    public String getCasilla2() {
+    public DoubleNode getCasilla2() {
         return casilla2;
     }
 
-    public void setCasilla2(String casilla2) {
+    public void setCasilla2(DoubleNode casilla2) {
         this.casilla2 = casilla2;
     }
 
-    public String getCasilla3() {
+    public DoubleNode getCasilla3() {
         return casilla3;
     }
 
-    public void setCasilla3(String casilla3) {
+    public void setCasilla3(DoubleNode casilla3) {
         this.casilla3 = casilla3;
     }
 
-    public String getCasilla4() {
+    public DoubleNode getCasilla4() {
         return casilla4;
     }
 
-    public void setCasilla4(String casilla4) {
+    public void setCasilla4(DoubleNode casilla4) {
         this.casilla4 = casilla4;
     }
 
-    public String getCasilla5() {
+    public DoubleNode getCasilla5() {
         return casilla5;
     }
 
-    public void setCasilla5(String casilla5) {
+    public void setCasilla5(DoubleNode casilla5) {
         this.casilla5 = casilla5;
     }
 
-    public String getCasilla6() {
+    public DoubleNode getCasilla6() {
         return casilla6;
     }
 
-    public void setCasilla6(String casilla6) {
+    public void setCasilla6(DoubleNode casilla6) {
         this.casilla6 = casilla6;
     }
 
-    public String getCasilla7() {
+    public DoubleNode getCasilla7() {
         return casilla7;
     }
 
-    public void setCasilla7(String casilla7) {
+    public void setCasilla7(DoubleNode casilla7) {
         this.casilla7 = casilla7;
     }
 
-    public String getCasilla8() {
+    public DoubleNode getCasilla8() {
         return casilla8;
     }
 
-    public void setCasilla8(String casilla8) {
+    public void setCasilla8(DoubleNode casilla8) {
         this.casilla8 = casilla8;
     }
 
-    public String getCasilla9() {
+    public DoubleNode getCasilla9() {
         return casilla9;
     }
 
-    public void setCasilla9(String casilla9) {
+    public void setCasilla9(DoubleNode casilla9) {
         this.casilla9 = casilla9;
     }
 
-    public String getCasilla10() {
+    public DoubleNode getCasilla10() {
         return casilla10;
     }
 
-    public void setCasilla10(String casilla10) {
+    public void setCasilla10(DoubleNode casilla10) {
         this.casilla10 = casilla10;
     }
 
-    public String getCasilla11() {
+    public DoubleNode getCasilla11() {
         return casilla11;
     }
 
-    public void setCasilla11(String casilla11) {
+    public void setCasilla11(DoubleNode casilla11) {
         this.casilla11 = casilla11;
     }
 
-    public String getCasilla12() {
+    public DoubleNode getCasilla12() {
         return casilla12;
     }
 
-    public void setCasilla12(String casilla12) {
+    public void setCasilla12(DoubleNode casilla12) {
         this.casilla12 = casilla12;
     }
 
-    public String getCasilla13() {
+    public DoubleNode getCasilla13() {
         return casilla13;
     }
 
-    public void setCasilla13(String casilla13) {
+    public void setCasilla13(DoubleNode casilla13) {
         this.casilla13 = casilla13;
     }
 
-    public String getCasilla14() {
+    public DoubleNode getCasilla14() {
         return casilla14;
     }
 
-    public void setCasilla14(String casilla14) {
+    public void setCasilla14(DoubleNode casilla14) {
         this.casilla14 = casilla14;
     }
 
-    public String getCasilla15() {
+    public DoubleNode getCasilla15() {
         return Casilla15;
     }
 
-    public void setCasilla15(String casilla15) {
+    public void setCasilla15(DoubleNode casilla15) {
         Casilla15 = casilla15;
     }
 
-    public String getCasilla16() {
+    public DoubleNode getCasilla16() {
         return casilla16;
     }
 
-    public void setCasilla16(String casilla16) {
+    public void setCasilla16(DoubleNode casilla16) {
         this.casilla16 = casilla16;
     }
+
+    public String getNombrejugador1() {
+        return nombrejugador1;
+    }
+
+    public void setNombrejugador1(String nombrejugador1) {
+        this.nombrejugador1 = nombrejugador1;
+    }
+
+    public String getNombrejugador2() {
+        return nombrejugador2;
+    }
+
+    public void setNombrejugador2(String nombrejugador2) {
+        this.nombrejugador2 = nombrejugador2;
+    }
+    
+
 }

@@ -9,6 +9,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import DoubleLinked.DoubleNode;
 import GUI.VentanaPrincipal;
 
 public class Cliente implements Runnable {
@@ -19,8 +20,8 @@ public class Cliente implements Runnable {
     int PORT = 5000;
     ObjectInputStream inputobject;
     ObjectOutputStream outputobject;
-    DataOutputStream outputdata;
-    DataInputStream inputdata;
+    //DataOutputStream outputdata;
+    //DataInputStream inputdata;
     public static String Nombrejugador1;
     public static String Nombrejugador2 = VentanaPrincipal.Nombre2;
 
@@ -28,7 +29,7 @@ public class Cliente implements Runnable {
         try {
             //Creo el socket para conectarme con el cliente
             Socket socket = new Socket(HOST, PORT);
-
+            /*
             outputdata = new DataOutputStream(socket.getOutputStream());
             inputdata = new DataInputStream(socket.getInputStream());
             
@@ -37,32 +38,39 @@ public class Cliente implements Runnable {
             
             //Recibo el mensaje del servidor
             Nombrejugador1 = inputdata.readUTF();
-            System.out.println(Nombrejugador1);
+            System.out.println(Nombrejugador1);*/
             
             inputobject = new ObjectInputStream(socket.getInputStream());
-            outputobject = new ObjectOutputStream(socket.getOutputStream());
-
+            
+            
             Paquetes CasillasRecibidas = new Paquetes();
             CasillasRecibidas = (Paquetes) inputobject.readObject();
-            String Casilla1 = CasillasRecibidas.getCasilla1();
-            String Casilla2 = CasillasRecibidas.getCasilla2();
-            String Casilla3 = CasillasRecibidas.getCasilla3();
-            String Casilla4 = CasillasRecibidas.getCasilla4();
-            String Casilla5 = CasillasRecibidas.getCasilla5();
-            String Casilla6 = CasillasRecibidas.getCasilla6();
-            String Casilla7 = CasillasRecibidas.getCasilla7();
-            String Casilla8 = CasillasRecibidas.getCasilla8();
-            String Casilla9 = CasillasRecibidas.getCasilla9();
-            String Casilla10 = CasillasRecibidas.getCasilla10();
-            String Casilla11 = CasillasRecibidas.getCasilla11();
-            String Casilla12 = CasillasRecibidas.getCasilla12();
-            String Casilla13 = CasillasRecibidas.getCasilla13();
-            String Casilla14 = CasillasRecibidas.getCasilla14();
-            String Casilla15 = CasillasRecibidas.getCasilla15();
-            String Casilla16 = CasillasRecibidas.getCasilla16();
+            DoubleNode Casilla1 = CasillasRecibidas.getCasilla1();
+            DoubleNode Casilla2 = CasillasRecibidas.getCasilla2();
+            DoubleNode Casilla3 = CasillasRecibidas.getCasilla3();
+            DoubleNode Casilla4 = CasillasRecibidas.getCasilla4();
+            DoubleNode Casilla5 = CasillasRecibidas.getCasilla5();
+            DoubleNode Casilla6 = CasillasRecibidas.getCasilla6();
+            DoubleNode Casilla7 = CasillasRecibidas.getCasilla7();
+            DoubleNode Casilla8 = CasillasRecibidas.getCasilla8();
+            DoubleNode Casilla9 = CasillasRecibidas.getCasilla9();
+            DoubleNode Casilla10 = CasillasRecibidas.getCasilla10();
+            DoubleNode Casilla11 = CasillasRecibidas.getCasilla11();
+            DoubleNode Casilla12 = CasillasRecibidas.getCasilla12();
+            DoubleNode Casilla13 = CasillasRecibidas.getCasilla13();
+            DoubleNode Casilla14 = CasillasRecibidas.getCasilla14();
+            DoubleNode Casilla15 = CasillasRecibidas.getCasilla15();
+            DoubleNode Casilla16 = CasillasRecibidas.getCasilla16();
+            Nombrejugador1 = CasillasRecibidas.getNombrejugador1();
+            
+            Paquetes PaqueteParaServidor = new Paquetes();
+            PaqueteParaServidor.setNombrejugador2(Nombrejugador2);
+            
+            outputobject = new ObjectOutputStream(socket.getOutputStream());
+            outputobject.writeObject(PaqueteParaServidor);
             
             System.out.println(Casilla1);
-            
+
             socket.close();
             
         } catch (IOException | ClassNotFoundException ex) {
