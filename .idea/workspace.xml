@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aaf872a9-5b03-42fb-8ee2-9ab124bbb442" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/BoardGeneration/ListGeneration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DoubleLinked/DoubleNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DoubleLinked/DoublyLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/VentanaAbout.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/VentanaInstrucciones.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/VentanaJuego.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/VentanaPrincipal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/VentanaReto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sockets/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sockets/ListadeJuego.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sockets/Servidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +44,11 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Isac\OneDrive\Documentos\GitHub\Proyecto1_Grupo8\src\main" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GUI.Main" />
@@ -85,6 +79,7 @@
       <updated>1632429297463</updated>
       <workItem from="1632429301598" duration="298000" />
       <workItem from="1632430583826" duration="1981000" />
+      <workItem from="1632435996291" duration="2963000" />
     </task>
     <servers />
   </component>
