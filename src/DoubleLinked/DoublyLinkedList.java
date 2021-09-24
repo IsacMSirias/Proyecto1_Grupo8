@@ -1,6 +1,7 @@
 package DoubleLinked;
 
 public class DoublyLinkedList {
+<<<<<<< HEAD
     public static DoubleNode Casilla1;
     public static DoubleNode Casilla2;
     public static DoubleNode Casilla3;
@@ -17,6 +18,24 @@ public class DoublyLinkedList {
     public static DoubleNode Casilla14;
     public static DoubleNode Casilla15;
     public static DoubleNode Casilla16;
+=======
+    public static String Casilla1;
+    public static String Casilla2;
+    public static String Casilla3;
+    public static String Casilla4;
+    public static String Casilla5;
+    public static String Casilla6;
+    public static String Casilla7;
+    public static String Casilla8;
+    public static String Casilla9;
+    public static String Casilla10;
+    public static String Casilla11;
+    public static String Casilla12;
+    public static String Casilla13;
+    public static String Casilla14;
+    public static String Casilla15;
+    public static String Casilla16;
+>>>>>>> parent of 4984e33 (Cuarta versión)
 
     private DoubleNode head;
     private DoubleNode tail;

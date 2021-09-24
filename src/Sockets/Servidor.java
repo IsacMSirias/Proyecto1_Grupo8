@@ -43,13 +43,29 @@ public class Servidor implements Runnable {
 
             //genero la lista para el tablero
             ListGeneration list = new ListGeneration();
-            DoublyLinkedList board = list.random();
+            list.random();
             //Siempre estara escuchando peticiones
             while (true) {
                 //Espero a que un cliente se conecte
                 socket = servidor.accept();
                 System.out.println("Cliente conectado");
+<<<<<<< HEAD
                     
+=======
+                //Genero los canales de  entrada y salida 
+                inputobject = new ObjectInputStream(socket.getInputStream());
+                outputobject = new ObjectOutputStream(socket.getOutputStream());
+                inputdata = new DataInputStream(socket.getInputStream());
+                outputdata = new DataOutputStream(socket.getOutputStream()); 
+                
+                //Leo el mensaje que me envia
+                Nombrejugador2 = inputdata.readUTF();
+                System.out.println(Nombrejugador2);
+
+                //Le envio un mensaje
+                outputdata.writeUTF(Nombrejugador1);
+  
+>>>>>>> parent of 4984e33 (Cuarta versión)
                 //Seteo las casillas
                 Paquetes DatosCasillas = new Paquetes();
                 DatosCasillas.setCasilla1(DoublyLinkedList.Casilla1);
@@ -68,6 +84,7 @@ public class Servidor implements Runnable {
                 DatosCasillas.setCasilla14(DoublyLinkedList.Casilla14);
                 DatosCasillas.setCasilla15(DoublyLinkedList.Casilla15);
                 DatosCasillas.setCasilla16(DoublyLinkedList.Casilla16);
+<<<<<<< HEAD
                 DatosCasillas.setNombrejugador1(Nombrejugador1);
                 
                 
@@ -76,6 +93,9 @@ public class Servidor implements Runnable {
                 
                 outputobject = new ObjectOutputStream(socket.getOutputStream()); // Eso tilín acércate
                 
+=======
+
+>>>>>>> parent of 4984e33 (Cuarta versión)
                 //envio los datos de las casillas a modo de lista(objeto) "DatosCasillas"
                 outputobject.writeObject(DatosCasillas);
                 
@@ -95,9 +115,30 @@ public class Servidor implements Runnable {
 }
 
 class Paquetes implements Serializable {
+<<<<<<< HEAD
     private DoubleNode casilla1, casilla2, casilla3, casilla4, casilla5, casilla6, casilla7, casilla8, casilla9, 
     casilla10, casilla11, casilla12, casilla13, casilla14, Casilla15, casilla16;
     private String nombrejugador1, nombrejugador2;
+=======
+    private String casilla1, casilla2, casilla3, casilla4, casilla5, casilla6, casilla7, casilla8, casilla9, 
+    casilla10, casilla11, casilla12, casilla13, casilla14, Casilla15, casilla16, nombrejugador1, nombrejugador2;
+
+    public String getNombrejugador1() {
+        return nombrejugador1;
+    }
+
+    public void setNombrejugador1(String nombrejugador1) {
+        this.nombrejugador1 = nombrejugador1;
+    }
+
+    public String getNombrejugador2() {
+        return nombrejugador2;
+    }
+
+    public void setNombrejugador2(String nombrejugador2) {
+        this.nombrejugador2 = nombrejugador2;
+    }
+>>>>>>> parent of 4984e33 (Cuarta versión)
 
     public DoubleNode getCasilla1() {
         return casilla1;

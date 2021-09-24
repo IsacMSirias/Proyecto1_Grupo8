@@ -29,17 +29,24 @@ public class Cliente implements Runnable {
         try {
             //Creo el socket para conectarme con el cliente
             Socket socket = new Socket(HOST, PORT);
+<<<<<<< HEAD
             /*
+=======
+
+            inputobject = new ObjectInputStream(socket.getInputStream());
+            outputobject = new ObjectOutputStream(socket.getOutputStream());
+>>>>>>> parent of 4984e33 (Cuarta versión)
             outputdata = new DataOutputStream(socket.getOutputStream());
             inputdata = new DataInputStream(socket.getInputStream());
-            
+
             //Envio un mensaje al servidor
             outputdata.writeUTF(Nombrejugador2);
-            
+
             //Recibo el mensaje del servidor
             Nombrejugador1 = inputdata.readUTF();
             System.out.println(Nombrejugador1);*/
             
+<<<<<<< HEAD
             inputobject = new ObjectInputStream(socket.getInputStream());
             
             
@@ -70,6 +77,26 @@ public class Cliente implements Runnable {
             outputobject.writeObject(PaqueteParaServidor);
             
             System.out.println(Casilla1);
+=======
+            Paquetes CasillasRecibidas = new Paquetes();
+            CasillasRecibidas = (Paquetes) inputobject.readObject();
+            String Casilla1 = CasillasRecibidas.getCasilla1();
+            String Casilla2 = CasillasRecibidas.getCasilla1();
+            String Casilla3 = CasillasRecibidas.getCasilla1();
+            String Casilla4 = CasillasRecibidas.getCasilla1();
+            String Casilla5 = CasillasRecibidas.getCasilla1();
+            String Casilla6 = CasillasRecibidas.getCasilla1();
+            String Casilla7 = CasillasRecibidas.getCasilla1();
+            String Casilla8 = CasillasRecibidas.getCasilla1();
+            String Casilla9 = CasillasRecibidas.getCasilla1();
+            String Casilla10 = CasillasRecibidas.getCasilla1();
+            String Casilla11 = CasillasRecibidas.getCasilla1();
+            String Casilla12 = CasillasRecibidas.getCasilla1();
+            String Casilla13 = CasillasRecibidas.getCasilla1();
+            String Casilla14 = CasillasRecibidas.getCasilla1();
+            String Casilla15 = CasillasRecibidas.getCasilla1();
+            
+>>>>>>> parent of 4984e33 (Cuarta versión)
 
             socket.close();
             
