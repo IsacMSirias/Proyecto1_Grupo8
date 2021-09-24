@@ -11,6 +11,9 @@ import BoardGeneration.ListGeneration;
 import DoubleLinked.DoublyLinkedList;
 import GUI.VentanaPrincipal;
 
+/**
+ * Esta clase maneja la generación del servidor
+ */
 public class Servidor implements Runnable {
 
     ServerSocket servidor = null;
@@ -24,7 +27,9 @@ public class Servidor implements Runnable {
     public static String Nombrejugador1 = VentanaPrincipal.Nombre;
     public static String Nombrejugador2;
 
-
+    /**
+     * Este método corre el servidor
+     */
     public void run() {
         //Creamos el socket del servidor
         try {

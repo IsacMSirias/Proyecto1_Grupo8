@@ -28,7 +28,7 @@ public class Cliente implements Runnable {
     public static String Nombrejugador2 = VentanaPrincipal.Nombre2;
 
     /**
-     * Este metodo maneja el cliente
+     * Este metodo corre el cliente
      */
     public void run() {
         try {
