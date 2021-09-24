@@ -12,6 +12,10 @@ import java.util.logging.Logger;
 import DoubleLinked.DoubleNode;
 import GUI.VentanaPrincipal;
 
+/**
+ * Esta clase maneja la generación del cliente
+ */
+
 public class Cliente implements Runnable {
 
     //Host del servidor
@@ -23,6 +27,9 @@ public class Cliente implements Runnable {
     public static String Nombrejugador1;
     public static String Nombrejugador2 = VentanaPrincipal.Nombre2;
 
+    /**
+     * Este metodo maneja el cliente
+     */
     public void run() {
         try {
             //Creo el socket para conectarme con el cliente
