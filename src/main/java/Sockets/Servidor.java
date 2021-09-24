@@ -8,6 +8,7 @@ import java.net.Socket;
 
 
 import BoardGeneration.ListGeneration;
+import DoubleLinked.DoubleNode;
 import DoubleLinked.DoublyLinkedList;
 import GUI.VentanaPrincipal;
 
@@ -34,6 +35,7 @@ public class Servidor implements Runnable {
             //genero la lista para el tablero
             ListGeneration list = new ListGeneration();
             DoublyLinkedList board = list.random();
+            DoubleNode node = new DoubleNode(null, "Reto", "+", 50, 50, 0, null);
             //Siempre estara escuchando peticiones
             while (true) {
                 //Espero a que un cliente se conecte
@@ -50,7 +52,8 @@ public class Servidor implements Runnable {
                 //Le envio un mensaje
                 output.writeUTF(Nombrejugador1);
 
-                output.writeUTF(Json.generateString(Json.toJson(socket), true));
+                System.out.println();
+                output.writeUTF(Json.generateString(Json.toJson(board), true));
 
             }
         } catch (IOException e) {

@@ -1,4 +1,5 @@
 package Sockets;
+import DoubleLinked.DoublyLinkedList;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -52,8 +53,9 @@ public class Json {
      * @return JsonNode
      */
 
-    public static JsonNode toJson(Object o){
+    public static JsonNode toJson(Object o) throws JsonProcessingException {
         //De objeto a JsonNode
+        System.out.println(objectMapper.canSerialize(DoublyLinkedList.class));
         return objectMapper.valueToTree(o);
     }
 

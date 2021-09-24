@@ -1,12 +1,16 @@
 package DoubleLinked;
 
+/**
+ *
+ */
 public class DoublyLinkedList {
+    public DoubleNode Casilla1;
 
     public DoubleNode head;
-    private DoubleNode tail;
+    public DoubleNode tail;
 
     /**
-     * Constructs a new DoublyLinkedList object with head and tail as null.
+     * Construye un nuevo objeto DoublyLinkedList con el head y el tail como null.
      */
     public DoublyLinkedList() {
         head = null;
@@ -15,16 +19,20 @@ public class DoublyLinkedList {
     }
 
     /**
-     * Returns true if the list is empty false otherwise
-     * @return true if the list empty false otherwise
+     * Retorna true si la lista está vacía y falso si no.
+     * @return true si la lista está vacía y falso si no
      */
     public boolean isEmpty(){
         return head == null;
     }
 
     /**
-     * Add a character BNode containing the character c to the end of the linked list. This routine does not require a search.
-     * @param num1 a single character
+     * Añade un BNode al final de la lista.
+     * @param str Nombre del BNode
+     * @param opt Operador
+     * @param num1 A
+     * @param num2 B
+     * @param mvt Movimientos
      */
     public void addFieldAtEnd(String str, String opt, int num1, int num2, int mvt){
         DoubleNode n = new DoubleNode(tail, str, opt, num1, num1, mvt, null);
@@ -37,11 +45,15 @@ public class DoublyLinkedList {
     }
 
     /**
-     * Add a character BNode containing the character c to the front of the linked list. No search is required.
-     * @param num1 a single character
+     * Añade un BNode al principio de la lista.
+     * @param str Nombre del BNode
+     * @param opt Operador
+     * @param num1 A
+     * @param num2 B
+     * @param mvt Movimientos
      */
     public void addFieldAtFront(String str, String opt, int num1, int num2, int mvt){
-        DoubleNode n = new DoubleNode(null, str, opt, num1, num1, mvt, head);
+        DoubleNode n = new DoubleNode(null, str, opt, num1, num2, mvt, head);
         if(isEmpty()){
             head = tail = n;
         }else{
@@ -51,8 +63,8 @@ public class DoublyLinkedList {
     }
 
     /**
-     * Remove and return the character at the front of the doubly linked list.
-     * @return the character at the front precondition: the list is not empty
+     * Elimina y retorna el nombre del BNode al principio de la lista.
+     * @return el nombre del BNode al principio de la lista
      */
     public String removeFieldFromFront(){
         String str = head.getField();
@@ -68,8 +80,8 @@ public class DoublyLinkedList {
     }
 
     /**
-     * Remove and return the character at the end of the doubly linked list. No searching is required.
-     * @return the character at the end precondition: the list is not empty
+     * Elimina y retorna el nombre del BNode al final de la lista.
+     * @return el nombre del BNode al final de la lista
      */
     public String removeFieldAtEnd(){
         String str = tail.getField();
@@ -87,8 +99,8 @@ public class DoublyLinkedList {
     }
 
     /**
-     * Counts the number of BNodes in the list. We are not maintaining a counter so a search is required.
-     * @return the number of BNodes in the doubly linked list between head and tail inclusive
+     * Cuenta la cantidad de BNodes en la lista.
+     * @return la cantidad de BNodes en la lista entre head y tail (inclusivo)
      */
     public int countBNodes(){
         DoubleNode cn = head;
@@ -100,6 +112,9 @@ public class DoublyLinkedList {
         return count;
     }
 
+    /**
+     * Muestra los nombres de todos los BNodes en un print.
+     */
     public void display() {
         //Node current will point to head
         DoubleNode cn = head;

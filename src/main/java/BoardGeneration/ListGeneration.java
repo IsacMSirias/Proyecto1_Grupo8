@@ -10,6 +10,10 @@ public class ListGeneration {
     public int casillas_trampa = 0;
     public int casillas_tunel = 0;
 
+    /**
+     * Este método genera una lista aleatoria con las especificaciones del proyecto.
+     * @return la lista generada
+     */
     public DoublyLinkedList random() {
         Random random = new Random();
         for (int i = 0; i < 16; i++) {
@@ -27,17 +31,17 @@ public class ListGeneration {
                 } else if (num_opt == 3) {
                     opt = "/";
                 }
-                board.addFieldAtEnd("Reto", opt, random.nextInt(49)+1, random.nextInt(49)+1, 0);
+                board.addFieldAtFront("Reto", opt, random.nextInt(49)+1, random.nextInt(49)+1, 0);
                 this.casillas_reto++;
             } else if (num == 1 && casillas_trampa < 4) {
-                board.addFieldAtEnd("Trampa", null, 0, 0, random.nextInt(2)+1);
+                board.addFieldAtFront("Trampa", null, 0, 0, random.nextInt(2)+1);
                 this.casillas_trampa++;
             } else if (num == 2 && casillas_tunel < 4) {
-                board.addFieldAtEnd("Tunel", null, 0, 0, random.nextInt(2)+1);
+                board.addFieldAtFront("Tunel", null, 0, 0, random.nextInt(2)+1);
                 this.casillas_tunel++;
             } else {
                 if (this.casillas_reto < 8) {
-                    int num_opt = random.nextInt(3);
+                    int num_opt = random.nextInt(4);
                     String opt = null;
                     if (num_opt == 0) {
                         opt = "+";
@@ -48,13 +52,13 @@ public class ListGeneration {
                     } else if (num_opt == 3) {
                         opt = "/";
                     }
-                    board.addFieldAtEnd("Reto", opt, random.nextInt(49)+1, random.nextInt(49)+1, 0);
+                    board.addFieldAtFront("Reto", opt, random.nextInt(49)+1, random.nextInt(49)+1, 0);
                     this.casillas_reto++;
                 } else if (casillas_trampa < 4) {
-                    board.addFieldAtEnd("Trampa", null, 0, 0, random.nextInt(2)+1);
+                    board.addFieldAtFront("Trampa", null, 0, 0, random.nextInt(2)+1);
                     this.casillas_trampa++;
                 } else if (casillas_tunel < 4) {
-                    board.addFieldAtEnd("Tunel", null, 0, 0, random.nextInt(2)+1);
+                    board.addFieldAtFront("Tunel", null, 0, 0, random.nextInt(2)+1);
                     this.casillas_tunel++;
                 }
             }

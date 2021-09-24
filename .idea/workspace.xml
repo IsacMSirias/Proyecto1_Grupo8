@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aaf872a9-5b03-42fb-8ee2-9ab124bbb442" name="Default Changelist" comment="">
+    <list default="true" id="aaf872a9-5b03-42fb-8ee2-9ab124bbb442" name="Default Changelist" comment="Quinta versión">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BoardGeneration/ListGeneration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BoardGeneration/ListGeneration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DoubleLinked/DoubleNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DoubleLinked/DoubleNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DoubleLinked/DoublyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DoubleLinked/DoublyLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Cliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Json.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Json.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Servidor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/BoardGeneration/ListGeneration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BoardGeneration/ListGeneration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DoubleLinked/DoubleNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DoubleLinked/DoubleNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DoubleLinked/DoublyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DoubleLinked/DoublyLinkedList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Sockets/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sockets/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Sockets/Json.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sockets/Json.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Sockets/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sockets/Servidor.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +32,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1yYX3BdwJOy6Yw30R7kOoRsIheO" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -42,7 +51,6 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -108,15 +116,36 @@
       <workItem from="1632450346087" duration="1718000" />
       <workItem from="1632454923868" duration="1933000" />
       <workItem from="1632455555614" duration="209000" />
-      <workItem from="1632455782895" duration="2296000" />
+      <workItem from="1632455782895" duration="9381000" />
     </task>
+    <task id="LOCAL-00001" summary="Quinta versión">
+      <created>1632458265520</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1632458265520</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Quinta versión" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quinta versión" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
