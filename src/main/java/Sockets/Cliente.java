@@ -18,10 +18,8 @@ public class Cliente implements Runnable {
     String HOST = "Localhost";
     //PORT del servidor
     int PORT = 5000;
-    ObjectInputStream inputobject;
-    ObjectOutputStream outputobject;
-    //DataOutputStream outputdata;
-    //DataInputStream inputdata;
+    DataOutputStream output;
+    DataInputStream input;
     public static String Nombrejugador1;
     public static String Nombrejugador2 = VentanaPrincipal.Nombre2;
 
@@ -29,52 +27,23 @@ public class Cliente implements Runnable {
         try {
             //Creo el socket para conectarme con el cliente
             Socket socket = new Socket(HOST, PORT);
-            /*
-            outputdata = new DataOutputStream(socket.getOutputStream());
-            inputdata = new DataInputStream(socket.getInputStream());
+
+            input = new DataInputStream(socket.getInputStream());
+            output = new DataOutputStream(socket.getOutputStream());
 
             //Envio un mensaje al servidor
-            outputdata.writeUTF(Nombrejugador2);
+            output.writeUTF(Nombrejugador2);
 
             //Recibo el mensaje del servidor
-            Nombrejugador1 = inputdata.readUTF();
-            System.out.println(Nombrejugador1);*/
+            Nombrejugador1 = input.readUTF();
 
-            inputobject = new ObjectInputStream(socket.getInputStream());
-
-
-            Paquetes CasillasRecibidas = new Paquetes();
-            CasillasRecibidas = (Paquetes) inputobject.readObject();
-            DoubleNode Casilla1 = CasillasRecibidas.getCasilla1();
-            DoubleNode Casilla2 = CasillasRecibidas.getCasilla2();
-            DoubleNode Casilla3 = CasillasRecibidas.getCasilla3();
-            DoubleNode Casilla4 = CasillasRecibidas.getCasilla4();
-            DoubleNode Casilla5 = CasillasRecibidas.getCasilla5();
-            DoubleNode Casilla6 = CasillasRecibidas.getCasilla6();
-            DoubleNode Casilla7 = CasillasRecibidas.getCasilla7();
-            DoubleNode Casilla8 = CasillasRecibidas.getCasilla8();
-            DoubleNode Casilla9 = CasillasRecibidas.getCasilla9();
-            DoubleNode Casilla10 = CasillasRecibidas.getCasilla10();
-            DoubleNode Casilla11 = CasillasRecibidas.getCasilla11();
-            DoubleNode Casilla12 = CasillasRecibidas.getCasilla12();
-            DoubleNode Casilla13 = CasillasRecibidas.getCasilla13();
-            DoubleNode Casilla14 = CasillasRecibidas.getCasilla14();
-            DoubleNode Casilla15 = CasillasRecibidas.getCasilla15();
-            DoubleNode Casilla16 = CasillasRecibidas.getCasilla16();
-            Nombrejugador1 = CasillasRecibidas.getNombrejugador1();
-
-            Paquetes PaqueteParaServidor = new Paquetes();
-            PaqueteParaServidor.setNombrejugador2(Nombrejugador2);
-
-            outputobject = new ObjectOutputStream(socket.getOutputStream());
-            outputobject.writeObject(PaqueteParaServidor);
-
-            System.out.println(Casilla1);
+            System.out.println(Nombrejugador1);
 
             socket.close();
 
-        } catch (IOException | ClassNotFoundException ex) {
-            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
