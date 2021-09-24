@@ -10,8 +10,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 
 /**
-        * Clase para le manejo de json
-        */
+ * Clase para le manejo de json
+ */
 
 public class Json {
     private static ObjectMapper objectMapper = getDefaultObjectMapper();
@@ -22,7 +22,7 @@ public class Json {
     }
 
     /**
-            * De String a Jsonnode
+     * De String a Jsonnode
      * @param jsonSource
      * @return Jsonnode
      * @throws JsonProcessingException
@@ -33,7 +33,7 @@ public class Json {
     }
 
     /**
-            * De Json no a objeto
+     * De Json nodo a objeto
      * @param node
      * @param clazz
      * @param <A>
@@ -47,7 +47,7 @@ public class Json {
     }
 
     /**
-            * De objeto a json
+     * De objeto a json
      * @param o
      * @return JsonNode
      */
@@ -58,7 +58,7 @@ public class Json {
     }
 
     /**
-            * De jsonnode a String
+     * De jsonnode a String
      * @param node
      * @param pretty
      * @return String
@@ -75,7 +75,7 @@ public class Json {
     }
 
     /**
-            * Metodo para leer en .json
+     * Metodo para leer en .json
      * @param file
      * @return String
      */

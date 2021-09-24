@@ -1,27 +1,18 @@
 package Sockets;
-import java.io.DataInput;
 import java.io.DataInputStream;
-import java.io.DataOutput;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.List;
-import java.util.Scanner;
 
 
 
 import BoardGeneration.ListGeneration;
-import DoubleLinked.DoubleNode;
 import DoubleLinked.DoublyLinkedList;
 import GUI.VentanaPrincipal;
 
 public class Servidor implements Runnable {
 
-    Thread thread;
     ServerSocket servidor = null;
     Socket socket = null;
 
@@ -58,6 +49,9 @@ public class Servidor implements Runnable {
 
                 //Le envio un mensaje
                 output.writeUTF(Nombrejugador1);
+
+                output.writeUTF(Json.generateString(Json.toJson(socket), true));
+
             }
         } catch (IOException e) {
             e.printStackTrace();

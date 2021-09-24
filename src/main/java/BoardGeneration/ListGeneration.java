@@ -9,7 +9,6 @@ public class ListGeneration {
     public int casillas_reto = 0;
     public int casillas_trampa = 0;
     public int casillas_tunel = 0;
-    //eso tilin
 
     public DoublyLinkedList random() {
         Random random = new Random();
@@ -17,7 +16,7 @@ public class ListGeneration {
             int num = random.nextInt(3);
             System.out.println(num);
             if (num == 0 && this.casillas_reto < 8) {
-                int num_opt = random.nextInt(3);
+                int num_opt = random.nextInt(4);
                 String opt = null;
                 if (num_opt == 0) {
                     opt = "+";
@@ -60,6 +59,7 @@ public class ListGeneration {
                 }
             }
         }
+        System.out.println(board.countBNodes());
         board.display();
         return board;
     }

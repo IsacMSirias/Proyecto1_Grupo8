@@ -39,6 +39,9 @@ public class Cliente implements Runnable {
 
             System.out.println(Nombrejugador1);
 
+            String head = input.readUTF();
+            System.out.println(head);
+
             socket.close();
 
 
