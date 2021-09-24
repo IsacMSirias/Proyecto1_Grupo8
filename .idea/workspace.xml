@@ -16,6 +16,11 @@
       <change beforePath="$PROJECT_DIR$/target/classes/DoubleLinked/DoublyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DoubleLinked/DoublyLinkedList.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Sockets/Json.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sockets/Json.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Sockets/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sockets/Servidor.class" afterDir="false" />
+    <list default="true" id="aaf872a9-5b03-42fb-8ee2-9ab124bbb442" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Servidor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +129,8 @@
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1632458265520</updated>
+      <workItem from="1632455782895" duration="2296000" />
+      <workItem from="1632459033686" duration="1080000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
