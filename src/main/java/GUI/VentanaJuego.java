@@ -15,12 +15,15 @@ public class VentanaJuego implements ActionListener {
     String Nombrejugador1;
     String Nombrejugador2;
 
+     int varPocision1;
+     int varPocision2;
+
+
+
     public static int varNumDado = 0;
 
-    public static int varPocision1 = 0;
     public static String varCasilla1 = "";
 
-    public static int varPocision2 = 0;
     public static String varCasilla2 = "";
 
     JFrame ventanaj = new JFrame();
@@ -49,13 +52,9 @@ public class VentanaJuego implements ActionListener {
         if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
             Nombrejugador1 = Servidor.Nombrejugador1;
             Nombrejugador2 = Servidor.Nombrejugador2;
-            varPocision1 = Servidor.varPos1;
-            varPocision2 = Servidor.varPos2;
         } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
             Nombrejugador1 = Cliente.Nombrejugador1;
             Nombrejugador2 = Cliente.Nombrejugador2;
-            varPocision1 = Cliente.varPos1;
-            varPocision2 = Cliente.varPos2;
         }
         ventanaj.setIconImage(imageIcon.getImage());
 
@@ -79,7 +78,7 @@ public class VentanaJuego implements ActionListener {
         Jugador2.setBounds(300+50, 400, 200, 20);
         Jugador2.setFont(new Font("cooper black", 0, 15));
 
-        Posicion1.setText("Pocisión:");
+        Posicion1.setText("Pocisión:" );
         Posicion1.setBounds(200-50, 425, 200, 20);
         Posicion1.setFont(new Font("cooper black", 0, 15));
 
@@ -134,41 +133,49 @@ public class VentanaJuego implements ActionListener {
 
         if (e.getSource() == BotonMenu) {
             ventanaj.dispose();
+            VentanaPrincipal.running = false;
             VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
         }
 
         int NumRandom = (int) (Math.random() * 3 + 1);
         if(e.getSource() == BLanzarDado & NumRandom == 1 & varNumDado <= 16){
             varNumDado = 1;
-            varPocision1 += 1;
-            Posicion1.setText("Posicion: " + varPocision1);
+            Servidor.varPos1 += 1;
+            Servidor.varPos2 += 1;
+            Posicion1.setText("Posicion: "+ Servidor.varPos1);
+            Posicion2.setText("Posicion: "+ Servidor.varPos2);
             Espacio.setText(": 1");
-            System.out.println(NumRandom);
+
         }
 
         else if(e.getSource() == BLanzarDado & NumRandom == 2 & varNumDado <= 16){
             varNumDado = 2;
-            varPocision1 += 2;
-            Posicion1.setText("Posicion: " + varPocision1);
+            Servidor.varPos1 += 2;
+            Servidor.varPos2 += 2;
+            Posicion1.setText("Posicion: "+ Servidor.varPos1);
+            Posicion2.setText("Posicion: "+ Servidor.varPos2);
             Espacio.setText(": 2");
-            System.out.println(NumRandom);
+
         }
 
 
         else if(e.getSource() == BLanzarDado & NumRandom == 3 & varNumDado <= 16){
             varNumDado = 3;
-            varPocision1 += 3;
+            Servidor.varPos1 += 3;
+            Servidor.varPos2 += 3;
 
             Espacio.setText(": 3");
-            Posicion1.setText("Posicion: " + varPocision1);
+            Posicion1.setText("Posicion: "+ Servidor.varPos1);
+            Posicion2.setText("Posicion: "+ Servidor.varPos2);
 
-            System.out.println(NumRandom);
+
         }
 
         if (varPocision1 >= 16 || varPocision2 >= 16){
 
 
             ventanaj.dispose();
+            VentanaPrincipal.running = false;
 
         }
 

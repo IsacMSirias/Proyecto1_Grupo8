@@ -10,6 +10,7 @@ import java.net.Socket;
 import BoardGeneration.ListGeneration;
 import DoubleLinked.DoubleNode;
 import DoubleLinked.DoublyLinkedList;
+import GUI.VentanaJuego;
 import GUI.VentanaPrincipal;
 
 /**
@@ -52,18 +53,23 @@ public class Servidor implements Runnable {
                 input = new DataInputStream(socket.getInputStream());
                 output = new DataOutputStream(socket.getOutputStream());
 
-                //Leo el mensaje que me envia
+                //Leo el mensaje que me envia el cliente
                 Nombrejugador2 = input.readUTF();
                 System.out.println(Nombrejugador2);
 
                 //Le envio un mensaje
                 output.writeUTF(Nombrejugador1);
 
-                // output.writeUTF(Json.generateString(Json.toJson(board), false));
-
                 while (true) {
+                   // Leo el mensaje que envia el cliente
+                    varPos2 = input.readInt();
+                    //System.out.println("Mensaje desde cliente" + varPos2);
+                    // Envio un mensaje al cliente
+                    output.writeInt(varPos1);
 
                 }
+                // output.writeUTF(Json.generateString(Json.toJson(board), false));
+
 
             }
         } catch (IOException e) {

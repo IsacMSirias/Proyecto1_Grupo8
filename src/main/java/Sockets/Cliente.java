@@ -48,14 +48,19 @@ public class Cliente implements Runnable {
 
             System.out.println(Nombrejugador1);
 
-            String head = input.readUTF();
-            System.out.println(head);
+            while (true){
+                // Envio de mensaje al server
+                output.writeInt(varPos2);;
+                //Recibo el mensaje
+                varPos1 = input.readInt();
 
-            while (true) {
-                output.writeUTF(varPos1);
             }
 
-            socket.close();
+            //String head = input.readUTF();
+            //System.out.println(head);
+
+
+
 
 
         } catch (IOException e) {
