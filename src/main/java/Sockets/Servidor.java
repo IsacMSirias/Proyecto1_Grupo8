@@ -58,7 +58,7 @@ public class Servidor implements Runnable {
                 output.writeUTF(Nombrejugador1);
 
                 System.out.println();
-                output.writeUTF(Json.generateString(Json.toJson(board), true));
+                output.writeUTF(Json.generateString(Json.toJson(board), false));
 
             }
         } catch (IOException e) {

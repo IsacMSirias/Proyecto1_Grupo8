@@ -9,18 +9,11 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/BoardGeneration/ListGeneration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BoardGeneration/ListGeneration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DoubleLinked/DoubleNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DoubleLinked/DoubleNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DoubleLinked/DoublyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DoubleLinked/DoublyLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Json.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Json.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Servidor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/BoardGeneration/ListGeneration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BoardGeneration/ListGeneration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DoubleLinked/DoubleNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DoubleLinked/DoubleNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DoubleLinked/DoublyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DoubleLinked/DoublyLinkedList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Sockets/Json.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sockets/Json.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Sockets/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sockets/Cliente.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Sockets/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sockets/Servidor.class" afterDir="false" />
-    <list default="true" id="aaf872a9-5b03-42fb-8ee2-9ab124bbb442" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Servidor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,6 +115,7 @@
       <workItem from="1632454923868" duration="1933000" />
       <workItem from="1632455555614" duration="209000" />
       <workItem from="1632455782895" duration="9381000" />
+      <workItem from="1632532189747" duration="708000" />
     </task>
     <task id="LOCAL-00001" summary="Quinta versión">
       <created>1632458265520</created>

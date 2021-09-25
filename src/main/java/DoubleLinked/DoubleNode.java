@@ -11,10 +11,14 @@ public class DoubleNode {
     public int b;
 
     /**
-     * Constructor with three arguments
-     * @param p is a pointer to a previous BNode.
-     * @param str is a string for this BNode.
-     * @param n is a pointer to a next BNode.
+     * Constructor con siete argumentos.
+     * @param p es un puntero al BNode previo
+     * @param str Nombre del BNode
+     * @param opt Operador
+     * @param num1 A
+     * @param num2 B
+     * @param mvt Movimientos
+     * @param n es un puntero al siguiente BNode
      */
     public DoubleNode(DoubleNode p, String str, String opt, int num1, int num2, int mvt, DoubleNode n){
         prev = p;
@@ -27,96 +31,84 @@ public class DoubleNode {
 
     }
 
-    /**
-     * @return a string for this BNode.
-     */
     public String getField(){
         return field;
     }
 
-    /**
-     */
     public int getMovement(){
         return movement;
     }
 
-    /**
-     */
     public String getOperation(){
         return operation;
     }
 
-    /**
-     */
     public int getA(){
         return a;
     }
 
-    /**
-     * @param num is assigned to this BNode
-     */
     public int getB(){
         return b;
     }
 
     /**
-     * @return a pointer to the next BNode or null if none exists
+     * @return el puntero al siguiente BNode o nulo si no existe
      */
     public DoubleNode getNext(){
         return next;
     }
 
     /**
-     * @return a pointer to the previous BNode or null if none exists
+     * @return el puntero al BNode previo o nulo si no existe
      */
     public DoubleNode getPrev(){
         return prev;
     }
 
     /**
-     * @param str is assigned to this BNode
+     * @param str Nombre del BNode
      */
     public void setField(String str){
         field = str;
     }
 
     /**
-     * @param num is assigned to this BNode
+     * @param num es asignado al BNode
      */
     public void setMovement(int num){
         movement = num;
     }
 
     /**
-     * @param str is assigned to this BNode
+     * @param str es asignado al BNode
      */
     public void setOperation(String str){
         operation = str;
     }
 
     /**
-     * @param num is assigned to this BNode
+     * @param num es asignado al BNode
      */
     public void setA(int num){
         a = num;
     }
 
     /**
-     * @param num is assigned to this BNode
+     * @param num es asignado al BNode
      */
     public void setB(int num){
         b = num;
     }
 
     /**
-     * @param n a pointer to the next BNode
+     * @param n un puntero al siguiente BNode
      */
     public void setNext(DoubleNode n){
         next = n;
     }
 
     /**
-     * @param p a pointer to the previous BNode
+     * @param p un puntero al BNode previo
      */
     public void setPrev(DoubleNode p){
         prev = p;

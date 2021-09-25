@@ -4,7 +4,6 @@ package DoubleLinked;
  *
  */
 public class DoublyLinkedList {
-    public DoubleNode Casilla1;
 
     public DoubleNode head;
     public DoubleNode tail;
