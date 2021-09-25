@@ -26,6 +26,8 @@ public class Cliente implements Runnable {
     DataInputStream input;
     public static String Nombrejugador1;
     public static String Nombrejugador2 = VentanaPrincipal.Nombre2;
+    public static int varPos1;
+    public static int varPos2;
 
     /**
      * Este metodo corre el cliente
@@ -48,6 +50,10 @@ public class Cliente implements Runnable {
 
             String head = input.readUTF();
             System.out.println(head);
+
+            while (true) {
+                output.writeUTF(varPos1);
+            }
 
             socket.close();
 

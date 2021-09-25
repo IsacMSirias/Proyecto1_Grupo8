@@ -7,6 +7,7 @@ import Sockets.Servidor;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 
 public class VentanaJuego implements ActionListener {
@@ -45,12 +46,16 @@ public class VentanaJuego implements ActionListener {
     JLabel Dado = new JLabel(new ImageIcon("src/Sprites/Dado.png"));
 
     public VentanaJuego() {
-        if (VentanaPrincipal.conexion == "servidor") {
+        if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
             Nombrejugador1 = Servidor.Nombrejugador1;
             Nombrejugador2 = Servidor.Nombrejugador2;
-        } else if (VentanaPrincipal.conexion == "cliente") {
+            varPocision1 = Servidor.varPos1;
+            varPocision2 = Servidor.varPos2;
+        } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
             Nombrejugador1 = Cliente.Nombrejugador1;
             Nombrejugador2 = Cliente.Nombrejugador2;
+            varPocision1 = Cliente.varPos1;
+            varPocision2 = Cliente.varPos2;
         }
         ventanaj.setIconImage(imageIcon.getImage());
 

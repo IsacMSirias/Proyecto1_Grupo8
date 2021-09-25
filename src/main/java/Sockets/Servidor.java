@@ -27,6 +27,8 @@ public class Servidor implements Runnable {
     int PORT = 5000;
     public static String Nombrejugador1 = VentanaPrincipal.Nombre;
     public static String Nombrejugador2;
+    public static int varPos1;
+    public static int varPos2;
 
     /**
      * Este método corre el servidor
@@ -57,8 +59,11 @@ public class Servidor implements Runnable {
                 //Le envio un mensaje
                 output.writeUTF(Nombrejugador1);
 
-                System.out.println();
-                output.writeUTF(Json.generateString(Json.toJson(board), false));
+                // output.writeUTF(Json.generateString(Json.toJson(board), false));
+
+                while (true) {
+
+                }
 
             }
         } catch (IOException e) {

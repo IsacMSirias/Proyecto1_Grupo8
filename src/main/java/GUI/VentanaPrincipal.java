@@ -113,6 +113,7 @@ public class VentanaPrincipal implements ActionListener {
         if (e.getSource() == BotonUnirse) {
             conexion = "cliente";
             Nombre2 = Usertxtbox.getText();
+
             Cliente cliente = new Cliente();
             new Thread(cliente).start();
         }
