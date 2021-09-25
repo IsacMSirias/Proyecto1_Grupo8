@@ -22,9 +22,6 @@ public class VentanaPrincipal implements ActionListener {
     public static String Nombre = "";
     public static String Nombre2 = "";
 
-    public static int varPos1;
-    public static int varPos2;
-
     public static String conexion = "";
 
     public static Boolean running = false;
@@ -114,7 +111,6 @@ public class VentanaPrincipal implements ActionListener {
         if (e.getSource() == BotonCrear) {
             conexion = "servidor";
             Nombre = Usertxtbox.getText();
-            varPos1 = 0;
             Servidor servidor = new Servidor();
             new Thread(servidor).start();
 
@@ -122,7 +118,6 @@ public class VentanaPrincipal implements ActionListener {
         if (e.getSource() == BotonUnirse) {
             conexion = "cliente";
             Nombre2 = Usertxtbox.getText();
-            varPos2 = 0;
             Cliente cliente = new Cliente();
             new Thread(cliente).start();
         }

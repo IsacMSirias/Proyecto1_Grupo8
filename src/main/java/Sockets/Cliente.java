@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import DoubleLinked.DoubleNode;
+import GUI.VentanaJuego;
 import GUI.VentanaPrincipal;
 
 /**
@@ -48,20 +49,17 @@ public class Cliente implements Runnable {
 
             System.out.println(Nombrejugador1);
 
-            while (true){
-                // Envio de mensaje al server
-                output.writeInt(varPos2);;
-                //Recibo el mensaje
-                varPos1 = input.readInt();
-
-            }
-
             //String head = input.readUTF();
             //System.out.println(head);
 
+            while (true){
+                output.writeInt(varPos2);
 
+                varPos1 = input.readInt();
 
-
+                VentanaJuego.Posicion1.setText("Posicion: "+ varPos1);
+                VentanaJuego.Posicion2.setText("Posicion: "+ varPos2);
+            }
 
         } catch (IOException e) {
             e.printStackTrace();

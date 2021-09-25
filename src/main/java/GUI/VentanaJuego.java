@@ -15,10 +15,8 @@ public class VentanaJuego implements ActionListener {
     String Nombrejugador1;
     String Nombrejugador2;
 
-     int varPocision1;
-     int varPocision2;
-
-
+    int varPocision1;
+    int varPocision2;
 
     public static int varNumDado = 0;
 
@@ -35,8 +33,8 @@ public class VentanaJuego implements ActionListener {
     JLabel Jugador1 = new JLabel();
     JLabel Jugador2 = new JLabel();
 
-    JLabel Posicion1 = new JLabel();
-    JLabel Posicion2 = new JLabel();
+    public static JLabel Posicion1 = new JLabel();
+    public static JLabel Posicion2 = new JLabel();
 
     JLabel CasillaTipo1 = new JLabel();
     JLabel CasillaTipo2 = new JLabel();
@@ -140,20 +138,22 @@ public class VentanaJuego implements ActionListener {
         int NumRandom = (int) (Math.random() * 3 + 1);
         if(e.getSource() == BLanzarDado & NumRandom == 1 & varNumDado <= 16){
             varNumDado = 1;
-            Servidor.varPos1 += 1;
-            Servidor.varPos2 += 1;
-            Posicion1.setText("Posicion: "+ Servidor.varPos1);
-            Posicion2.setText("Posicion: "+ Servidor.varPos2);
+            if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
+                Servidor.varPos1 += 1;
+            } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
+                Cliente.varPos2 += 1;
+            }
             Espacio.setText(": 1");
 
         }
 
         else if(e.getSource() == BLanzarDado & NumRandom == 2 & varNumDado <= 16){
             varNumDado = 2;
-            Servidor.varPos1 += 2;
-            Servidor.varPos2 += 2;
-            Posicion1.setText("Posicion: "+ Servidor.varPos1);
-            Posicion2.setText("Posicion: "+ Servidor.varPos2);
+            if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
+                Servidor.varPos1 += 2;
+            } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
+                Cliente.varPos2 += 2;
+            }
             Espacio.setText(": 2");
 
         }
@@ -161,9 +161,11 @@ public class VentanaJuego implements ActionListener {
 
         else if(e.getSource() == BLanzarDado & NumRandom == 3 & varNumDado <= 16){
             varNumDado = 3;
-            Servidor.varPos1 += 3;
-            Servidor.varPos2 += 3;
-
+            if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
+                Servidor.varPos1 += 3;
+            } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
+                Cliente.varPos2 += 3;
+            }
             Espacio.setText(": 3");
             Posicion1.setText("Posicion: "+ Servidor.varPos1);
             Posicion2.setText("Posicion: "+ Servidor.varPos2);
@@ -171,12 +173,26 @@ public class VentanaJuego implements ActionListener {
 
         }
 
-        if (varPocision1 >= 16 || varPocision2 >= 16){
-
-
-            ventanaj.dispose();
-            VentanaPrincipal.running = false;
-
+        if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
+            if (Servidor.varPos1 >= 16 || Servidor.varPos2 >= 16){
+                if (Servidor.varPos1 >= 16) {
+                    JOptionPane.showMessageDialog(null, "¡Ganaste!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "¡Perdiste!");
+                }
+                ventanaj.dispose();
+                VentanaPrincipal.running = false;
+            }
+        } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
+            if (Cliente.varPos1 >= 16 || Cliente.varPos2 >= 16){
+                if (Cliente.varPos2 >= 16) {
+                    JOptionPane.showMessageDialog(null, "¡Ganaste!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "¡Perdiste!");
+                }
+                ventanaj.dispose();
+                VentanaPrincipal.running = false;
+            }
         }
 
         varNumDado = 0;

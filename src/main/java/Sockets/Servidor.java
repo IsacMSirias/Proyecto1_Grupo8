@@ -60,17 +60,17 @@ public class Servidor implements Runnable {
                 //Le envio un mensaje
                 output.writeUTF(Nombrejugador1);
 
-                while (true) {
-                   // Leo el mensaje que envia el cliente
-                    varPos2 = input.readInt();
-                    //System.out.println("Mensaje desde cliente" + varPos2);
-                    // Envio un mensaje al cliente
-                    output.writeInt(varPos1);
-
-                }
                 // output.writeUTF(Json.generateString(Json.toJson(board), false));
 
+                while (true) {
 
+                    varPos2 = input.readInt();
+
+                    output.writeInt(varPos1);
+
+                    VentanaJuego.Posicion1.setText("Posicion: "+ varPos1);
+                    VentanaJuego.Posicion2.setText("Posicion: "+ varPos2);
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
