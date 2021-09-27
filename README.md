@@ -31,7 +31,7 @@ Esta casilla funciona de la misma manera que la de tunel, pero en vez de avanzar
 
 ## Diagrama de clases
 
-aquí estará el diagrama de clases :v
+![UMLSocketMath ](https://user-images.githubusercontent.com/83249731/134855213-af958f90-f584-47f3-8d32-6893f596ee5c.png)
 
 ## Lista doblemente enlazada
 
@@ -241,13 +241,10 @@ Este indiscutiblemente es uno de los algoritmos mas importantes en el código ya
 
 La secuencia de algoritmos anteriores hacen referencia al movimiento de archivos, objetos y nodos por medio de Json, esto se realiza de manera secuencial a razón de que se puede convertir un objeto a un JsonNode, de este a un Json String para finalmente leerse como un string y así a viceversa.
 
-* **Diagrama de clases**
 
 
-![UMLSocketMath ](https://user-images.githubusercontent.com/83249731/134855213-af958f90-f584-47f3-8d32-6893f596ee5c.png)
 
-
-* **Problemas encontrados**
+## Problemas encontrados
 
 Aunque la mayoría de los problemas presentes en el proyecto se dieron por parte del código y su resolución, tuvimos inconvenientes con github, dado que en ciertos casos habían conflictos prensentes en los merge quue se realizaban.
 
