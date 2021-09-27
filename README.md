@@ -191,9 +191,69 @@ Este método permite que al clickear los botones presentes en la pantalla princi
 
 Este indiscutiblemente es uno de los algoritmos mas importantes en el código ya que por medio de este metodo se permite ver el progreso de los jugadores en pantalla, sin con contar que es el que acciona tanto los movimientos de los dados presentes en la pantalla del juego, permite visualizar en que casilla está el jugador y su posición en el tablero de juego. Además gracias a este método es posible ver cuándo el juegador gana o pierde.
 
+
 * **Algoritmos referentes a Json**
 
+         public static JsonNode parse(String jsonSource) throws JsonProcessingException{
+            return objectMapper.readTree(jsonSource);
+         }
+        public static JsonNode toJson(Object o) throws JsonProcessingException {
+            System.out.println(objectMapper.canSerialize(DoublyLinkedList.class));
+                return objectMapper.valueToTree(o);
+        }
 
+            public static String generateString(JsonNode node, boolean pretty) throws JsonProcessingException{
+                 ObjectWriter objectWriter = objectMapper.writer();
+                     if(pretty){
+                        objectWriter = objectWriter.with(SerializationFeature.INDENT_OUTPUT);
+                     }
+                return objectWriter.writeValueAsString(node);
+            }
+
+            public static String ReadJson(String file) {
+                String json = new String();
+                    try{
+                    BufferedReader br = new BufferedReader(new FileReader(file));
+
+                    try{
+                     StringBuilder sb = new StringBuilder();
+                     String line = br.readLine();
+
+                     while (line != null){
+                         sb.append(line);
+                            sb.append(System.lineSeparator());
+                            line = br.readLine();
+                      }
+                    json = sb.toString();
+
+                    } finally {
+                       br.close();
+                 }
+
+                 return json;
+
+              }catch (Exception e){
+               e.printStackTrace();
+             }
+
+            return json;
+         }
+
+La secuencia de algoritmos anteriores hacen referencia al movimiento de archivos, objetos y nodos por medio de Json, esto se realiza de manera secuencial a razón de que se puede convertir un objeto a un JsonNode, de este a un Json String para finalmente leerse como un string y así a viceversa.
+
+* **Diagrama de clases**
+
+
+![UMLSocketMath ](https://user-images.githubusercontent.com/83249731/134855213-af958f90-f584-47f3-8d32-6893f596ee5c.png)
+
+
+* **Problemas encontrados**
+
+Aunque la mayoría de los problemas presentes en el proyecto se dieron por parte del código y su resolución, tuvimos inconvenientes con github, dado que en ciertos casos habían conflictos prensentes en los merge quue se realizaban.
+
+Una de las complicaciones mas grandes que se presentaron a la hora de realizar el proyecto fue el uso de diferentes IDE´S dado que unos se estaba trabajando en vscode y en Intellij a la vez, lo que generaba carpetas de archivos internos provenientes de dos ides diferentes y a la hora de mezclar  el .idea con el .vscode, no se podía compilar el proyecto.
+
+Se tuvo que exportar todo el proyecto a un IDE con una extencion diferente, dado que cuando se empezó se guardó en un JAVA propocionado por IntelliJ, pero mas tarde el grupo de trabajo se dio cuenta de que para poder pasar objetos por Json, se necesitaban usar dependencias propias de un proyecto con extencion MAVEN, por lo que eso hizo que la elavoración del proyecto se atrasara considerablemente.
 ## Conclusiones
 
 **1.** Al realizar la documentación interna utilizando la herramienta de JavaDocs, se reconoce la importancia de hacerla lo mas clara y lo más detallada posible, ya que es necesario para el entendimiento de las demás personas a la hora de leer el código realizado, teniendo una vista de los constructores, variables y metodos presentes en cada clase.
