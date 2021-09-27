@@ -58,7 +58,7 @@ public class VentanaPrincipal implements ActionListener {
 
         BotonJugar.setFocusable(false);
         BotonJugar.addActionListener(this);
-        BotonJugar.setBounds(140, 300, 200, 40);
+        BotonJugar.setBounds(140, 400, 200, 40);
 
         BotonUnirse.setFocusable(false);
         BotonUnirse.addActionListener(this);
@@ -81,8 +81,8 @@ public class VentanaPrincipal implements ActionListener {
         ventanap.setLayout(null);
         ventanap.setVisible(true);
         ventanap.add(BotonJugar);
-        ventanap.add(BotonAbout);
-        ventanap.add(BotonInstrucciones);
+        //ventanap.add(BotonAbout);
+        //ventanap.add(BotonInstrucciones);
         ventanap.add(BotonCrear);
         ventanap.add(BotonUnirse);
         ventanap.add(NombreJugador);
