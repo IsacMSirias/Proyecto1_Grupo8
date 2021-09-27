@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aaf872a9-5b03-42fb-8ee2-9ab124bbb442" name="Default Changelist" comment="Prueba">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/VentanaAbout.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/VentanaInstrucciones.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/VentanaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/VentanaPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/VentanaReto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/VentanaReto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Servidor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,19 +77,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -116,6 +100,7 @@
       <workItem from="1632455782895" duration="9381000" />
       <workItem from="1632532189747" duration="1687000" />
       <workItem from="1632712120205" duration="310000" />
+      <workItem from="1632781464199" duration="2931000" />
     </task>
     <task id="LOCAL-00001" summary="Quinta versión">
       <created>1632458265520</created>

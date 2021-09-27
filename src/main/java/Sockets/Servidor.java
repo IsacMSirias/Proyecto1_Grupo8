@@ -12,6 +12,7 @@ import DoubleLinked.DoubleNode;
 import DoubleLinked.DoublyLinkedList;
 import GUI.VentanaJuego;
 import GUI.VentanaPrincipal;
+import GUI.VentanaReto;
 
 /**
  * Esta clase maneja la generación del servidor
@@ -30,6 +31,8 @@ public class Servidor implements Runnable {
     public static String Nombrejugador2;
     public static int varPos1;
     public static int varPos2;
+    public static String ActOper;
+    public static int res;
 
     /**
      * Este método corre el servidor
@@ -62,6 +65,9 @@ public class Servidor implements Runnable {
 
                 // output.writeUTF(Json.generateString(Json.toJson(board), false));
 
+                DoubleNode Node = board.head;
+
+
                 while (true) {
 
                     varPos2 = input.readInt();
@@ -70,6 +76,24 @@ public class Servidor implements Runnable {
 
                     VentanaJuego.Posicion1.setText("Posicion: "+ varPos1);
                     VentanaJuego.Posicion2.setText("Posicion: "+ varPos2);
+
+                    for ( int i = 0; i > VentanaJuego.varNumDado; i ++){
+                        Node = Node.getNext();
+                    }
+
+                    if (Node.getField().equals("Reto")) {
+                        int a = Node.getA();
+                        int b = Node.getB();
+
+                        switch (Node.getOperation()) {
+                            case "+" -> VentanaReto.RespuestaJugador = Integer.toString(a + b);
+                            case "-" -> VentanaReto.RespuestaJugador = Integer.toString(a - b);
+                            case "*" -> VentanaReto.RespuestaJugador = Integer.toString(a * b);
+                            case "/" -> VentanaReto.RespuestaJugador = Integer.toString(a / b);
+                        }
+                        VentanaReto.operacion.setText(a + Node.getOperation() + b);
+                    }
+                    
                 }
             }
         } catch (IOException e) {

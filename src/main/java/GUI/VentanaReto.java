@@ -10,11 +10,12 @@ import java.awt.event.ActionListener;
 public class VentanaReto implements ActionListener {
 
     JFrame ventanaReto = new JFrame();
-    JLabel operacion = new JLabel();
+    public static JLabel operacion = new JLabel();
     JTextField Respuesta = new JTextField();
     JButton enviar = new JButton();
 
-    String respuesta = "";
+    public static String RespuestaJugador;
+    public static String Operacion = "";
 
     public VentanaReto() {
 
@@ -26,7 +27,7 @@ public class VentanaReto implements ActionListener {
         ventanaReto.setResizable(false);
         ventanaReto.setTitle("R e t o ");
 
-        operacion.setText("Daniel papi");
+        operacion.setText(Operacion);
         operacion.setBounds(77, 10, 100, 25);
         operacion.setFont(new Font("cooper black", 0, 15));
 
@@ -44,13 +45,11 @@ public class VentanaReto implements ActionListener {
         ventanaReto.add(enviar);
 
 
-
     }
-
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        respuesta = Respuesta.getText();
+        RespuestaJugador = Respuesta.getText();
     }
 }
