@@ -100,14 +100,6 @@ public class VentanaPrincipal implements ActionListener {
             running = true;
             VentanaJuego ventanaJuego = new VentanaJuego();
         }
-        if (e.getSource() == BotonAbout) {
-            ventanap.dispose();
-            VentanaAbout ventanaAb = new VentanaAbout();
-        }
-        if (e.getSource() == BotonInstrucciones) {
-            ventanap.dispose();
-            VentanaInstrucciones ventanaInstrucciones = new VentanaInstrucciones();
-        }
         if (e.getSource() == BotonCrear) {
             conexion = "servidor";
             Nombre = Usertxtbox.getText();
