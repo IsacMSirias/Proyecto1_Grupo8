@@ -11,11 +11,11 @@ public class VentanaReto implements ActionListener {
 
     JFrame ventanaReto = new JFrame();
     public static JLabel operacion = new JLabel();
-    JTextField Respuesta = new JTextField();
+    JTextField respuestaJugador = new JTextField();
     JButton enviar = new JButton();
 
-    public static String RespuestaJugador;
     public static String Operacion = "";
+    public static String respuesta;
 
     public VentanaReto() {
 
@@ -31,8 +31,8 @@ public class VentanaReto implements ActionListener {
         operacion.setBounds(77, 10, 100, 25);
         operacion.setFont(new Font("cooper black", 0, 15));
 
-        Respuesta.setBounds(42, 50, 150, 25);
-        Respuesta.setFont(new Font("cooper black", 0, 15));
+        respuestaJugador.setBounds(42, 50, 150, 25);
+        respuestaJugador.setFont(new Font("cooper black", 0, 15));
 
         enviar.setFocusable(false);
         enviar.addActionListener(this);
@@ -41,7 +41,7 @@ public class VentanaReto implements ActionListener {
         enviar.setText("Enviar");
 
         ventanaReto.add(operacion);
-        ventanaReto.add(Respuesta);
+        ventanaReto.add(respuestaJugador);
         ventanaReto.add(enviar);
 
 
@@ -49,7 +49,5 @@ public class VentanaReto implements ActionListener {
 
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        RespuestaJugador = Respuesta.getText();
-    }
+    public void actionPerformed(ActionEvent e) {respuesta = respuestaJugador.getText();}
 }

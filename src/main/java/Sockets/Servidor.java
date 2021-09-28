@@ -4,7 +4,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-
+import java.util.Objects;
 
 
 import BoardGeneration.ListGeneration;
@@ -33,6 +33,7 @@ public class Servidor implements Runnable {
     public static int varPos2;
     public static String ActOper;
     public static int res;
+    private String respuesta;
 
     /**
      * Este método corre el servidor
@@ -70,14 +71,14 @@ public class Servidor implements Runnable {
 
                 while (true) {
 
+                    // Recibimos y enviamos la posición
                     varPos2 = input.readInt();
-
                     output.writeInt(varPos1);
 
                     VentanaJuego.Posicion1.setText("Posicion: "+ varPos1);
                     VentanaJuego.Posicion2.setText("Posicion: "+ varPos2);
 
-                    for ( int i = 0; i > VentanaJuego.varNumDado; i ++){
+                    for (int i = 0; i > varPos1; i ++){
                         Node = Node.getNext();
                     }
 
@@ -86,12 +87,19 @@ public class Servidor implements Runnable {
                         int b = Node.getB();
 
                         switch (Node.getOperation()) {
-                            case "+" -> VentanaReto.RespuestaJugador = Integer.toString(a + b);
-                            case "-" -> VentanaReto.RespuestaJugador = Integer.toString(a - b);
-                            case "*" -> VentanaReto.RespuestaJugador = Integer.toString(a * b);
-                            case "/" -> VentanaReto.RespuestaJugador = Integer.toString(a / b);
+                            case "+" -> respuesta = Integer.toString(a + b);
+                            case "-" -> respuesta = Integer.toString(a - b);
+                            case "*" -> respuesta = Integer.toString(a * b);
+                            case "/" -> respuesta = Integer.toString(a / b);
                         }
                         VentanaReto.operacion.setText(a + Node.getOperation() + b);
+                        if (Objects.equals(VentanaReto.respuesta, respuesta)){
+                            break; // averiguar con isac la parte gráfica
+                        }
+                    } else if (Node.getField().equals("Trampa")) {
+                        varPos1 -= Node.getMovement();
+                    } else if (Node.getField().equals("Tunel")) {
+                        varPos1 += Node.getMovement();
                     }
                     
                 }
