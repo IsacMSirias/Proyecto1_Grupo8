@@ -29,15 +29,15 @@ public class ListGeneration {
                 } else if (num_opt == 2) {
                     opt = "*";
                 } else if (num_opt == 3) {
-                    opt = "/";
+                    opt = "div";
                 }
                 board.addFieldAtEnd("Reto", opt, random.nextInt(49)+1, random.nextInt(49)+1, 0);
                 this.casillas_reto++;
             } else if (num == 1 && casillas_trampa < 4) {
-                board.addFieldAtEnd("Trampa", null, 0, 0, random.nextInt(2)+1);
+                board.addFieldAtEnd("Trampa", null, 0, 0, random.nextInt(3)+1);
                 this.casillas_trampa++;
             } else if (num == 2 && casillas_tunel < 4) {
-                board.addFieldAtEnd("Tunel", null, 0, 0, random.nextInt(2)+1);
+                board.addFieldAtEnd("Tunel", null, 0, 0, random.nextInt(3)+1);
                 this.casillas_tunel++;
             } else {
                 if (this.casillas_reto < 8) {
@@ -50,15 +50,15 @@ public class ListGeneration {
                     } else if (num_opt == 2) {
                         opt = "*";
                     } else if (num_opt == 3) {
-                        opt = "/";
+                        opt = "div";
                     }
                     board.addFieldAtEnd("Reto", opt, random.nextInt(49)+1, random.nextInt(49)+1, 0);
                     this.casillas_reto++;
                 } else if (casillas_trampa < 4) {
-                    board.addFieldAtEnd("Trampa", null, 0, 0, random.nextInt(2)+1);
+                    board.addFieldAtEnd("Trampa", null, 0, 0, random.nextInt(3)+1);
                     this.casillas_trampa++;
                 } else if (casillas_tunel < 4) {
-                    board.addFieldAtEnd("Tunel", null, 0, 0, random.nextInt(2)+1);
+                    board.addFieldAtEnd("Tunel", null, 0, 0, random.nextInt(3)+1);
                     this.casillas_tunel++;
                 }
             }

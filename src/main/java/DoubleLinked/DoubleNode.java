@@ -2,13 +2,13 @@ package DoubleLinked;
 
 public class DoubleNode {
 
-    public DoubleNode prev;
-    public DoubleNode next;
-    public String field;
-    public String operation;
-    public int movement;
-    public int a;
-    public int b;
+    DoubleNode prev;
+    DoubleNode next;
+    String field;
+    String operation;
+    int movement;
+    int a;
+    int b;
 
     /**
      * Constructor con siete argumentos.

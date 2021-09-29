@@ -34,6 +34,9 @@ public class Servidor implements Runnable {
     public static String ActOper;
     public static int res;
     private String respuesta;
+    public static DoublyLinkedList board;
+    public static DoubleNode campo;
+    public static int contador = 1;
 
     /**
      * Este método corre el servidor
@@ -46,8 +49,7 @@ public class Servidor implements Runnable {
 
             //genero la lista para el tablero
             ListGeneration list = new ListGeneration();
-            DoublyLinkedList board = list.random();
-            DoubleNode node = new DoubleNode(null, "Reto", "+", 50, 50, 0, null);
+            board = list.random();
             //Siempre estara escuchando peticiones
             while (true) {
                 //Espero a que un cliente se conecte
@@ -64,10 +66,11 @@ public class Servidor implements Runnable {
                 //Le envio un mensaje
                 output.writeUTF(Nombrejugador1);
 
-                // output.writeUTF(Json.generateString(Json.toJson(board), false));
+                campo = board.head;
+
+                ListFileWrite.WriteValues();
 
                 DoubleNode Node = board.head;
-
 
                 while (true) {
 

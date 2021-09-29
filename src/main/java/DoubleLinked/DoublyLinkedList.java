@@ -34,7 +34,7 @@ public class DoublyLinkedList {
      * @param mvt Movimientos
      */
     public void addFieldAtEnd(String str, String opt, int num1, int num2, int mvt){
-        DoubleNode n = new DoubleNode(tail, str, opt, num1, num1, mvt, null);
+        DoubleNode n = new DoubleNode(tail, str, opt, num1, num2, mvt, null);
         if(isEmpty()){
             head = tail = n;
         }else{
