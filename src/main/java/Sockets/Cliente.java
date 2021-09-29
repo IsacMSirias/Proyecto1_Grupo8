@@ -47,10 +47,14 @@ public class Cliente implements Runnable {
             //Recibo el mensaje del servidor
             Nombrejugador1 = input.readUTF();
 
+
             System.out.println(Nombrejugador1);
 
             //String head = input.readUTF();
             //System.out.println(head);
+
+            ListFileRead.ReadValues();
+            System.out.println(ListFileRead.casilla1);
 
             while (true){
                 output.writeInt(varPos2);

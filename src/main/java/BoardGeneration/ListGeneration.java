@@ -29,7 +29,7 @@ public class ListGeneration {
                 } else if (num_opt == 2) {
                     opt = "*";
                 } else if (num_opt == 3) {
-                    opt = "div";
+                    opt = "/";
                 }
                 board.addFieldAtEnd("Reto", opt, random.nextInt(49)+1, random.nextInt(49)+1, 0);
                 this.casillas_reto++;
@@ -50,7 +50,7 @@ public class ListGeneration {
                     } else if (num_opt == 2) {
                         opt = "*";
                     } else if (num_opt == 3) {
-                        opt = "div";
+                        opt = "/";
                     }
                     board.addFieldAtEnd("Reto", opt, random.nextInt(49)+1, random.nextInt(49)+1, 0);
                     this.casillas_reto++;
