@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aaf872a9-5b03-42fb-8ee2-9ab124bbb442" name="Default Changelist" comment="Prueba">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BoardGeneration/ListGeneration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BoardGeneration/ListGeneration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Jsontxt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Jsontxt.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/ListFileRead.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/ListFileRead.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Servidor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Sockets/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sockets/Servidor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Sockets/ListFileRead.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sockets/ListFileRead.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +92,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -125,6 +133,7 @@
       <workItem from="1632850010608" duration="592000" />
       <workItem from="1632877744329" duration="713000" />
       <workItem from="1632884000534" duration="5545000" />
+      <workItem from="1632971232579" duration="360000" />
     </task>
     <task id="LOCAL-00001" summary="Quinta versión">
       <created>1632458265520</created>

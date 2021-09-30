@@ -81,11 +81,11 @@ public class Servidor implements Runnable {
                     VentanaJuego.Posicion1.setText("Posicion: "+ varPos1);
                     VentanaJuego.Posicion2.setText("Posicion: "+ varPos2);
 
-                    /*for (int i = 0; i >= varPos1; i ++){
+                    for (int i = 0; i >= varPos1; i ++){
                         Node = Node.getNext();
-                    }*/
+                    }
 
-                    /*if (tmp_varpos1 == varPos1) {
+                    if (tmp_varpos1 == varPos1) {
                         if (Node.getField().equals("Reto")) {
                             int a = Node.getA();
                             int b = Node.getB();
@@ -106,9 +106,8 @@ public class Servidor implements Runnable {
                         } else if (Node.getField().equals("Tunel")) {
                             varPos1 += Node.getMovement();
                         }
-                    }*/
+                    }
                     tmp_varpos1 = varPos1;
-                    
                 }
             }
         } catch (IOException e) {
