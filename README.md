@@ -31,8 +31,7 @@ Esta casilla funciona de la misma manera que la de túnel, pero en vez de avanza
 
 ## Diagrama de clases
 
-![UMLSocketMath ](https://user-images.githubusercontent.com/83249731/134855213-af958f90-f584-47f3-8d32-6893f596ee5c.png)
-
+![UMLDiagram](https://user-images.githubusercontent.com/83249731/135375111-575b3c59-d05f-4e16-85e7-929028b9edcb.png)
 ## Lista doblemente enlazada
 
 Para la funcionalidad de las casillas se utilizó una lista doblemente enlazada. Esta consta de nodos, que para efectos de esta implementación contienen el nombre del tipo de casilla (sea reto, túnel o trampa) y la información que necesita cada tipo de casilla para su funcionamiento, como la operación de una casilla reto o la cantidad de espacios que avanza el jugador al caer en una casilla túnel o trampa. Además, cada nodo contiene los datos que indican dónde se encuentra en la memoria el nodo que le sigue y el nodo que le antecede. Esto se hace para que el jugador pueda moverse a las casillas que le siguen y devolverse cuando sea necesario.
