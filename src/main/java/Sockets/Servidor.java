@@ -70,8 +70,8 @@ public class Servidor implements Runnable {
 
                 ListFileWrite.WriteValues();
 
-                DoubleNode Node = board.head;
-
+                //DoubleNode Node = board.head;
+                campo = board.head;
                 while (true) {
 
                     // Recibimos y enviamos la posición
@@ -81,11 +81,14 @@ public class Servidor implements Runnable {
                     VentanaJuego.Posicion1.setText("Posicion: "+ varPos1);
                     VentanaJuego.Posicion2.setText("Posicion: "+ varPos2);
 
-                    for (int i = 1; i <= varPos1; i++){
-                        Node = Node.getNext();
+                    while (campo != null) {
+                        campo = campo.getNext();
+                    }
+                    for (int i = 0; i < 4; i++) {
+                        System.out.println("gonorrea");
                     }
 
-                    if (tmp_varpos1 == varPos1) {
+                    /*if (tmp_varpos1 == varPos1) {
                         if (Node.getField().equals("Reto")) {
                             int a = Node.getA();
                             int b = Node.getB();
@@ -110,7 +113,7 @@ public class Servidor implements Runnable {
                             varPos1 += Node.getMovement();
                         }
                     }
-                    tmp_varpos1 = varPos1;
+                    tmp_varpos1 = varPos1;*/
                 }
             }
         } catch (IOException e) {
