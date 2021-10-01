@@ -37,7 +37,7 @@ public class Servidor implements Runnable {
     public static DoublyLinkedList board;
     public static DoubleNode campo;
     public static int contador = 1;
-    private int tmp_varpos1 = 0;
+    private int tmp_varpos1 = -1;
     /**
      * Este método corre el servidor
      */
@@ -81,7 +81,7 @@ public class Servidor implements Runnable {
                     VentanaJuego.Posicion1.setText("Posicion: "+ varPos1);
                     VentanaJuego.Posicion2.setText("Posicion: "+ varPos2);
 
-                    for (int i = 0; i >= varPos1; i ++){
+                    for (int i = 1; i <= varPos1; i++){
                         Node = Node.getNext();
                     }
 
@@ -103,6 +103,9 @@ public class Servidor implements Runnable {
                             }
                         } else if (Node.getField().equals("Trampa")) {
                             varPos1 -= Node.getMovement();
+                            if (varPos1 < 0) {
+                                varPos1 = 0;
+                            }
                         } else if (Node.getField().equals("Tunel")) {
                             varPos1 += Node.getMovement();
                         }

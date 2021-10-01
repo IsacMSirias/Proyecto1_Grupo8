@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import DoubleLinked.DoubleNode;
+import DoubleLinked.DoublyLinkedList;
 import GUI.VentanaJuego;
 import GUI.VentanaPrincipal;
 
@@ -27,6 +28,7 @@ public class Cliente implements Runnable {
     DataInputStream input;
     public static String Nombrejugador1;
     public static String Nombrejugador2 = VentanaPrincipal.Nombre2;
+    public static DoublyLinkedList board = new DoublyLinkedList();;
     public static int varPos1;
     public static int varPos2;
 
@@ -54,7 +56,6 @@ public class Cliente implements Runnable {
             //System.out.println(head);
 
             ListFileRead.ReadValues();
-            System.out.println(ListFileRead.casilla1);
 
             while (true){
                 output.writeInt(varPos2);

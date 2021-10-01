@@ -6,24 +6,11 @@ import org.json.simple.parser.ParseException;
 import java.io.FileReader;
 import java.io.IOException;
 
+import static Sockets.Cliente.board;
+
 
 public class ListFileRead {
-    public static JSONArray casilla1;
-    public static JSONArray casilla2;
-    public static JSONArray casilla3;
-    public static JSONArray casilla4;
-    public static JSONArray casilla5;
-    public static JSONArray casilla6;
-    public static JSONArray casilla7;
-    public static JSONArray casilla8;
-    public static JSONArray casilla9;
-    public static JSONArray casilla10;
-    public static JSONArray casilla11;
-    public static JSONArray casilla12;
-    public static JSONArray casilla13;
-    public static JSONArray casilla14;
-    public static JSONArray casilla15;
-    public static JSONArray casilla16;
+    public static JSONArray casilla;
 
     public static void ReadValues() {
 
@@ -35,23 +22,11 @@ public class ListFileRead {
 
             JSONObject jsonObject = (JSONObject) obj;
             System.out.println(jsonObject);
-            casilla1 = (JSONArray) jsonObject.get("Casilla 1");
-            casilla2 = (JSONArray) jsonObject.get("Casilla 2");
-            casilla3 = (JSONArray) jsonObject.get("Casilla 3");
-            casilla4 = (JSONArray) jsonObject.get("Casilla 4");
-            casilla5 = (JSONArray) jsonObject.get("Casilla 5");
-            casilla6 = (JSONArray) jsonObject.get("Casilla 6");
-            casilla7 = (JSONArray) jsonObject.get("Casilla 7");
-            casilla8 = (JSONArray) jsonObject.get("Casilla 8");
-            casilla9 = (JSONArray) jsonObject.get("Casilla 9");
-            casilla10 = (JSONArray) jsonObject.get("Casilla 10");
-            casilla11 = (JSONArray) jsonObject.get("Casilla 11");
-            casilla12 = (JSONArray) jsonObject.get("Casilla 12");
-            casilla13 = (JSONArray) jsonObject.get("Casilla 13");
-            casilla14 = (JSONArray) jsonObject.get("Casilla 14");
-            casilla15 = (JSONArray) jsonObject.get("Casilla 15");
-            casilla16 = (JSONArray) jsonObject.get("Casilla 16");
-
+            for (int i = 1; i < 17; i++) {
+                casilla = (JSONArray) jsonObject.get("Casilla " + i);
+                Cliente.board.addFieldAtEnd(String.valueOf(casilla.get(0)), String.valueOf(casilla.get(2)), Integer.parseInt(String.valueOf(casilla.get(3))), Integer.parseInt(String.valueOf(casilla.get(4))), Integer.parseInt(String.valueOf(casilla.get(1))));
+            }
+            board.display();
         } catch (ParseException | IOException e) {
             e.printStackTrace();
         }

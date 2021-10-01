@@ -21,7 +21,7 @@ public class ListGeneration {
             System.out.println(num);
             if (num == 0 && this.casillas_reto < 8) {
                 int num_opt = random.nextInt(4);
-                String opt = null;
+                String opt = "";
                 if (num_opt == 0) {
                     opt = "+";
                 } else if (num_opt == 1) {
@@ -34,15 +34,15 @@ public class ListGeneration {
                 board.addFieldAtEnd("Reto", opt, random.nextInt(49)+1, random.nextInt(49)+1, 0);
                 this.casillas_reto++;
             } else if (num == 1 && casillas_trampa < 4) {
-                board.addFieldAtEnd("Trampa", null, 0, 0, random.nextInt(3)+1);
+                board.addFieldAtEnd("Trampa", "", 0, 0, random.nextInt(3)+1);
                 this.casillas_trampa++;
             } else if (num == 2 && casillas_tunel < 4) {
-                board.addFieldAtEnd("Tunel", null, 0, 0, random.nextInt(3)+1);
+                board.addFieldAtEnd("Tunel", "", 0, 0, random.nextInt(3)+1);
                 this.casillas_tunel++;
             } else {
                 if (this.casillas_reto < 8) {
                     int num_opt = random.nextInt(4);
-                    String opt = null;
+                    String opt = "";
                     if (num_opt == 0) {
                         opt = "+";
                     } else if (num_opt == 1) {
@@ -55,10 +55,10 @@ public class ListGeneration {
                     board.addFieldAtEnd("Reto", opt, random.nextInt(49)+1, random.nextInt(49)+1, 0);
                     this.casillas_reto++;
                 } else if (casillas_trampa < 4) {
-                    board.addFieldAtEnd("Trampa", null, 0, 0, random.nextInt(3)+1);
+                    board.addFieldAtEnd("Trampa", "", 0, 0, random.nextInt(3)+1);
                     this.casillas_trampa++;
                 } else if (casillas_tunel < 4) {
-                    board.addFieldAtEnd("Tunel", null, 0, 0, random.nextInt(3)+1);
+                    board.addFieldAtEnd("Tunel", "", 0, 0, random.nextInt(3)+1);
                     this.casillas_tunel++;
                 }
             }
