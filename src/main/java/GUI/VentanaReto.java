@@ -2,6 +2,7 @@ package GUI;
 import javax.swing.*;
 
 import DoubleLinked.DoubleNode;
+import Sockets.Servidor;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -49,5 +50,24 @@ public class VentanaReto implements ActionListener {
 
 
     @Override
-    public void actionPerformed(ActionEvent e) {respuesta = respuestaJugador.getText();}
+    public void actionPerformed(ActionEvent e) {
+
+        if (e.getSource() == enviar) {
+
+            if (respuesta.equals(respuestaJugador.getText())) {
+
+                JOptionPane.showMessageDialog(null, "Respuesta correcta");
+                ventanaReto.dispose();
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "Respuesta Incorrecta");
+
+
+
+            }
+
+        }
+
+
+    }
 }
