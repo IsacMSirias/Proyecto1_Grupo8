@@ -62,8 +62,6 @@ public class VentanaReto implements ActionListener {
             } else {
                 JOptionPane.showMessageDialog(null, "Respuesta Incorrecta");
 
-
-
             }
 
         }

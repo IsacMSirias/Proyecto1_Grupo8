@@ -29,6 +29,8 @@ public class Servidor implements Runnable {
     public static String Nombrejugador2;
     public static int varPos1 = 0;
     public static int varPos2;
+    public static String CasillaServidor = "";
+    public static String CasillaCliente =  "";
     public static DoublyLinkedList board;
     public static DoubleNode Node;
     public static int contador = 1;
@@ -71,8 +73,15 @@ public class Servidor implements Runnable {
                 varPos2 = input.readInt();
                 output.writeInt(varPos1);
 
+                CasillaCliente = input.readUTF();
+                output.writeUTF(CasillaServidor);
+
                 VentanaJuego.Posicion1.setText("Posicion: "+ varPos1);
                 VentanaJuego.Posicion2.setText("Posicion: "+ varPos2);
+
+                VentanaJuego.CasillaTipo1.setText("Casilla " + CasillaServidor);
+                VentanaJuego.CasillaTipo2.setText("Casilla " + CasillaCliente);
+
             }
         } catch (IOException e) {
             e.printStackTrace();

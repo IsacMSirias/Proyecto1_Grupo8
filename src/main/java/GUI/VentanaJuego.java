@@ -11,19 +11,18 @@ import java.awt.event.ActionListener;
 import java.util.Objects;
 
 
+
 public class VentanaJuego implements ActionListener {
 
     String Nombrejugador1;
     String Nombrejugador2;
 
-    int varPocision1;
-    int varPocision2;
-
-    public static int varNumDado = 0;
-
     public static String varCasilla1 = "";
 
     public static String varCasilla2 = "";
+
+
+    public static int varNumDado = 0;
 
     JFrame ventanaj = new JFrame();
 
@@ -37,8 +36,8 @@ public class VentanaJuego implements ActionListener {
     public static JLabel Posicion1 = new JLabel();
     public static JLabel Posicion2 = new JLabel();
 
-    JLabel CasillaTipo1 = new JLabel();
-    JLabel CasillaTipo2 = new JLabel();
+    public static JLabel CasillaTipo1 = new JLabel();
+    public static JLabel CasillaTipo2 = new JLabel();
 
     JButton BotonMenu = new JButton("MENU");
     JButton BLanzarDado = new JButton("Lanzar");
@@ -46,12 +45,13 @@ public class VentanaJuego implements ActionListener {
     ImageIcon imageIcon = new ImageIcon("src/Sprites/IconMath.png");
     JLabel Tablero = new JLabel(new ImageIcon("src/Sprites/Tablero.png"));
     JLabel Dado = new JLabel(new ImageIcon("src/Sprites/Dado.png"));
-    public static boolean dado_lanzado = false;
 
     public VentanaJuego() {
         if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
             Nombrejugador1 = Servidor.Nombrejugador1;
             Nombrejugador2 = Servidor.Nombrejugador2;
+
+
         } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
             Nombrejugador1 = Cliente.Nombrejugador1;
             Nombrejugador2 = Cliente.Nombrejugador2;
@@ -144,10 +144,15 @@ public class VentanaJuego implements ActionListener {
             if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
                 Servidor.varPos1 += 1;
                 Logica.turno(Servidor.varPos1, Servidor.board.head);
+                Servidor.CasillaServidor = Logica.recorrerCasillas(Servidor.varPos1,
+                        Servidor.board.head).getField();
             } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
                 Cliente.varPos2 += 1;
-                Logica.turno(Cliente.varPos1, Cliente.board.head);
+                Logica.turno(Cliente.varPos2, Cliente.board.head);
+                Cliente.CasillaCliente = Logica.recorrerCasillas(Cliente.varPos2,
+                        Cliente.board.head).getField();
             }
+
         }
 
         else if(e.getSource() == BLanzarDado & NumRandom == 2){
@@ -156,9 +161,13 @@ public class VentanaJuego implements ActionListener {
             if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
                 Servidor.varPos1 += 2;
                 Logica.turno(Servidor.varPos1, Servidor.board.head);
+                Servidor.CasillaServidor = Logica.recorrerCasillas(Servidor.varPos1,
+                        Servidor.board.head).getField();
             } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
                 Cliente.varPos2 += 2;
-                Logica.turno(Cliente.varPos1, Cliente.board.head);
+                Logica.turno(Cliente.varPos2, Cliente.board.head);
+                Cliente.CasillaCliente = Logica.recorrerCasillas(Cliente.varPos2,
+                        Cliente.board.head).getField();
             }
         }
 
@@ -169,9 +178,13 @@ public class VentanaJuego implements ActionListener {
             if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
                 Servidor.varPos1 += 3;
                 Logica.turno(Servidor.varPos1, Servidor.board.head);
+                Servidor.CasillaServidor = Logica.recorrerCasillas(Servidor.varPos1,
+                        Servidor.board.head).getField();
             } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
                 Cliente.varPos2 += 3;
-                Logica.turno(Cliente.varPos1, Cliente.board.head);
+                Logica.turno(Cliente.varPos2, Cliente.board.head);
+                Cliente.CasillaCliente = Logica.recorrerCasillas(Cliente.varPos2,
+                        Cliente.board.head).getField();
             }
         }
 

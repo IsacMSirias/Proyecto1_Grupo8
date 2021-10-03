@@ -12,8 +12,11 @@ public class Logica {
 
     public static DoubleNode recorrerCasillas(int pos, DoubleNode head) {
         DoubleNode node = head;
-        System.out.println(node);
-        return node.getNext();
+        for(int i = 0; i <= pos; i++) {
+            node = node.getNext();
+            System.out.println(node.getField());
+        }
+        return node;
     }
 
     public static void MandarReto(DoubleNode Node) {
@@ -21,15 +24,18 @@ public class Logica {
         int a = Node.getA();
         int b = Node.getB();
 
-        String respuesta = VentanaReto.respuesta;
+        String respuesta;
 
         switch (Node.getOperation()) {
             case "+" -> respuesta = Integer.toString(a + b);
             case "-" -> respuesta = Integer.toString(a - b);
             case "*" -> respuesta = Integer.toString(a * b);
             case "/" -> respuesta = Integer.toString(a / b);
+            default -> throw new IllegalStateException("Unexpected value: " + Node.getOperation());
         }
+        VentanaReto.respuesta = respuesta;
         VentanaReto.Operacion = a + Node.getOperation() + b;
+        VentanaReto reto = new VentanaReto();
     }
 
     public static void turno(int num, DoubleNode head) {
@@ -42,12 +48,14 @@ public class Logica {
             } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
                 Cliente.varPos2 -= node.getMovement();
             }
+            System.out.println("Trampa" + node.getMovement());
         } else if (Objects.equals(node.getField(), "Tunel")) {
             if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
                 Servidor.varPos1 += node.getMovement();
             } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
                 Cliente.varPos2 += node.getMovement();
             }
+            System.out.println("Tunel" + node.getMovement());
         }
     }
 
