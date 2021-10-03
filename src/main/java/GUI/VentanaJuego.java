@@ -3,6 +3,7 @@ import javax.management.RuntimeMBeanException;
 import javax.swing.*;
 
 import Sockets.Cliente;
+import Sockets.Logica;
 import Sockets.Servidor;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -139,38 +140,41 @@ public class VentanaJuego implements ActionListener {
         int NumRandom = (int) (Math.random() * 3 + 1);
         if(e.getSource() == BLanzarDado & NumRandom == 1){
             varNumDado = 1;
+            Espacio.setText(": 1");
             if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
                 Servidor.varPos1 += 1;
+                Logica.turno(Servidor.varPos1, Servidor.board.head);
             } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
                 Cliente.varPos2 += 1;
+                Logica.turno(Cliente.varPos1, Cliente.board.head);
             }
-            Espacio.setText(": 1");
-            dado_lanzado = true;
-
         }
 
         else if(e.getSource() == BLanzarDado & NumRandom == 2){
             varNumDado = 2;
+            Espacio.setText(": 2");
             if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
                 Servidor.varPos1 += 2;
+                Logica.turno(Servidor.varPos1, Servidor.board.head);
             } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
                 Cliente.varPos2 += 2;
+                Logica.turno(Cliente.varPos1, Cliente.board.head);
             }
-            Espacio.setText(": 2");
-            dado_lanzado = true;
         }
 
 
         else if(e.getSource() == BLanzarDado & NumRandom == 3){
             varNumDado = 3;
+            Espacio.setText(": 3");
             if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
                 Servidor.varPos1 += 3;
+                Logica.turno(Servidor.varPos1, Servidor.board.head);
             } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
                 Cliente.varPos2 += 3;
+                Logica.turno(Cliente.varPos1, Cliente.board.head);
             }
-            Espacio.setText(": 3");
-            dado_lanzado = true;
         }
+
 
         if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
             if (Servidor.varPos1 >= 16 || Servidor.varPos2 >= 16){
