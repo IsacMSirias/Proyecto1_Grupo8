@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,6 +14,7 @@ import DoubleLinked.DoubleNode;
 import DoubleLinked.DoublyLinkedList;
 import GUI.VentanaJuego;
 import GUI.VentanaPrincipal;
+import GUI.VentanaReto;
 
 /**
  * Esta clase maneja la generación del cliente
@@ -30,7 +32,11 @@ public class Cliente implements Runnable {
     public static String Nombrejugador2 = VentanaPrincipal.Nombre2;
     public static DoublyLinkedList board = new DoublyLinkedList();;
     public static int varPos1;
-    public static int varPos2;
+    public static int varPos2 = 0;
+    public static DoubleNode Node;
+    private boolean turno = true;
+    private String respuesta;
+    private boolean turno_servidor = true;
 
     /**
      * Este metodo corre el cliente
@@ -52,18 +58,16 @@ public class Cliente implements Runnable {
 
             System.out.println(Nombrejugador1);
 
-            //String head = input.readUTF();
-            //System.out.println(head);
-
             ListFileRead.ReadValues();
 
             while (true){
-                output.writeInt(varPos2);
 
+                output.writeInt(varPos2);
                 varPos1 = input.readInt();
 
                 VentanaJuego.Posicion1.setText("Posicion: "+ varPos1);
                 VentanaJuego.Posicion2.setText("Posicion: "+ varPos2);
+
             }
 
         } catch (IOException e) {

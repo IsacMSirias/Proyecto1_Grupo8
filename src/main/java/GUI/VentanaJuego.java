@@ -45,6 +45,7 @@ public class VentanaJuego implements ActionListener {
     ImageIcon imageIcon = new ImageIcon("src/Sprites/IconMath.png");
     JLabel Tablero = new JLabel(new ImageIcon("src/Sprites/Tablero.png"));
     JLabel Dado = new JLabel(new ImageIcon("src/Sprites/Dado.png"));
+    public static boolean dado_lanzado = false;
 
     public VentanaJuego() {
         if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
@@ -136,7 +137,7 @@ public class VentanaJuego implements ActionListener {
         }
 
         int NumRandom = (int) (Math.random() * 3 + 1);
-        if(e.getSource() == BLanzarDado & NumRandom == 1 & varNumDado <= 16){
+        if(e.getSource() == BLanzarDado & NumRandom == 1){
             varNumDado = 1;
             if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
                 Servidor.varPos1 += 1;
@@ -144,10 +145,11 @@ public class VentanaJuego implements ActionListener {
                 Cliente.varPos2 += 1;
             }
             Espacio.setText(": 1");
+            dado_lanzado = true;
 
         }
 
-        else if(e.getSource() == BLanzarDado & NumRandom == 2 & varNumDado <= 16){
+        else if(e.getSource() == BLanzarDado & NumRandom == 2){
             varNumDado = 2;
             if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
                 Servidor.varPos1 += 2;
@@ -155,11 +157,11 @@ public class VentanaJuego implements ActionListener {
                 Cliente.varPos2 += 2;
             }
             Espacio.setText(": 2");
-
+            dado_lanzado = true;
         }
 
 
-        else if(e.getSource() == BLanzarDado & NumRandom == 3 & varNumDado <= 16){
+        else if(e.getSource() == BLanzarDado & NumRandom == 3){
             varNumDado = 3;
             if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
                 Servidor.varPos1 += 3;
@@ -167,10 +169,7 @@ public class VentanaJuego implements ActionListener {
                 Cliente.varPos2 += 3;
             }
             Espacio.setText(": 3");
-            Posicion1.setText("Posicion: "+ Servidor.varPos1);
-            Posicion2.setText("Posicion: "+ Servidor.varPos2);
-
-
+            dado_lanzado = true;
         }
 
         if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {

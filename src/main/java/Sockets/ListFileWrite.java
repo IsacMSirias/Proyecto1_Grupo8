@@ -15,15 +15,15 @@ public class ListFileWrite {
     public static void WriteValues() {
         JSONObject obj = new JSONObject();
         JSONArray listadatos;
-        while(Servidor.campo != null) {
+        while(Servidor.Node != null) {
             listadatos = new JSONArray();
-            listadatos.add(Servidor.campo.getField());
-            listadatos.add(Servidor.campo.getMovement());
-            listadatos.add(Servidor.campo.getOperation());
-            listadatos.add(Servidor.campo.getA());
-            listadatos.add(Servidor.campo.getB());
+            listadatos.add(Servidor.Node.getField());
+            listadatos.add(Servidor.Node.getMovement());
+            listadatos.add(Servidor.Node.getOperation());
+            listadatos.add(Servidor.Node.getA());
+            listadatos.add(Servidor.Node.getB());
             obj.put("Casilla "+Servidor.contador, listadatos);
-            Servidor.campo = Servidor.campo.getNext();
+            Servidor.Node = Servidor.Node.getNext();
             Servidor.contador++;
         }
 
