@@ -14,6 +14,8 @@ import GUI.VentanaJuego;
 import GUI.VentanaPrincipal;
 import GUI.VentanaReto;
 
+import javax.swing.*;
+
 /**
  * Esta clase maneja la generación del servidor
  */
@@ -33,7 +35,8 @@ public class Servidor implements Runnable {
     public static String CasillaCliente =  "";
     public static DoublyLinkedList board;
     public static DoubleNode Node;
-    public static int contador = 1;
+    public static int contador = 0;
+    private boolean casillaterminada = true;
 
     /**
      * Este método corre el servidor
@@ -47,7 +50,6 @@ public class Servidor implements Runnable {
             //genero la lista para el tablero
             ListGeneration list = new ListGeneration();
             board = list.random();
-            //Siempre estara escuchando peticiones
 
             //Espero a que un cliente se conecte
             socket = servidor.accept();
@@ -76,11 +78,32 @@ public class Servidor implements Runnable {
                 CasillaCliente = input.readUTF();
                 output.writeUTF(CasillaServidor);
 
+                // se setea la posicion del los jugadores
                 VentanaJuego.Posicion1.setText("Posicion: "+ varPos1);
                 VentanaJuego.Posicion2.setText("Posicion: "+ varPos2);
 
+                // se setea la el tipo de casilla actual
                 VentanaJuego.CasillaTipo1.setText("Casilla " + CasillaServidor);
                 VentanaJuego.CasillaTipo2.setText("Casilla " + CasillaCliente);
+
+                if (casillaterminada) {
+                    if (varPos1 >= 16) {
+                        varPos1 = 16;
+                        VentanaJuego.Posicion1.setText("Posicion: "+ varPos1);
+                        JOptionPane.showMessageDialog(null, "¡Ganaste!");
+                        VentanaJuego.ventanaj.dispose();
+                        VentanaPrincipal.running = false;
+                        casillaterminada = false;
+
+                    } else if (varPos2 >= 16) {
+                        varPos2 = 16;
+                        VentanaJuego.Posicion2.setText("Posicion: "+ varPos2);
+                        JOptionPane.showMessageDialog(null, "¡Perdiste!");
+                        VentanaJuego.ventanaj.dispose();
+                        VentanaPrincipal.running = false;
+                        casillaterminada = false;
+                    }
+                }
 
             }
         } catch (IOException e) {

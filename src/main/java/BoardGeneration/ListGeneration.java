@@ -16,6 +16,7 @@ public class ListGeneration {
      */
     public DoublyLinkedList random() {
         Random random = new Random();
+        board.addFieldAtEnd("Inicio", "", 0, 0, 0);
         for (int i = 0; i < 16; i++) {
             int num = random.nextInt(3);
             System.out.println(num);
@@ -63,6 +64,7 @@ public class ListGeneration {
                 }
             }
         }
+        board.addFieldAtEnd("Final", "", 0, 0, 0);
         System.out.println(board.countBNodes());
         board.display();
         return board;

@@ -16,6 +16,8 @@ import GUI.VentanaJuego;
 import GUI.VentanaPrincipal;
 import GUI.VentanaReto;
 
+import javax.swing.*;
+
 /**
  * Esta clase maneja la generación del cliente
  */
@@ -37,7 +39,7 @@ public class Cliente implements Runnable {
     public static String CasillaServidor = "";
     public static DoubleNode Node;
     private String respuesta;
-
+    private boolean casillaterminada = true;
 
     /**
      * Este metodo corre el cliente
@@ -76,6 +78,24 @@ public class Cliente implements Runnable {
                 VentanaJuego.CasillaTipo1.setText("Casilla " + CasillaServidor);
                 VentanaJuego.CasillaTipo2.setText("Casilla " + CasillaCliente);
 
+                if (casillaterminada) {
+                    if (varPos2 >= 16) {
+                        varPos2 = 16;
+                        VentanaJuego.Posicion2.setText("Posicion: "+ varPos2);
+                        JOptionPane.showMessageDialog(null, "¡Ganaste!");
+                        VentanaJuego.ventanaj.dispose();
+                        VentanaPrincipal.running = false;
+                        casillaterminada = false;
+
+                    } else if (varPos1 >= 16) {
+                        varPos1 = 16;
+                        VentanaJuego.Posicion1.setText("Posicion: "+ varPos1);
+                        JOptionPane.showMessageDialog(null, "¡Perdiste!");
+                        VentanaJuego.ventanaj.dispose();
+                        VentanaPrincipal.running = false;
+                        casillaterminada = false;
+                    }
+                }
             }
 
         } catch (IOException e) {
