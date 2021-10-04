@@ -2,12 +2,15 @@ package GUI;
 import javax.management.RuntimeMBeanException;
 import javax.swing.*;
 
+import DoubleLinked.DoubleNode;
+import DoubleLinked.DoublyLinkedList;
 import Sockets.Cliente;
 import Sockets.Logica;
 import Sockets.Servidor;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 import java.util.Objects;
 
 
@@ -16,6 +19,14 @@ public class VentanaJuego implements ActionListener {
 
     String Nombrejugador1;
     String Nombrejugador2;
+
+    String[] ArrayTablero;
+
+    JLabel TableroFila1 = new JLabel();
+    JLabel TableroFila2 = new JLabel();
+    JLabel TableroFila3 = new JLabel();
+    JLabel TableroFila4 = new JLabel();
+
 
     public static String varCasilla1 = "";
 
@@ -50,11 +61,16 @@ public class VentanaJuego implements ActionListener {
         if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
             Nombrejugador1 = Servidor.Nombrejugador1;
             Nombrejugador2 = Servidor.Nombrejugador2;
+            ArrayTablero = Servidor.board.displayGrphics();
+            System.out.println(Arrays.toString(ArrayTablero));
+
 
 
         } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
             Nombrejugador1 = Cliente.Nombrejugador1;
             Nombrejugador2 = Cliente.Nombrejugador2;
+            ArrayTablero = Cliente.board.displayGrphics();
+            System.out.println(Arrays.toString(ArrayTablero));
         }
         ventanaj.setIconImage(imageIcon.getImage());
 
@@ -94,6 +110,23 @@ public class VentanaJuego implements ActionListener {
         CasillaTipo2.setBounds(300+50, 450, 200, 15);
         CasillaTipo2.setFont(new Font("cooper black", 0, 15));
 
+
+        TableroFila1.setText("Inicio" +", "+ArrayTablero[0] + ", " + ArrayTablero[1] + ", "+ ArrayTablero[2] +", "+ ArrayTablero[3]);
+        TableroFila1.setBounds(15, 550, 200, 15);
+        TableroFila1.setFont(new Font("cooper black", 0, 10));
+
+        TableroFila2.setText(ArrayTablero[4] + ", " + ArrayTablero[5] + ", "+ ArrayTablero[6] +", "+ ArrayTablero[7]);
+        TableroFila2.setBounds(15, 575, 200, 15);
+        TableroFila2.setFont(new Font("cooper black", 0, 10));
+
+        TableroFila3.setText(ArrayTablero[8] + ", " + ArrayTablero[9] + ", "+ ArrayTablero[10] +", "+ ArrayTablero[11]);
+        TableroFila3.setBounds(15, 600, 200, 15);
+        TableroFila3.setFont(new Font("cooper black", 0, 10));
+
+        TableroFila4.setText(ArrayTablero[12] + ", " + ArrayTablero[13] + ", "+ ArrayTablero[14] +", "+ ArrayTablero[15] +", "+ "Final");
+        TableroFila4.setBounds(15, 625, 200, 15);
+        TableroFila4.setFont(new Font("cooper black", 0, 10));
+
         Tablero.setBounds(137, 75,300, 299);
 
         Dado.setBounds(250, 498, 50,50);
@@ -122,7 +155,12 @@ public class VentanaJuego implements ActionListener {
         ventanaj.add(Posicion2);
         ventanaj.add(CasillaTipo1);
         ventanaj.add(CasillaTipo2);
+        ventanaj.add(TableroFila1);
+        ventanaj.add(TableroFila2);
+        ventanaj.add(TableroFila3);
+        ventanaj.add(TableroFila4);
         ventanaj.add(Dado);
+
 
         ventanaj.setLocationRelativeTo(null);
 
