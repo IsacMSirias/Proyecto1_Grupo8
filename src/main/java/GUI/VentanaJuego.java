@@ -35,7 +35,7 @@ public class VentanaJuego implements ActionListener {
 
     public static int varNumDado = 0;
 
-    public static JFrame ventanaj = new JFrame();
+    JFrame ventanaj = new JFrame();
 
     JLabel Titulo = new JLabel();
 
@@ -223,6 +223,29 @@ public class VentanaJuego implements ActionListener {
                 Logica.turno(Cliente.varPos2, Cliente.board.head);
                 Cliente.CasillaCliente = Logica.recorrerCasillas(Cliente.varPos2,
                         Cliente.board.head).getField();
+            }
+        }
+
+
+        if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
+            if (Servidor.varPos1 >= 16 || Servidor.varPos2 >= 16){
+                if (Servidor.varPos1 >= 16) {
+                    JOptionPane.showMessageDialog(null, "¡Ganaste!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "¡Perdiste!");
+                }
+                ventanaj.dispose();
+                VentanaPrincipal.running = false;
+            }
+        } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
+            if (Cliente.varPos1 >= 16 || Cliente.varPos2 >= 16){
+                if (Cliente.varPos2 >= 16) {
+                    JOptionPane.showMessageDialog(null, "¡Ganaste!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "¡Perdiste!");
+                }
+                ventanaj.dispose();
+                VentanaPrincipal.running = false;
             }
         }
 
