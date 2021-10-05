@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="48c9c4d8-6b03-45fe-ab96-49af0df08f40" name="Changes" comment="Prueba">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/VentanaReto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/VentanaReto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Jsontxt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Jsontxt.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Logica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Logica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Servidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Sockets/Logica.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sockets/Logica.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

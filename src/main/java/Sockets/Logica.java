@@ -8,6 +8,7 @@ import java.util.Objects;
 
 public class Logica {
     public static String respuesta;
+    public static boolean esperando = true;
 
     public static DoubleNode recorrerCasillas(int pos, DoubleNode head) {
         DoubleNode node = head;
@@ -18,23 +19,27 @@ public class Logica {
     }
 
     public static void MandarReto(DoubleNode Node) {
-        System.out.println("Tamo activo papi");
-        int a = Node.getA();
-        int b = Node.getB();
+        if (esperando) {
+            esperando = false;
+            System.out.println("Tamo activo papi");
+            int a = Node.getA();
+            int b = Node.getB();
 
-        switch (Node.getOperation()) {
-            case "+" -> respuesta = Integer.toString(a + b);
-            case "-" -> respuesta = Integer.toString(a - b);
-            case "*" -> respuesta = Integer.toString(a * b);
-            case "/" -> respuesta = Integer.toString(a / b);
-            default -> throw new IllegalStateException("Unexpected value: " + Node.getOperation());
+            switch (Node.getOperation()) {
+                case "+" -> respuesta = Integer.toString(a + b);
+                case "-" -> respuesta = Integer.toString(a - b);
+                case "*" -> respuesta = Integer.toString(a * b);
+                case "/" -> respuesta = Integer.toString(a / b);
+                default -> throw new IllegalStateException("Unexpected value: " + Node.getOperation());
+            }
+            VentanaReto.respuesta = respuesta;
+            VentanaReto.Operacion = a + Node.getOperation() + b;
+            VentanaReto reto = new VentanaReto();
         }
-        VentanaReto.respuesta = respuesta;
-        VentanaReto.Operacion = a + Node.getOperation() + b;
-        VentanaReto reto = new VentanaReto();
     }
 
     public static void turno(int num, DoubleNode head) {
+        Logica.esperando = true;
         DoubleNode node = recorrerCasillas(num, head);
         if(Objects.equals(node.getField(), "Reto")) {
             if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
@@ -42,7 +47,6 @@ public class Logica {
             } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
                 Cliente.varPos2++;
             }
-
         } else if (Objects.equals(node.getField(), "Trampa")) {
             if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
                 Servidor.varPos1 -= node.getMovement();
@@ -57,9 +61,7 @@ public class Logica {
                     Cliente.varPos2 = 0;
                 }
             }
-
             System.out.println("Trampa " + node.getMovement());
-
         } else if (Objects.equals(node.getField(), "Tunel")) {
             if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
                 Servidor.varPos1 += node.getMovement();

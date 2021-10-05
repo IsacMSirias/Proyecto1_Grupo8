@@ -2,6 +2,7 @@ package GUI;
 import javax.swing.*;
 
 import DoubleLinked.DoubleNode;
+import Sockets.Logica;
 import Sockets.Servidor;
 
 import java.awt.*;
@@ -61,6 +62,7 @@ public class VentanaReto implements ActionListener {
                 
             } else {
                 JOptionPane.showMessageDialog(null, "Respuesta Incorrecta");
+                ventanaReto.dispose();
 
             }
 
