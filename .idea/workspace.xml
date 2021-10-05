@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48c9c4d8-6b03-45fe-ab96-49af0df08f40" name="Changes" comment="Prueba">
+    <list default="true" id="aaf872a9-5b03-42fb-8ee2-9ab124bbb442" name="Default Changelist" comment="Prueba">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Cliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Jsontxt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Jsontxt.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Logica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Logica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Servidor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +112,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="48c9c4d8-6b03-45fe-ab96-49af0df08f40" name="Changes" comment="" />
+      <changelist id="aaf872a9-5b03-42fb-8ee2-9ab124bbb442" name="Default Changelist" comment="" />
       <created>1632429297463</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -139,9 +137,8 @@
       <workItem from="1633141264046" duration="8711000" />
       <workItem from="1633191866404" duration="384000" />
       <workItem from="1633217855346" duration="1596000" />
-      <workItem from="1633307558803" duration="10390000" />
-      <workItem from="1633357019065" duration="238000" />
-      <workItem from="1633357293780" duration="2452000" />
+      <workItem from="1633460827724" duration="161000" />
+      <workItem from="1633461034184" duration="356000" />
     </task>
     <task id="LOCAL-00001" summary="Quinta versión">
       <created>1632458265520</created>
