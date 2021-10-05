@@ -16,8 +16,8 @@ public class ListGeneration {
      */
     public DoublyLinkedList random() {
         Random random = new Random();
-        board.addFieldAtEnd("Inicio", "", 0, 0, 0);
-        for (int i = 0; i < 16; i++) {
+        board.addFieldAtFront("Inicio", "", 0, 0, 0);
+        for (int i = 0; i < 17; i++) {
             int num = random.nextInt(3);
             System.out.println(num);
             if (num == 0 && this.casillas_reto < 8) {

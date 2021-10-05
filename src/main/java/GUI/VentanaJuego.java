@@ -111,19 +111,19 @@ public class VentanaJuego implements ActionListener {
         CasillaTipo2.setFont(new Font("cooper black", 0, 15));
 
 
-        TableroFila1.setText("Inicio" +", "+ArrayTablero[0] + ", " + ArrayTablero[1] + ", "+ ArrayTablero[2] +", "+ ArrayTablero[3]);
+        TableroFila1.setText(ArrayTablero[0] +  ", " + ArrayTablero[1] + ", "+ ArrayTablero[2] +", "+ ArrayTablero[3] + ArrayTablero[4]);
         TableroFila1.setBounds(15, 550, 200, 15);
         TableroFila1.setFont(new Font("cooper black", 0, 10));
 
-        TableroFila2.setText(ArrayTablero[4] + ", " + ArrayTablero[5] + ", "+ ArrayTablero[6] +", "+ ArrayTablero[7]);
+        TableroFila2.setText(ArrayTablero[5] + ", "+ ArrayTablero[6] +", "+ ArrayTablero[7] +", "+ ArrayTablero[8]);
         TableroFila2.setBounds(15, 575, 200, 15);
         TableroFila2.setFont(new Font("cooper black", 0, 10));
 
-        TableroFila3.setText(ArrayTablero[8] + ", " + ArrayTablero[9] + ", "+ ArrayTablero[10] +", "+ ArrayTablero[11]);
+        TableroFila3.setText(ArrayTablero[9] + ", "+ ArrayTablero[10] +", "+ ArrayTablero[11]+ ArrayTablero[12]);
         TableroFila3.setBounds(15, 600, 200, 15);
         TableroFila3.setFont(new Font("cooper black", 0, 10));
 
-        TableroFila4.setText(ArrayTablero[12] + ", " + ArrayTablero[13] + ", "+ ArrayTablero[14] +", "+ ArrayTablero[15] +", "+ "Final");
+        TableroFila4.setText(ArrayTablero[13] + ", "+ ArrayTablero[14] +", "+ ArrayTablero[15] +", "+ ArrayTablero[16]);
         TableroFila4.setBounds(15, 625, 200, 15);
         TableroFila4.setFont(new Font("cooper black", 0, 10));
 

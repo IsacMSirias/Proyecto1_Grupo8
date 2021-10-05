@@ -85,6 +85,7 @@ public class Servidor implements Runnable {
                 // se setea la el tipo de casilla actual
                 VentanaJuego.CasillaTipo1.setText("Casilla " + CasillaServidor);
                 VentanaJuego.CasillaTipo2.setText("Casilla " + CasillaCliente);
+
                 if (Objects.equals(Logica.recorrerCasillas(varPos2, board.head).getField(), "Reto")){
                     Logica.MandarReto(Logica.recorrerCasillas(varPos2, board.head));
                 }
