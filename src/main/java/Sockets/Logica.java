@@ -9,6 +9,7 @@ import java.util.Objects;
 public class Logica {
     public static String respuesta;
     public static Boolean esperando = true;
+    private static boolean cont = true;
     public static DoubleNode recorrerCasillas(int pos, DoubleNode head) {
         DoubleNode node = head;
         for(int i = 0; i < pos; i++) {
@@ -43,11 +44,16 @@ public class Logica {
         DoubleNode node = recorrerCasillas(num, head);
         esperando = true;
         if(Objects.equals(node.getField(), "Reto")) {
-            if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
-                Servidor.varPos1++;
-            } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
-                Cliente.varPos2++;
+            cont = true;
+            if (cont) {
+                if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
+                    Servidor.varPos1++;
+                } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
+                    Cliente.varPos2++;
+                }
+                cont = false;
             }
+
 
         } else if (Objects.equals(node.getField(), "Trampa")) {
             if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {

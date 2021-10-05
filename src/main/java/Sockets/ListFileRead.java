@@ -22,7 +22,7 @@ public class ListFileRead {
 
             JSONObject jsonObject = (JSONObject) obj;
             System.out.println(jsonObject);
-            for (int i = 1; i < 18; i++) {
+            for (int i = 0; i < 18; i++) {
                 casilla = (JSONArray) jsonObject.get("Casilla " + i);
                 Cliente.board.addFieldAtEnd(String.valueOf(casilla.get(0)), String.valueOf(casilla.get(2)), Integer.parseInt(String.valueOf(casilla.get(3))), Integer.parseInt(String.valueOf(casilla.get(4))), Integer.parseInt(String.valueOf(casilla.get(1))));
             }

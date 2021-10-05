@@ -29,7 +29,7 @@ public class Servidor implements Runnable {
     int PORT = 5000;
     public static String Nombrejugador1 = VentanaPrincipal.Nombre;
     public static String Nombrejugador2;
-    public static int varPos1 = 0;
+    public static int varPos1 = 1;
     public static int varPos2;
     public static String CasillaServidor = "";
     public static String CasillaCliente =  "";
@@ -88,18 +88,19 @@ public class Servidor implements Runnable {
 
                 if (Objects.equals(Logica.recorrerCasillas(varPos2, board.head).getField(), "Reto")){
                     Logica.MandarReto(Logica.recorrerCasillas(varPos2, board.head));
+                    break;
                 }
                 if (casillaterminada) {
-                    if (varPos1 >= 16) {
-                        varPos1 = 16;
+                    if (varPos1 >= 18) {
+                        varPos1 = 18;
                         VentanaJuego.Posicion1.setText("Posicion: "+ varPos1);
                         JOptionPane.showMessageDialog(null, "¡Ganaste!");
                         VentanaJuego.ventanaj.dispose();
                         VentanaPrincipal.running = false;
                         casillaterminada = false;
 
-                    } else if (varPos2 >= 16) {
-                        varPos2 = 16;
+                    } else if (varPos2 >= 18) {
+                        varPos2 = 18;
                         VentanaJuego.Posicion2.setText("Posicion: "+ varPos2);
                         JOptionPane.showMessageDialog(null, "¡Perdiste!");
                         VentanaJuego.ventanaj.dispose();
