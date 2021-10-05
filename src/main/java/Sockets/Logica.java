@@ -7,6 +7,7 @@ import org.w3c.dom.Node;
 import java.util.Objects;
 
 public class Logica {
+    public static String respuesta;
 
     public static DoubleNode recorrerCasillas(int pos, DoubleNode head) {
         DoubleNode node = head;
@@ -17,11 +18,9 @@ public class Logica {
     }
 
     public static void MandarReto(DoubleNode Node) {
-
+        System.out.println("Tamo activo papi");
         int a = Node.getA();
         int b = Node.getB();
-
-        String respuesta;
 
         switch (Node.getOperation()) {
             case "+" -> respuesta = Integer.toString(a + b);
@@ -38,7 +37,12 @@ public class Logica {
     public static void turno(int num, DoubleNode head) {
         DoubleNode node = recorrerCasillas(num, head);
         if(Objects.equals(node.getField(), "Reto")) {
-            MandarReto(node);
+            if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
+                Servidor.varPos1++;
+            } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
+                Cliente.varPos2++;
+            }
+
         } else if (Objects.equals(node.getField(), "Trampa")) {
             if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
                 Servidor.varPos1 -= node.getMovement();
@@ -55,6 +59,7 @@ public class Logica {
             }
 
             System.out.println("Trampa " + node.getMovement());
+
         } else if (Objects.equals(node.getField(), "Tunel")) {
             if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
                 Servidor.varPos1 += node.getMovement();
