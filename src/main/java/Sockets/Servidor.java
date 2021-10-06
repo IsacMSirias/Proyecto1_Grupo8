@@ -87,10 +87,12 @@ public class Servidor implements Runnable {
                 VentanaJuego.CasillaTipo1.setText("Casilla " + CasillaServidor);
                 VentanaJuego.CasillaTipo2.setText("Casilla " + CasillaCliente);
 
-
                 if (Objects.equals(Logica.recorrerCasillas(varPos2,board.head).getField(), "Reto")){
                     Logica.MandarReto(Logica.recorrerCasillas(varPos2,board.head));
                 }
+                /*if (Objects.equals(Logica.recorrerCasillas(varPos1,board.head).getField(), "Reto")){
+                    Logica.MandarReto(Logica.recorrerCasillas(varPos1,board.head));
+                }*/
 
                 if (casillaterminada) {
                     if (varPos1 >= 18) {

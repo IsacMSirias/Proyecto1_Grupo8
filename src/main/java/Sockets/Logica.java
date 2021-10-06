@@ -34,17 +34,15 @@ public class Logica {
             VentanaReto.Operacion = a + Node.getOperation() + b;
             VentanaReto reto = new VentanaReto();
         }
-
-
     }
-
     public static void turno(int num, DoubleNode head) {
         DoubleNode node = recorrerCasillas(num, head);
         if(Objects.equals(node.getField(), "Reto")) {
             esperando = true;
             if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
                 Servidor.varPos1++;
-            } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
+            }
+            if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
                 Cliente.varPos2++;
             }
 

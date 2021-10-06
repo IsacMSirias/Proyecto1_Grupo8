@@ -81,6 +81,10 @@ public class Cliente implements Runnable {
                 if (Objects.equals(Logica.recorrerCasillas(varPos1, board.head).getField(), "Reto")){
                     Logica.MandarReto(Logica.recorrerCasillas(varPos1, board.head));
                 }
+                /*if (Objects.equals(Logica.recorrerCasillas(varPos1,board.head).getField(), "Reto")){
+                    Logica.MandarReto(Logica.recorrerCasillas(varPos1,board.head));
+                }*/
+
 
                 if (casillaterminada) {
                     if (varPos2 >= 16) {
