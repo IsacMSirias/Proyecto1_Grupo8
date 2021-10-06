@@ -29,7 +29,7 @@ public class Servidor implements Runnable {
     int PORT = 5000;
     public static String Nombrejugador1 = VentanaPrincipal.Nombre;
     public static String Nombrejugador2;
-    public static int varPos1 = 1;
+    public static int varPos1 = 0;
     public static int varPos2;
     public static String CasillaServidor = "";
     public static String CasillaCliente =  "";
@@ -82,14 +82,16 @@ public class Servidor implements Runnable {
                 VentanaJuego.Posicion1.setText("Posicion: "+ varPos1);
                 VentanaJuego.Posicion2.setText("Posicion: "+ varPos2);
 
+
                 // se setea la el tipo de casilla actual
                 VentanaJuego.CasillaTipo1.setText("Casilla " + CasillaServidor);
                 VentanaJuego.CasillaTipo2.setText("Casilla " + CasillaCliente);
 
-                if (Objects.equals(Logica.recorrerCasillas(varPos2, board.head).getField(), "Reto")){
-                    Logica.MandarReto(Logica.recorrerCasillas(varPos2, board.head));
-                    break;
+
+                if (Objects.equals(Logica.recorrerCasillas(varPos2,board.head).getField(), "Reto")){
+                    Logica.MandarReto(Logica.recorrerCasillas(varPos2,board.head));
                 }
+
                 if (casillaterminada) {
                     if (varPos1 >= 18) {
                         varPos1 = 18;

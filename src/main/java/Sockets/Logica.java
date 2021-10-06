@@ -9,7 +9,6 @@ import java.util.Objects;
 public class Logica {
     public static String respuesta;
     public static Boolean esperando = true;
-    private static boolean cont = true;
     public static DoubleNode recorrerCasillas(int pos, DoubleNode head) {
         DoubleNode node = head;
         for(int i = 0; i < pos; i++) {
@@ -21,7 +20,6 @@ public class Logica {
     public static void MandarReto(DoubleNode Node) {
         if (esperando) {
             esperando = false;
-            System.out.println("Tamo activo papi");
             int a = Node.getA();
             int b = Node.getB();
 
@@ -42,31 +40,27 @@ public class Logica {
 
     public static void turno(int num, DoubleNode head) {
         DoubleNode node = recorrerCasillas(num, head);
-        esperando = true;
         if(Objects.equals(node.getField(), "Reto")) {
-            cont = true;
-            if (cont) {
-                if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
-                    Servidor.varPos1++;
-                } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
-                    Cliente.varPos2++;
-                }
-                cont = false;
+            esperando = true;
+            if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
+                Servidor.varPos1++;
+            } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
+                Cliente.varPos2++;
             }
 
 
-        } else if (Objects.equals(node.getField(), "Trampa")) {
+        }else if (Objects.equals(node.getField(), "Trampa")) {
             if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
                 Servidor.varPos1 -= node.getMovement();
-                VenTrampa.Mensaje1.setText("El jugador se ha movido  " +"-"+ node.getMovement());
                 VenTrampa trampa = new VenTrampa();
+                VenTrampa.Mensaje1.setText("El jugador se ha movido  " +"-"+ node.getMovement());
                 if (Servidor.varPos1 < 0){
                     Servidor.varPos1 = 0;
                 }
             } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
                 Cliente.varPos2 -= node.getMovement();
-                VenTrampa.Mensaje1.setText("El jugador se ha movido  " +"-"+ node.getMovement());
                 VenTrampa trampa = new VenTrampa();
+                VenTrampa.Mensaje1.setText("El jugador se ha movido  " +"-"+ node.getMovement());
                 if (Cliente.varPos2 < 0){
                     Cliente.varPos2 = 0;
                 }
@@ -77,12 +71,12 @@ public class Logica {
         } else if (Objects.equals(node.getField(), "Tunel")) {
             if (Objects.equals(VentanaPrincipal.conexion, "servidor")) {
                 Servidor.varPos1 += node.getMovement();
-                VenTunel.TMensaje1.setText("El jugador se ha movido  " + node.getMovement());
                 VenTunel tunel = new VenTunel();
+                VenTunel.TMensaje1.setText("El jugador se ha movido  " + node.getMovement());
             } else if (Objects.equals(VentanaPrincipal.conexion, "cliente")) {
                 Cliente.varPos2 += node.getMovement();
-                VenTunel.TMensaje1.setText("El jugador se ha movido  " + node.getMovement());
                 VenTunel tunel = new VenTunel();
+                VenTunel.TMensaje1.setText("El jugador se ha movido  " + node.getMovement());
             }
             System.out.println("Tunel " + node.getMovement());
         }

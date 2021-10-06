@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aaf872a9-5b03-42fb-8ee2-9ab124bbb442" name="Default Changelist" comment="Prueba">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BoardGeneration/ListGeneration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BoardGeneration/ListGeneration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/VentanaJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/VentanaJuego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/VentanaReto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/VentanaReto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Cliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Jsontxt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Jsontxt.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/ListFileRead.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/ListFileRead.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Logica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Logica.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Servidor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/VentanaJuego.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/VentanaJuego.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Sockets/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sockets/Cliente.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Sockets/Logica.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sockets/Logica.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Sockets/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sockets/Servidor.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +137,7 @@
       <workItem from="1633461034184" duration="356000" />
       <workItem from="1633465054449" duration="3328000" />
       <workItem from="1633465097701" duration="3275000" />
+      <workItem from="1633472213510" duration="7978000" />
     </task>
     <task id="LOCAL-00001" summary="Quinta versión">
       <created>1632458265520</created>

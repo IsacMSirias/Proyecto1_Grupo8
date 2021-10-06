@@ -34,7 +34,7 @@ public class Cliente implements Runnable {
     public static String Nombrejugador2 = VentanaPrincipal.Nombre2;
     public static DoublyLinkedList board = new DoublyLinkedList();;
     public static int varPos1;
-    public static int varPos2 = 1;
+    public static int varPos2 = 0;
     public static String CasillaCliente = "";
     public static String CasillaServidor = "";
     public static DoubleNode Node;
