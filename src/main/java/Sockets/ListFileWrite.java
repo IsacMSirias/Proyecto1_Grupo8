@@ -7,10 +7,14 @@ import org.json.simple.JSONObject;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
+/**
+ * Ésta clase se encarga de escribir en el Json
+ */
 public class ListFileWrite {
 
-
+    /**
+     * Éste método escribe en el Json
+     */
     @SuppressWarnings("unchecked")
     public static void WriteValues() {
         JSONObject obj = new JSONObject();

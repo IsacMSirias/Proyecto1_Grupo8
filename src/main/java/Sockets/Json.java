@@ -24,9 +24,9 @@ public class Json {
 
     /**
      * De String a Jsonnode
-     * @param jsonSource
+     * @param jsonSource JsonSource
      * @return Jsonnode
-     * @throws JsonProcessingException
+     * @throws JsonProcessingException JsonProcessingException
      */
 
     public static JsonNode parse(String jsonSource) throws JsonProcessingException{
@@ -35,11 +35,11 @@ public class Json {
 
     /**
      * De Json nodo a objeto
-     * @param node
-     * @param clazz
-     * @param <A>
+     * @param node node
+     * @param clazz clazz
+     * @param <A> A
      * @return objeto
-     * @throws JsonProcessingException
+     * @throws JsonProcessingException JsonProcessingExceptions
      */
 
     public static <A> A fromJson(JsonNode node, Class<A> clazz) throws JsonProcessingException{
@@ -49,7 +49,7 @@ public class Json {
 
     /**
      * De objeto a json
-     * @param o
+     * @param o o
      * @return JsonNode
      */
 
@@ -61,10 +61,10 @@ public class Json {
 
     /**
      * De jsonnode a String
-     * @param node
-     * @param pretty
+     * @param node node
+     * @param pretty pretty
      * @return String
-     * @throws JsonProcessingException
+     * @throws JsonProcessingException JsonProcessingExceptions
      */
 
     public static String generateString(JsonNode node, boolean pretty) throws JsonProcessingException{
@@ -78,13 +78,13 @@ public class Json {
 
     /**
      * Metodo para leer en .json
-     * @param file
+     * @param file file
      * @return String
      */
 
     public static String ReadJson(String file) {
         //Lee el archivo.json
-        String json = new String();
+        String json = "";
         try{
             BufferedReader br = new BufferedReader(new FileReader(file));
 

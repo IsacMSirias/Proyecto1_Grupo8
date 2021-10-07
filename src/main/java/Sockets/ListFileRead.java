@@ -8,13 +8,18 @@ import java.io.IOException;
 
 import static Sockets.Cliente.board;
 
-
+/**
+ * Esta clase se encarga de leer el Json
+ */
 public class ListFileRead {
     /**
      * esta variable almacena la información de cada casilla
      */
     public static JSONArray casilla;
 
+    /**
+     * Este metodo lee el Json
+     */
     public static void ReadValues() {
 
         JSONParser parser = new JSONParser();
