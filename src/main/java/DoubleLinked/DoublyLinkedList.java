@@ -1,11 +1,16 @@
 package DoubleLinked;
 
 /**
- *
+ * Esta clase construye la lista doblemente enlazada.
  */
 public class DoublyLinkedList {
-
+    /**
+     * Guarda la cabeza de la lista
+     */
     public DoubleNode head;
+    /**
+     * Guarda la cola de la lista.
+     */
     public DoubleNode tail;
 
     /**

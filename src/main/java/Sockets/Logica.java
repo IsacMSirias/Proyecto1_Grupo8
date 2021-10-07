@@ -12,7 +12,13 @@ import static java.lang.Thread.sleep;
  * Esta clase se encarga de ejecutar las funciones básicas del juego.
  */
 public class Logica {
+    /**
+     * Guarda la respuesta de la casilla reto en la que se encuentra el jugador.
+     */
     public static String respuesta;
+    /**
+     * Sirve para no leer el mismo reto varias veces.
+     */
     public static Boolean esperando = true;
     private static DoubleNode tmp_node;
 

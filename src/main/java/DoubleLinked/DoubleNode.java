@@ -1,5 +1,8 @@
 package DoubleLinked;
 
+/**
+ * Esta clase construye el nodo doble enlazado.
+ */
 public class DoubleNode {
 
     DoubleNode prev;
