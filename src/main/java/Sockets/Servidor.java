@@ -22,7 +22,10 @@ import javax.swing.*;
 public class Servidor implements Runnable {
 
     ServerSocket servidor = null;
-    Socket socket = null;
+    /**
+     * Instancia de la comunicacion entre el server y el cliente
+     */
+    public static Socket socket = null;
     DataOutputStream output;
     DataInputStream input;
     //PORT de nuestro servidor

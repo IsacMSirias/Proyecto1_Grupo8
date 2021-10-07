@@ -2,19 +2,14 @@ package Sockets;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.Objects;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import DoubleLinked.DoubleNode;
 import DoubleLinked.DoublyLinkedList;
 import GUI.VentanaJuego;
 import GUI.VentanaPrincipal;
-import GUI.VentanaReto;
+
 
 import javax.swing.*;
 
@@ -37,9 +32,8 @@ public class Cliente implements Runnable {
     public static int varPos2 = 0;
     public static String CasillaCliente = "";
     public static String CasillaServidor = "";
-    public static DoubleNode Node;
-    private String respuesta;
     private boolean casillaterminada = true;
+    public static Socket socket = null;
 
     /**
      * Este metodo corre el cliente
@@ -47,7 +41,8 @@ public class Cliente implements Runnable {
     public void run() {
         try {
             //Creo el socket para conectarme con el cliente
-            Socket socket = new Socket(HOST, PORT);
+
+            socket = new Socket(HOST, PORT);
 
             input = new DataInputStream(socket.getInputStream());
             output = new DataOutputStream(socket.getOutputStream());
