@@ -4,6 +4,9 @@ import java.util.Random;
 
 import DoubleLinked.DoublyLinkedList;
 
+/**
+ * Esta clase genera una lista para el tablero con las proporciones respectivas de cada tipo de casilla.
+ */
 public class ListGeneration {
     public DoublyLinkedList board = new DoublyLinkedList();
     public int casillas_reto = 0;
