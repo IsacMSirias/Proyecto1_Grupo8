@@ -211,12 +211,6 @@ public class VentanaJuego implements ActionListener {
             ventanaj.dispose();
             VentanaPrincipal.running = false;
             VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
-            try {
-                Servidor.socket.close();
-                Cliente.socket.close();
-            } catch (IOException exception) {
-                exception.printStackTrace();
-            }
         }
 
         int NumRandom = (int) (Math.random() * 3 + 1);
