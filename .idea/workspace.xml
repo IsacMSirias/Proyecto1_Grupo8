@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aaf872a9-5b03-42fb-8ee2-9ab124bbb442" name="Default Changelist" comment="Prueba">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/VentanaJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/VentanaJuego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Jsontxt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Jsontxt.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DoubleLinked/DoubleNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DoubleLinked/DoubleNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DoubleLinked/DoublyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DoubleLinked/DoublyLinkedList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/VentanaJuego.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/VentanaJuego.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Sockets/Logica.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sockets/Logica.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DocuExterna/UMLDiagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/DocuExterna/UMLDiagram.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
