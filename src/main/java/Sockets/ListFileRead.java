@@ -10,6 +10,9 @@ import static Sockets.Cliente.board;
 
 
 public class ListFileRead {
+    /**
+     * esta variable almacena la información de cada casilla
+     */
     public static JSONArray casilla;
 
     public static void ReadValues() {

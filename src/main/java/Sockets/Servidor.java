@@ -30,17 +30,46 @@ public class Servidor implements Runnable {
     DataInputStream input;
     //PORT de nuestro servidor
     int PORT = 5000;
+    /**
+     * almacena el nombre del jugador 1
+     */
     public static String Nombrejugador1 = VentanaPrincipal.Nombre;
+    /**
+     * almacena el nombre del jugador 2
+     */
     public static String Nombrejugador2;
+    /**
+     * almacena la posición del jugador 1
+     */
     public static int varPos1 = 0;
+    /**
+     * almacena la posición de la del jugador 2
+     */
     public static int varPos2;
+    /**
+     * almacena el tipo de casilla del servidor
+     */
     public static String CasillaServidor = "";
+    /**
+     * almacena el tipo de casilla del cliente
+     */
     public static String CasillaCliente =  "";
+    /**
+     * almacena el tablero
+     */
     public static DoublyLinkedList board;
+    /**
+     * almacena la cabeza del tablero
+     */
     public static DoubleNode Node;
+    /**
+     * se utiliza para setear el key del Json
+     */
     public static int contador = 0;
+    /**
+     * se utiliza para verificar si ya se salió de la lista el turno
+     */
     private boolean casillaterminada = true;
-
     /**
      * Este método corre el servidor
      */
@@ -48,7 +77,7 @@ public class Servidor implements Runnable {
         //Creamos el socket del servidor
         try {
             this.servidor = new ServerSocket(PORT);
-            System.out.println("Servidor iniciado");
+            System.out.println("<<<<<<< SERVIDOR INICIADO >>>>>>");
 
             //genero la lista para el tablero
             ListGeneration list = new ListGeneration();
@@ -56,7 +85,7 @@ public class Servidor implements Runnable {
 
             //Espero a que un cliente se conecte
             socket = servidor.accept();
-            System.out.println("Cliente conectado");
+            System.out.println("-----> ¡CLIENTE CONECTADO! <-----");
             //Genero los canales de  entrada y salida
             input = new DataInputStream(socket.getInputStream());
             output = new DataOutputStream(socket.getOutputStream());
@@ -93,15 +122,12 @@ public class Servidor implements Runnable {
                 if (Objects.equals(Logica.recorrerCasillas(varPos2,board.head).getField(), "Reto")){
                     Logica.MandarReto(Logica.recorrerCasillas(varPos2,board.head));
                 }
-                /*if (Objects.equals(Logica.recorrerCasillas(varPos1,board.head).getField(), "Reto")){
-                    Logica.MandarReto(Logica.recorrerCasillas(varPos1,board.head));
-                }*/
 
                 if (casillaterminada) {
                     if (varPos1 >= 18) {
                         varPos1 = 18;
                         VentanaJuego.Posicion1.setText("Posicion: "+ varPos1);
-                        JOptionPane.showMessageDialog(null, "¡Ganaste!");
+                        JOptionPane.showMessageDialog(null, "¡GANASTE!");
                         VentanaJuego.ventanaj.dispose();
                         VentanaPrincipal.running = false;
                         casillaterminada = false;
@@ -109,7 +135,7 @@ public class Servidor implements Runnable {
                     } else if (varPos2 >= 18) {
                         varPos2 = 18;
                         VentanaJuego.Posicion2.setText("Posicion: "+ varPos2);
-                        JOptionPane.showMessageDialog(null, "¡Perdiste!");
+                        JOptionPane.showMessageDialog(null, "¡PERDISTE!");
                         VentanaJuego.ventanaj.dispose();
                         VentanaPrincipal.running = false;
                         casillaterminada = false;

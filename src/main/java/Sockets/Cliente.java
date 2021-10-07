@@ -25,15 +25,38 @@ public class Cliente implements Runnable {
     int PORT = 5000;
     DataOutputStream output;
     DataInputStream input;
+    /**
+     * almacena el nombre del jugador 1
+     */
     public static String Nombrejugador1;
+    /**
+     * almacena el nombre del jugador 2
+     */
     public static String Nombrejugador2 = VentanaPrincipal.Nombre2;
-    public static DoublyLinkedList board = new DoublyLinkedList();;
+    /**
+     * almacena el tablero
+     */
+    public static DoublyLinkedList board = new DoublyLinkedList();
+    /**
+     * almacena la posición del jugador 1
+     */
     public static int varPos1;
+    /**
+     * almacena la posición del jugador 2
+     */
     public static int varPos2 = 0;
+    /**
+     * almacena el tipo de casilla del cliente
+     */
     public static String CasillaCliente = "";
+    /**
+     * almacena el tipo de casilla del servidor
+     */
     public static String CasillaServidor = "";
+    /**
+     * se utiliza para verificar si ya se salió de la lista el turno
+     */
     private boolean casillaterminada = true;
-    public static Socket socket = null;
 
     /**
      * Este metodo corre el cliente
@@ -42,7 +65,7 @@ public class Cliente implements Runnable {
         try {
             //Creo el socket para conectarme con el cliente
 
-            socket = new Socket(HOST, PORT);
+            Socket socket = new Socket(HOST, PORT);
 
             input = new DataInputStream(socket.getInputStream());
             output = new DataOutputStream(socket.getOutputStream());
@@ -52,7 +75,6 @@ public class Cliente implements Runnable {
 
             //Recibo el mensaje del servidor
             Nombrejugador1 = input.readUTF();
-
 
             System.out.println(Nombrejugador1);
 
@@ -76,10 +98,6 @@ public class Cliente implements Runnable {
                 if (Objects.equals(Logica.recorrerCasillas(varPos1, board.head).getField(), "Reto")){
                     Logica.MandarReto(Logica.recorrerCasillas(varPos1, board.head));
                 }
-                /*if (Objects.equals(Logica.recorrerCasillas(varPos1,board.head).getField(), "Reto")){
-                    Logica.MandarReto(Logica.recorrerCasillas(varPos1,board.head));
-                }*/
-
 
                 if (casillaterminada) {
                     if (varPos2 >= 16) {
