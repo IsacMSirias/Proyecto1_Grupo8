@@ -8,9 +8,21 @@ import DoubleLinked.DoublyLinkedList;
  * Esta clase genera una lista para el tablero con las proporciones respectivas de cada tipo de casilla.
  */
 public class ListGeneration {
+    /**
+     * Instancia de la lista doblemente enlazada
+     */
     public DoublyLinkedList board = new DoublyLinkedList();
+    /**
+     *  Posicion de la casilla de reto
+     */
     public int casillas_reto = 0;
+    /**
+     * Posicion de la casilla de trampa
+     */
     public int casillas_trampa = 0;
+    /**
+     * Posicionnde la casilla de tunel
+     */
     public int casillas_tunel = 0;
 
     /**

@@ -34,22 +34,42 @@ public class DoubleNode {
 
     }
 
+    /**
+     * Obtiene el nombre de la casilla del nodo
+     * @return retorna el nombre de la casilla del nodo
+     */
     public String getField(){
         return field;
     }
 
+    /**
+     * Obtiene el movimiento de los nodos
+     * @return Retorna el movimiento
+     */
     public int getMovement(){
         return movement;
     }
 
+    /**
+     * Obtiene la operacion
+     * @return devuelve el contenido de la operacion
+     */
     public String getOperation(){
         return operation;
     }
 
+    /**
+     * Obtiene el primero termino numreico
+     * @return retorna el primer termino numerico
+     */
     public int getA(){
         return a;
     }
 
+    /**
+     * Obtiene el segundo termino numerico
+     * @return retorna el segundo termino numerico
+     */
     public int getB(){
         return b;
     }

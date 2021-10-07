@@ -51,6 +51,7 @@ public class Json {
      * De objeto a json
      * @param o o
      * @return JsonNode
+     * @throws JsonProcessingException Por si ocurre algun problema inesperado
      */
 
     public static JsonNode toJson(Object o) throws JsonProcessingException {

@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aaf872a9-5b03-42fb-8ee2-9ab124bbb442" name="Default Changelist" comment="Prueba">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BoardGeneration/ListGeneration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BoardGeneration/ListGeneration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DoubleLinked/DoubleNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DoubleLinked/DoubleNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Json.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Json.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/ListFileRead.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/ListFileRead.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/ListFileWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/ListFileWrite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sockets/Jsontxt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sockets/Jsontxt.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Sockets/Json.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sockets/Json.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Sockets/ListFileRead.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sockets/ListFileRead.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Sockets/ListFileWrite.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Sockets/ListFileWrite.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,17 +71,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ListFileWrite" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Sockets.ListFileWrite" />
       <module name="Proyecto1_Grupo8" />
@@ -147,6 +141,7 @@
       <workItem from="1633562111083" duration="10019000" />
       <workItem from="1633570953729" duration="2760000" />
       <workItem from="1633578823087" duration="725000" />
+      <workItem from="1633584688496" duration="755000" />
     </task>
     <task id="LOCAL-00001" summary="Quinta versión">
       <created>1632458265520</created>
