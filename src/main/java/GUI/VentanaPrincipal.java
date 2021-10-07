@@ -8,9 +8,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class VentanaPrincipal implements ActionListener {
+/**
+ * Clase de la Pantalla principal, está tendrá los parametros que necesitará el constructor.
+ */
 
-//ekisde
+public class VentanaPrincipal implements ActionListener {
 
     JFrame ventanap = new JFrame();
 
@@ -19,11 +21,24 @@ public class VentanaPrincipal implements ActionListener {
 
     JTextField Usertxtbox = new JTextField();
 
+    /**
+     * Esta variable guarda la el nombre del jugador1, el codigo entero tiene acceso a esta variable.
+     */
     public static String Nombre = "";
+    /**
+     * Esta variable guarda la el nombre del jugador2, el codigo entero tiene acceso a esta variable.
+     */
     public static String Nombre2 = "";
 
+    /**
+     * Esta es la conexion que define si se estan ejecutando acciones en el cliente
+     * o en el servidor, el codigo entero tiene acceso a esta variable.
+     */
     public static String conexion = "";
 
+    /**
+     * Esta variable boleana es un flag, el cual sirve para ejecutar instrcciones sin que otras interfieran en ella.
+     */
     public static Boolean running = false;
 
 
@@ -35,6 +50,10 @@ public class VentanaPrincipal implements ActionListener {
     JButton BotonCrear = new JButton("Crear partida");
 
     ImageIcon imageIcon = new ImageIcon("src/Sprites/IconMath.png");
+
+    /**
+     * Metodo el cual tendrá todos los objetos visibles dentro de la pantalla
+     */
 
     public VentanaPrincipal() {
 
@@ -91,6 +110,11 @@ public class VentanaPrincipal implements ActionListener {
         ventanap.setLocationRelativeTo(null);
 
     }
+
+    /**
+     * Metodo que hace que los botones de la pantalla principal sean funcionales.
+     * @param e Corresponde a la escucha de los drivers del clickeo del mouse.
+     */
 
     @Override
     public void actionPerformed(ActionEvent e) {

@@ -9,15 +9,39 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Esta es la ventana que contendra los respectivos objetos y metodos que haran que la
+ * ventana de reto funcionen.
+ */
+
 public class VentanaReto implements ActionListener {
 
     JFrame ventanaReto = new JFrame();
+    /**
+     * Esta es ina istancia de la biblioteca Jlabel, la cual contendra
+     * la operacion que se escribe en la pantalla de reto
+     */
     public static JLabel operacion = new JLabel();
+    /**
+     * Instancia de la biblioteca TextFlield
+     * en donde el jugador ingresara su respuesta al problema de la ventana reto
+     */
     JTextField respuestaJugador = new JTextField();
     JButton enviar = new JButton();
 
+    /**
+     * En esta variable se guardara la respuesta que escribe el jugador en el txtbox de la ventana de reto
+     */
     public static String Operacion = "";
+    /**
+     *  Variable que almacena la respuesta del jugador
+     */
     public static String respuesta;
+
+    /**
+     *  Metodo de la ventana de reto, la cual estaran presentes todos aquellos objetos que se
+     *  se veran reflejados en la pantalla emergente de reto.
+     */
 
     public VentanaReto() {
 
@@ -49,6 +73,11 @@ public class VentanaReto implements ActionListener {
 
     }
 
+    /**
+     *  Metodo que envía la respuesta del reto hacia otra clase, la cual verifica que la respuesta del jugador
+     *  en el caso de que este correcta, esta notificara al usuario y si esta incorrecta tambien
+     * @param e Corresponde a la escucha de los drivers del clickeo del mouse.
+     */
 
     @Override
     public void actionPerformed(ActionEvent e) {

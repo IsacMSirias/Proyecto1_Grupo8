@@ -137,6 +137,10 @@ public class DoublyLinkedList {
 
     }
 
+    /**
+     * Este metodo genera un array con los nombres de las posiciones del tablero generado
+     * @return este metodo retorna un array actualizada con el tablero actual generado
+     */
     public String[] displayGrphics() {
         String TableroEscrito[] = new String[18];
         DoubleNode cn = head;

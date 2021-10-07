@@ -34,6 +34,7 @@ public class Logica {
      * Este método se encarga de abrir la ventana juego y guardar la respueste del problema.
      * @param Node Nodo de la casilla reto
      */
+
     public static void MandarReto(DoubleNode Node) {
         if (esperando && Node != tmp_node) {
             esperando = false;

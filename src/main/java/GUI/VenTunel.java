@@ -5,16 +5,26 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Ventana tunel, esta es una clase que hace que cuando el jugador caiga en esta trampa se despliegue una pantalla emergente
+ * que notifica cuantas posiciones en el tablero se ha movido el jugador
+ */
 
 public class VenTunel implements ActionListener {
 
     JFrame VentanaTunel = new JFrame();
+    /**
+     * Label que contendra el numero de espacions que se mueve el jugador en el tablero
+     */
     public static JLabel TMensaje1 = new JLabel();
     JLabel TMensaje2 = new JLabel();
     JButton Confirmar  = new JButton();
 
     ImageIcon imageIcon = new ImageIcon("src/Sprites/IconMath.png");
 
+    /**
+     *  Metodo que contiene todos los objetos e instancias que estan presentes en la ventana de tunel
+     */
     public VenTunel() {
 
         VentanaTunel.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
